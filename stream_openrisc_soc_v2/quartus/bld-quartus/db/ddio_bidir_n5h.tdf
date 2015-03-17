@@ -1,0 +1,79 @@
+--altddio_bidir CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone IV E" INVERT_OUTPUT="OFF" POWER_UP_HIGH="OFF" WIDTH=1 aclr datain_h datain_l dataout_h inclock outclock padio
+--VERSION_BEGIN 13.1 cbx_altddio_bidir 2013:10:17:09:48:19:SJ cbx_cycloneii 2013:10:17:09:48:19:SJ cbx_maxii 2013:10:17:09:48:19:SJ cbx_mgl 2013:10:17:09:48:49:SJ cbx_stratix 2013:10:17:09:48:19:SJ cbx_stratixii 2013:10:17:09:48:19:SJ cbx_stratixiii 2013:10:17:09:48:19:SJ cbx_stratixv 2013:10:17:09:48:19:SJ cbx_util_mgl 2013:10:17:09:48:19:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2013 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION cycloneive_ddio_out (areset, clk, clkhi, clklo, datainhi, datainlo, ena, muxsel, sreset)
+WITH ( async_mode, power_up, sync_mode, use_new_clocking_model)
+RETURNS ( dataout);
+FUNCTION TRI (in, oe)
+RETURNS ( out);
+
+--synthesis_resources = IO 1 reg 3 
+OPTIONS ALTERA_INTERNAL_OPTION = "ANALYZE_METASTABILITY=OFF;ADV_NETLIST_OPT_ALLOWED=DEFAULT;suppress_da_rule_internal=C106;{-to input_cell_h} DDIO_INPUT_REGISTER=HIGH;{-to input_cell_l} DDIO_INPUT_REGISTER=LOW;{-to tri_buf1a} MEGAFUNCTION_GENERATED_TRI=ON";
+
+SUBDESIGN ddio_bidir_n5h
+( 
+	aclr	:	input;
+	datain_h[0..0]	:	input;
+	datain_l[0..0]	:	input;
+	dataout_h[0..0]	:	output;
+	dataout_l[0..0]	:	output;
+	inclock	:	input;
+	outclock	:	input;
+	padio[0..0]	:	bidir;
+) 
+VARIABLE 
+	input_cell_h[0..0] : dffe;
+	input_cell_l[0..0] : dffe;
+	input_latch_l[0..0] : dffe;
+	ddio_outa[0..0] : cycloneive_ddio_out
+		WITH (
+			async_mode = "clear",
+			power_up = "low",
+			sync_mode = "none",
+			use_new_clocking_model = "true"
+		);
+	tri_buf1a[0..0] : TRI;
+	comb_wire[0..0]	: WIRE;
+	oe	: NODE;
+
+BEGIN 
+	input_cell_h[].clk = inclock;
+	input_cell_h[].clrn = (! aclr);
+	input_cell_h[].d = comb_wire[];
+	input_cell_l[].clk = (! inclock);
+	input_cell_l[].clrn = (! aclr);
+	input_cell_l[].d = comb_wire[];
+	input_latch_l[].clk = inclock;
+	input_latch_l[].clrn = (! aclr);
+	input_latch_l[].d = input_cell_l[].q;
+	ddio_outa[].areset = aclr;
+	ddio_outa[].clkhi = outclock;
+	ddio_outa[].clklo = outclock;
+	ddio_outa[].datainhi = datain_h[];
+	ddio_outa[].datainlo = datain_l[];
+	ddio_outa[].muxsel = outclock;
+	tri_buf1a[].in = ddio_outa[].dataout;
+	tri_buf1a[].oe = oe;
+	comb_wire[] = padio[];
+	dataout_h[] = input_cell_h[].q;
+	dataout_l[] = input_latch_l[].q;
+	oe = VCC;
+	padio[] = tri_buf1a[].out;
+END;
+--VALID FILE

@@ -1,0 +1,15 @@
+CAPI=1
+[main]
+description = Cypress FX3 Interface
+simulators = icarus modelsim
+[verilog]
+src_files =
+ rtl/verilog/fx3_tx.v
+ rtl/verilog/fx3.v
+tb_private_src_files = bench/fx3_tb.v
+
+[simulator]
+toplevel = fx3_tb
+
+[icarus]
+depend = vlog_tb_utils

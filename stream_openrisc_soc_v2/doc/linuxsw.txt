@@ -1,0 +1,35 @@
+Creating Linux applications
+===========================
+
+Installing the musl toolchain
+-------------------------------
+
+The Linux toolchain for OpenRISC is built upon the musl C library
+
+Build instructions for the musl toolchain are available link:http://opencores.org/or1k/OpenRISC_GNU_tool_chain#Linux_.28musl.29_toolchain_.28or1k-linux-musl.29[here]
+
+Building applications
+---------------------
+
+The basic usage for compiling a C application is +or1k-linux-musl-gcc <program.c>+.
+
+
+
+Downloading applications
+------------------------
+
+The most common way to add new files to the Linux filesystem is to embed them to the built-in memory filesystem (initramfs).
+
+This is done by copying the binary files to +linux/arch/openrisc/support/initramfs/bin+. If the program uses dynamically linked libraries, ensure that they are also copied to locations where the program can find them (e.g. +linux/arch/openrisc/support/initramfs/lib/+)
+
+After new files are added to the initramfs, the kernel must be rebuilt. Use the following commands to rebuild the kernel.
+
+.Rebuild Linux kernel
+-------------
+cd linux
+export ARCH=openrisc
+export CROSS_COMPILE=or1k-elf-
+make
+-------------
+
+Once the Linux system is running, files can also be copied to the running system via ethernet.

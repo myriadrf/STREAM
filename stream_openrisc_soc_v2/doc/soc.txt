@@ -1,0 +1,103 @@
+Stream OpenRISC SoC Specification
+=================================
+
+Architecture
+------------
+
+The Stream OpenRISC SoC consists of an OpenRISC CPU connected to various peripheral devices.
+
+image:./arch.png[]
+
+.Stream SoC memory map
+[width="40%",options="header"]
+|==========================
+|Core         |Base Address
+|Main Memory  |0x00000000
+|TX/RX Memory |0x04000000
+|UART         |0x90000000
+|GPIO         |0x91000000
+|Ethernet MAC |0x92000000
+|LMS 6002D IF |9x95000000
+|Boot ROM     |0xF0000100
+|==========================
+
+Boot ROM
+--------
+
+The boot ROM contains the first instructions that the OpenRISC CPU will read after reset. The default behaviour is to clear register r3 and jump to address 0x100 and continue to load an application from there
+
+link:https://github.com/openrisc/orpsoc-cores/blob/master/cores/wb_ram/README.md[Documentation]
+
+CPU
+---
+
+The OpenRISC Stream SoC uses mor1kx as main CPU.
+
+link:https://github.com/openrisc/mor1kx/blob/master/doc/mor1kx.asciidoc[Documentation]
+
+Ethernet MAC
+------------
+
+The 10/100 Mbps Ethernet MAC is used for Ethernet communication.
+
+link:http://opencores.org/websvn,filedetails?repname=ethmac&path=%2Fethmac%2Ftrunk%2Fdoc%2Feth_speci.pdf[Documentation]
+
+FX3
+---
+
+The FX3 interface is used for streaming received I/Q data to the on-board FX3 USB3 controller
+
+link:fx3.html[Documentation]
+
+GPIO
+----
+
+The GPIO block is connected to the remaining FPGA_GPIO pins not used by UART. All pins can be programmed as either input or output separately.
+
+.GPIO connections
+[width="10%",options="header"]
+|==========================
+|Bit |Onboard pin
+|0   |N.C.
+|1   |N.C.
+|2   |FPGA_GPIO2
+|3   |FPGA_GPIO3
+|4   |FPGA_GPIO4
+|5   |FPGA_GPIO5
+|6   |FPGA_GPIO6
+|7   |N.C.
+|==========================
+
+link:https://github.com/openrisc/orpsoc-cores/blob/master/cores/gpio/README.md[Documentation]
+
+Main Memory
+-----------
+
+The Main Memory controller is connected to 64MB DDR2 SDRAM. This memory is used for instructions and data for applications and operating systems
+
+TX/RX Memory
+------------
+
+The TX/RX Memory controller is connected to 64MB DDR2 SDRAM. This memory is used for storing I/Q samples that are received , or to be transmitted from/to the LMS controller.
+
+LMS6002D IF
+-----------
+
+The LMS6002D IF is responsible for communication with a MyriadRF board.
+
+link:myriadrf.html[Documentation]
+
+UART
+----
+
+The UART is used for standard input/output for software running on the SoC. The following pins are connected to the UART
+
+.UART connections
+[width="30%",options="header"]
+|============
+|Pin | Usage
+|FPGA_GPIO0 | TX (from computer to Stream board)
+|FPGA_GPIO1 | RX (from Stream board to computer)
+|=============
+
+link:http://opencores.org/websvn,filedetails?repname=uart16550&path=%2Fuart16550%2Ftrunk%2Fdoc%2FUART_spec.pdf[Documentation]

@@ -1,0 +1,32 @@
+CAPI=1
+[main]
+description = Myriad-RF interface
+
+simulators = icarus modelsim
+depend = stream_utils-1.0 wb_streamer
+
+[verilog]
+src_files =
+ rtl/verilog/test_data_gen.v
+ rtl/verilog/usb_packetizer.v
+ rtl/verilog/usb_framer.v
+ rtl/verilog/myriadrf_fx2.v
+ rtl/verilog/myriadrf_intercon.v
+ rtl/verilog/myriadrf_cfg.v
+ rtl/verilog/myriadrf_tx_ctrl.v
+ rtl/verilog/myriadrf_tx_if.v
+ rtl/verilog/myriadrf_rx_ctrl.v
+ rtl/verilog/myriadrf_rx_if.v
+ rtl/verilog/myriadrf.v
+
+include_files =  rtl/verilog/myriadrf_intercon.vh
+
+tb_private_src_files =
+ bench/usb_framer_tb.v
+ bench/myriadrf_tb.v
+
+[simulator]
+toplevel = usb_framer_tb
+
+[icarus]
+depend = fifo vlog_tb_utils

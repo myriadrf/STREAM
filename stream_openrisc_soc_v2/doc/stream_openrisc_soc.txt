@@ -1,0 +1,30 @@
+Stream OpenRISC SoC
+===================
+
+The Stream OpenRISC SoC is a complete System On Chip running on the FPGA on the Stream board. Its main usage is to control all the on-board peripheral devices and to provide a stand-alone platform for SDR applications.
+
+With the supplied Linux image, the SoC is capable of:
+
+* Generating I/Q data in software to send to a MyriadRF board
+* Receiving I/Q samples that can be processed with the on-chip OpenRISC CPU or forwaded to the USB3 interface
+* Connect to a network with Ethernet
+* Handle user I/O with a UART
+
+For special purpose application, the Linux image can be replaced with a light-weight RTOS or a custom bare-metal application to increase performance and real-time capabilities
+
+Further reading
+---------------
+
+link:quickstart.html[Stream OpenRISC SoC quick start]
+
+link:soc.html[Stream OpenRISC SoC specification]
+
+link:fpga.html[Rebuild FPGA image]
+
+link:linux.html[Reuild Linux image]
+
+link:project.html[Stream top-level core structure]
+
+link:linuxsw.html[Creating Linux user applications]
+
+link:baremetal.html[Creating bare-metal applications]

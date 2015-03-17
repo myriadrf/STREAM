@@ -1,0 +1,56 @@
+MyriadRF IF
+===========
+
+The MyriadRF Interface is a peripheral controller for transmitting and receiving data to a MyriadRF board. The external interface consists of an RX interface and a TX interface and the internal interfaces consists of two Wishbone master interfaces for streaming I/Q data to and from RAM, a Wishbone slave interface for control of MyriadRF IF and a stream port for accessing the received data stream directly.
+
+Interfaces
+------------
+
+.TX Interface
+[width="40%",options="header"]
+|==========================
+|Name    |Width| Dir | Comment
+|txd     |12   | out | TX I/Q Data from MyriadRF
+|txiqsel |1    | out | TX I/Q selector from MyriadRF
+|tx_clk  |1    | in  | TX Clock from MyriadRF
+|tx_rst  |1    | in  | Reset signal synchronous to tx_clk
+|==========================
+
+The TX interface should be connected directly to pins interfacing the MyriadRF, except for tx_rst which should be synchronized internally
+
+.RX Interface
+[width="40%",options="header"]
+|==========================
+|Name    |Width| Dir | Comment
+|rxd     |12   | in  | RX I/Q Data from MyriadRF
+|rxiqsel |1    | in  | RX I/Q selector from MyriadRF
+|rx_clk  |1    | in  | RX Clock from MyriadRF
+|rx_rst  |1    | in  | Reset signal synchronous to rx_clk
+|==========================
+
+The RX interface should be connected directly to pins interfacing the MyriadRF, except for rx_rst which should be synchronized internally
+
+.RX Stream Interface
+[width="40%",options="header"]
+|==========================
+|Name          |Width| Dir | Comment
+|usb_m_data_o  |24   | out | RX I/Q Data from MyriadRF. I = bits[23:12], Q = bits 11:0]
+|usb_m_valid_o |1    | out | RX I/Q Data valid
+|usb_m_ready_i |1    | in  | Receiver ready
+|==========================
+
+The RX Stream interface provides a port for directly reading out the data stream from MyriadRF. A successful transaction of a word occurs when both the valid and ready signals are asserted. This interface is synchronous to wb_clk.
+
+.Wishbone Interfaces
+[width="40%",options="header"]
+|==========================
+|Name         |Width| Dir | Comment
+|wbs_*        | -   | -   | Wishbone slave interface for controlling the MyriadRF IF core
+|wbm_tx_*     | -   | -   | Wishbone master Interface for reading TX samples from RAM
+|lms_tx_irq_o | 1   | out | Interrupt signal for TX DMA Streamer
+|wbm_rx_*     | -   | -   | RX DMA Interface for writing received samples to RAM
+|lms_rx_irq_o | 1   | out | Interrupt signal for RX DMA Streamer
+|==========================
+
+The Wishbone slave interface is used for control and status of the MyriadRF core. The memory map is detailed link:memory_map.html[here]
+

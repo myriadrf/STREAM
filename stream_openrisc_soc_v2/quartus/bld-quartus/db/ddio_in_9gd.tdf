@@ -1,0 +1,50 @@
+--altddio_in CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone IV E" POWER_UP_HIGH="OFF" WIDTH=1 aclr datain dataout_h dataout_l inclock
+--VERSION_BEGIN 13.1 cbx_altddio_in 2013:10:17:09:48:19:SJ cbx_cycloneii 2013:10:17:09:48:19:SJ cbx_maxii 2013:10:17:09:48:19:SJ cbx_mgl 2013:10:17:09:48:49:SJ cbx_stratix 2013:10:17:09:48:19:SJ cbx_stratixii 2013:10:17:09:48:19:SJ cbx_stratixiii 2013:10:17:09:48:19:SJ cbx_stratixv 2013:10:17:09:48:19:SJ cbx_util_mgl 2013:10:17:09:48:19:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2013 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+
+--synthesis_resources = IO 1 reg 3 
+OPTIONS ALTERA_INTERNAL_OPTION = "ANALYZE_METASTABILITY=OFF;suppress_da_rule_internal=C106;ADV_NETLIST_OPT_ALLOWED=""NEVER_ALLOW"";{-to input_cell_h} DDIO_INPUT_REGISTER=HIGH;{-to input_cell_l} DDIO_INPUT_REGISTER=LOW";
+
+SUBDESIGN ddio_in_9gd
+( 
+	aclr	:	input;
+	datain[0..0]	:	input;
+	dataout_h[0..0]	:	output;
+	dataout_l[0..0]	:	output;
+	inclock	:	input;
+) 
+VARIABLE 
+	input_cell_h[0..0] : dffe;
+	input_cell_l[0..0] : dffe;
+	input_latch_l[0..0] : dffe;
+
+BEGIN 
+	input_cell_h[].clk = inclock;
+	input_cell_h[].clrn = (! aclr);
+	input_cell_h[].d = datain[];
+	input_cell_l[].clk = (! inclock);
+	input_cell_l[].clrn = (! aclr);
+	input_cell_l[].d = datain[];
+	input_latch_l[].clk = inclock;
+	input_latch_l[].clrn = (! aclr);
+	input_latch_l[].d = input_cell_l[].q;
+	dataout_h[] = input_cell_h[].q;
+	dataout_l[] = input_latch_l[].q;
+END;
+--VALID FILE

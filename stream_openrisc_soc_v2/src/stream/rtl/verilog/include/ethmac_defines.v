@@ -1,0 +1,1 @@
+`define ETH_ALTERA_SYNCRAM

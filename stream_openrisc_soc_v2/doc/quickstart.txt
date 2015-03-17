@@ -1,0 +1,103 @@
+Quick instructions
+==================
+
+Prerequisites
+-------------
+
+Software
+~~~~~~~~
+
+* Quartus II Programmer (part of the Quartus II suite)
+* OpenOCD (>= 0.8.0)
+
+Hardware
+~~~~~~~~
+
+* Serial cable (Any 3.3V USB-to-serial cable should work)
+* Altera USB Blaster (or compatible)
+
+Files
+~~~~~
+
+* FPGA image (stream.sof)
+* Linux image (vmlinux)
+
+Program FPGA
+------------
+
+Connect USB Blaster to FPGA JTAG port. Use the Quartus programmer to load the FPGA image stream.sof to the board or convert the sof file to an rbf file and load it with the LMS7 GUI
+
+Attach serial console
+---------------------
+
+
+The following pins are used for UART communication.
+
+* FPGA_GPIO 1  : TX (from computer to Stream board)
+* FPGA_GPIO 3  : RX (from Stream board to computer)
+* FPGA_GPIO 10 : GND
+
+The following UART settings are used for the Linux system
+
+* Baud rate : 115200
+
+Open a terminal window and connect to the serial console (e.g. +screen /dev/ttyUSB0 115200+)
+
+Load Linux
+----------
+
+Go to the directory containing the Linux image (vmlinux)
+
+Launch openocd with +openocd -f interface/altera-usb-blaster.cfg -f board/or1k_generic.cfg+
+
+If everything works as expected, you should see the following in your terminal:
+
+.OpenOCD output
+-----------------------------------------------------
+ Open On-Chip Debugger 0.9.0-dev-00211-g1e23496 (2015-01-20-13:27)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.sourceforge.net/doc/doxygen/bugs.html
+Warn : Adapter driver 'usb_blaster' did not declare which transports it allows; assuming legacy JTAG-only
+Info : only one transport option; autoselect 'jtag'
+Info : vjtag tap selected
+Info : adv debug unit selected
+Info : Option 7 is passed to adv debug unit
+Info : set servers polling period to 1ms
+adapter speed: 3000 kHz
+Info : No lowlevel driver configured, will try them all
+Info : usb blaster interface using libftdi
+Info : This adapter doesn't support configurable speed
+Info : JTAG tap: or1200.cpu tap/device found: 0x020f40dd (mfg: 0x06e, part: 0x20f4, ver: 0x0)
+Warn : JTAG tap: or1200.cpu       UNEXPECTED: 0x020f40dd (mfg: 0x06e, part: 0x20f4, ver: 0x0)
+Error: JTAG tap: or1200.cpu  expected 1 of 1: 0x020b30dd (mfg: 0x06e, part: 0x20b3, ver: 0x0)
+Error: Trying to use configured scan chain anyway...
+Warn : Bypassing JTAG setup events due to errors
+Info : adv debug unit is configured with option ADBG_USE_HISPEED
+Info : adv debug unit is configured with option ENABLE_JSP_MULTI
+Info : adv debug unit is configured with option ENABLE_JSP_SERVER
+Halting processor
+target state: halted
+Chip is or1200.cpu, Endian: big, type: or1k
+Target ready...
+--------------------
+
+Open a new terminal window and connect to the OpenOCD proxy with +telnet localhost 4444+. This should result in something like the following:
+
+.OpenOCD telnet output
+----------------------
+Trying ::1...
+telnet: connect to address ::1: Connection refused
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+Open On-Chip Debugger
+> 
+----------------------
+
+Run the following command to load the Linux image +halt; load_image vmlinux; reg npc 0x100; reset+
+
+The Linux boot process should now start in the terminal connected to the serial console
+
+After the boot is complete you should be greeted by a message saying
++Please press Enter to activate this console.+

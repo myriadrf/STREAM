@@ -1,0 +1,49 @@
+--altpll_dynamic_phase_lcell CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" DEVICE_FAMILY="Cyclone IV E" INDEX=1 combout dataa datab datac datad ALTERA_INTERNAL_OPTIONS=ADV_NETLIST_OPT_ALLOWED = NEVER_ALLOW;REMOVE_REDUNDANT_LOGIC_CELLS = OFF;IGNORE_LCELL_BUFFERS = OFF
+--VERSION_BEGIN 13.1 cbx_altclkbuf 2013:10:17:09:48:19:SJ cbx_altiobuf_bidir 2013:10:17:09:48:19:SJ cbx_altiobuf_in 2013:10:17:09:48:19:SJ cbx_altiobuf_out 2013:10:17:09:48:19:SJ cbx_altpll 2013:10:17:09:48:19:SJ cbx_cycloneii 2013:10:17:09:48:19:SJ cbx_lpm_add_sub 2013:10:17:09:48:19:SJ cbx_lpm_compare 2013:10:17:09:48:19:SJ cbx_lpm_counter 2013:10:17:09:48:19:SJ cbx_lpm_decode 2013:10:17:09:48:19:SJ cbx_lpm_mux 2013:10:17:09:48:19:SJ cbx_mgl 2013:10:17:09:48:49:SJ cbx_stratix 2013:10:17:09:48:19:SJ cbx_stratixii 2013:10:17:09:48:19:SJ cbx_stratixiii 2013:10:17:09:48:19:SJ cbx_stratixv 2013:10:17:09:48:19:SJ cbx_util_mgl 2013:10:17:09:48:19:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2013 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION cycloneive_lcell_comb (cin, dataa, datab, datac, datad)
+WITH ( DONT_TOUCH, LUT_MASK, SUM_LUTC_INPUT)
+RETURNS ( combout, cout);
+
+--synthesis_resources = lut 1 
+OPTIONS ALTERA_INTERNAL_OPTION = "ADV_NETLIST_OPT_ALLOWED = NEVER_ALLOW;REMOVE_REDUNDANT_LOGIC_CELLS = OFF;IGNORE_LCELL_BUFFERS = OFF;PLL_PHASE_RECONFIG_COUNTER_REMAP_LCELL = 1";
+
+SUBDESIGN altpll_dyn_phase_le_5ho
+( 
+	combout	:	output;
+	dataa	:	input;
+	datab	:	input;
+	datac	:	input;
+	datad	:	input;
+) 
+VARIABLE 
+	le_comb9 : cycloneive_lcell_comb
+		WITH (
+			DONT_TOUCH = "on",
+			LUT_MASK = "CCCC",
+			SUM_LUTC_INPUT = "datac"
+		);
+
+BEGIN 
+	le_comb9.dataa = dataa;
+	le_comb9.datab = datab;
+	le_comb9.datac = datac;
+	combout = le_comb9.combout;
+END;
+--VALID FILE

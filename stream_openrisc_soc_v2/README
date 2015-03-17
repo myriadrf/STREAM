@@ -1,0 +1,15 @@
+doc/
+- HTML documentation for the Stream OpenRISC SoC
+bin/
+- stream.sof : Pre-built FPGA image
+- vmlinux    : Pre-built Linux image
+quartus/
+- Quartus project archive for rebuilding the FPGA image
+src/
+- Source code for Stream-specific cores
+- src/fx3 : FX3 communication controller
+- src/myriadrf : Peripheral core for communicating with LMS6002D transceivers
+- src/or1k_bootloaders : A collection of bootloaders for OpenRISC 1000
+- src/stream : Stream OpenRISC SoC top-level core
+- src/wb_ram : Altera-specific version of the Wishbone Block RAM core
+- src/wb_streamer : Wishbone-compatible DMA Streamer

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preset name="winbond_w9751g6kb25">
+  <parameter name="mem_if_memtype" value="DDR2 SDRAM" />
+  <parameter name="vendor" value="Other" />
+  <parameter name="chip_or_dimm" value="Discrete Device" />
+  <parameter name="mem_fmax" value="400" />
+  <parameter name="mem_if_coladdr_width" value="10" />
+  <parameter name="mem_if_rowaddr_width" value="13" />
+  <parameter name="mem_if_bankaddr_width" value="2" />
+  <parameter name="mem_if_clk_pair_count" value="1" />
+  <parameter name="mem_if_cs_per_dimm" value="1" />
+  <parameter name="mem_if_cs_width" value="1" />
+  <parameter name="mem_if_dq_per_dqs" value="8" />
+  <parameter name="mem_if_dwidth" value="16" />
+  <parameter name="mem_if_pchaddr_bit" value="10" />
+  <parameter name="mem_if_dm_pins_en" value="Yes" />
+  <parameter name="mem_if_tinit_us" value="200" />
+  <parameter name="mem_if_tmrd_ns" value="5" />
+  <parameter name="mem_if_tras_ns" value="45" />
+  <parameter name="mem_if_trcd_ns" value="12.5" />
+  <parameter name="mem_if_trp_ns" value="12.5" />
+  <parameter name="mem_if_trefi_us" value="7.8" />
+  <parameter name="mem_if_trfc_ns" value="105" />
+  <parameter name="mem_if_twr_ns" value="15" />
+  <parameter name="mem_if_twtr_ck" value="3" />
+  <parameter name="mem_tac_ps" value="400" />
+  <parameter name="mem_tdsa_ps" value="250" />
+  <parameter name="mem_tdha_ps" value="250" />
+  <parameter name="mem_tdqsck_ps" value="350" />
+  <parameter name="mem_tdqsq_ps" value="200" />
+  <parameter name="mem_tdqss_ck" value="0.25" />
+  <parameter name="mem_tdsh_ck" value="0.2" />
+  <parameter name="mem_tdss_ck" value="0.2" />
+  <parameter name="mem_tisa_ps" value="375" />
+  <parameter name="mem_tiha_ps" value="375" />
+  <parameter name="mem_tqhs_ps" value="300" />
+  <parameter name="mem_tfaw_ns" value="45" />
+  <parameter name="mem_trrd_ns" value="10" />
+  <parameter name="mem_trtp_ns" value="7.5" />
+  <parameter name="mem_bl" value="4" />
+  <parameter name="mem_btype" value="Sequential" />
+  <parameter name="mem_dll_en" value="Yes" />
+  <parameter name="mem_drv_str" value="Normal" />
+  <parameter name="mem_odt" value="Disabled" />
+  <parameter name="mem_tcl" value="5.0" />
+  <parameter name="mem_tcl_30_fmax" value="200" />
+  <parameter name="mem_tcl_40_fmax" value="266.667" />
+  <parameter name="mem_tcl_50_fmax" value="400" />
+  <parameter name="mem_tcl_60_fmax" value="400" />
+  <parameter name="mem_atcl" value="Disabled" />
+</preset>
+

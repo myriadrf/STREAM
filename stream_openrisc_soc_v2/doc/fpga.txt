@@ -1,0 +1,65 @@
+Rebuild FPGA image
+==================
+
+The Stream OpenRISC SoC uses FuseSoC to collect all required source files and create a project file for either simulation or building an FPGA image. A pre-built Quartus II project archive is supplied with the Stream documentation.
+
+Build from project file
+-----------------------
+
+Use Altera Quartus II to rebuild the FPGA image from the supplied project file +stream.qpf+
+
+
+Build with FuseSoC
+------------------
+
+FuseSoC is a package manager and a set of build tools for HDL code. General instructions for FuseSoC can be found link:https://github.com/olofk/fusesoc/blob/master/readme.md[here]
+
+To rebuild the FPGA image for the Stream board followin the instructions below:
+
+Install FuseSoC
+~~~~~~~~~~~~~~~
+
+.Download
+----------------
+git clone https://github.com/olofk/fusesoc
+----------------
+
+.Build and install
+----------------
+cd fusesoc
+autoreconf -i
+./configure
+make
+sudo make install
+----------------
+
+At this point create an empty directory somwhere that will be used as your workspace area, this workspace directory will be called +$ws+ from now
+
+.Initial setup
+--------------
+mkdir $ws
+cd $ws
+fusesoc init
+--------------
+
++fusesoc init+ will download the standard core library and write configuration files. The installation can now be tested by running +fusesoc list-cores+ which should return a list of all supported cores
+
+Add Stream Core library
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The Stream OpenRISC SoC uses some cores that are not part of the standard library, but instead provided in the Stream OpenRISC SoC package. To make FuseSoC aware of these cores, we need to add this core library to the FuseSoC configuration. Copy the FuseSoC configuration file located at +~/.config/fusesoc/fusesoc.conf+ to +$ws+ and add the path to the src directory in your Stream OpenRISC SoC package. The file should look something like this. Change the path of stream_openrisc_soc to where your Stream OpenRISC SoC package is located:
+
+.Example fusesoc.conf
+-------------------
+[main]
+cores_root = ~/.local/share/orpsoc-cores <path to stream_openrisc_soc>/src
+-------------------
+
+You can now run +fusesoc core-info stream+ to verify that the Stream board is found
+
+Build Stream OpenRISC SoC
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once everything is in place, run +fusesoc build stream+ from you +$ws+ directory. When the build is complete, the FPGA image will be written to +$ws/build/stream/bld-quartus/stream.sof+. There will also be a Quartus II project file that can be opened at +$ws/build/stream/bld-quartus/stream.qpf+. This project file is useful if you want to run SignalTap or convert the sof file to another format.
+
+If an Altera USB Blaster is connected to the Stream board, it can also be programmed directly with +fusesoc pgm stream+

@@ -1,0 +1,50 @@
+Creating bare-metal applications
+================================
+
+Bare-metal applications are programs that run directly on the hardware without any underlying Operating System. The benefits of bare-metal application are increased performance and smaller code size.
+
+For OpenRISC, bare-metal applications are built with the newlib toolchain (or1k-elf-). Configurations for specific boards are implemented as libgloss archives
+
+Installing the newlib toolchain
+-------------------------------
+
+The newlib toolchain is available as both source or as precompiled binaries.
+
+Build instructions and pre-built toolchains are available link:http://wallento.github.io/newlib/[here]
+
+Building applications
+---------------------
+
+The basic usage for compiling a C application is +or1k-elf-gcc <program.c>+. This will use the reference board support package (BSP) for or1ksim. To compile against a different BSP use +-mboard=_<board name_+ (e.g. +or1k-elf-gcc -mboard=stream+)
+
+The newlib library for OpenRISC also contains OpenRISC-specific support functions. These functions are described link:http://openrisc.github.io/newlib/docs/html/modules.html[here]
+
+Adding a new BSP
+----------------
+
+The BSP contains information about clock frequency, memory layout and basic UART information.
+
+To add a pre-built BSP archive, copy +libboard_<board name>_.a+ to +_<toolchain root>_/lib/+
+
+To create a new BSP, go to +libgloss/or1k/boards/+ in the newlib source tree and copy +tmpl.S+ to a +_<board name>_.s+. Edit the new file and set all the relevant parameters. Look at the other files for inspiration. It's usually only memory size and clock frequency that should differ between the boards. UART configuration should preferrably be similar across all boards.
+
+The process is described in further detail link:https://github.com/wallento/newlib/blob/master/libgloss/or1k/boards/README[here]
+
+Downloading applications
+------------------------
+
+Since there is no Operating system available, the bare-metal application must be transferred directly to RAM and started from there.
+
+
+The most common way to do this is to use the JTAG connection to the OpenRISC debug interface
+
+Connect the Altera USB Blaster to the JTAG port on the Stream board. Launch openocd with +openocd -f interface/altera-usb-blaster.cfg -f board/or1k_generic.cfg+
+
+Open a new terminal window and connect to the OpenOCD proxy with +telnet localhost 4444+
+
+Inside the telnet session, run +halt; load_image _<program name>_; reg npc 0x100; reset+ to download and execute the program. The telnet session and OpenOCD proxy can be released once the program is running.
+
+Further reading
+---------------
+http://openrisc.github.io/newlib/
+

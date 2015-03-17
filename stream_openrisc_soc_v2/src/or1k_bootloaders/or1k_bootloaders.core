@@ -1,0 +1,10 @@
+CAPI=1
+[main]
+description = Collection of basic boot loaders for OpenRISC 1000
+
+[verilog]
+include_files =
+ boot_loop.vh
+ clear_r3_and_jump_to_0x100.vh
+ led_blink.vh
+ rw.vh

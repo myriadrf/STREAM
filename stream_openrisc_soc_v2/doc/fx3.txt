@@ -1,0 +1,30 @@
+FX3 Synchronous slave core
+==========================
+
+The FX3 core implements a simple interface for writing to a synchronous slave interface of a Cypress FX3. Most parameters are fixed except for a input flag to signal flow control from the FX3 and data and write enable outputs to the FX3. The internal user interface consists of a 16-bit stream port.
+
+Interfaces
+------------
+
+.FX3 Interface
+[width="40%",options="header"]
+|==========================
+|Name    |Width| Dir | Comment
+|fd_o    |16   | out | Data to write to FX3
+|slwr_n  |1    | out | Active low write enable to FX3
+|flagb   |1    | in  | Flow control flag from FX3 to signal busy
+|==========================
+
+The FX3 interface should be connected directly to pins interfacing the FX3
+
+
+.Stream Interface
+[width="40%",options="header"]
+|==========================
+|Name             |Width| Dir | Comment
+|stream_s_data_i  |16   | in  | Internal data port
+|stream_s_valid_i |1    | in  | Internal data valid
+|stream_s_ready_o |1    | out | FX3 core is ready to accept data
+|==========================
+
+The Stream interface provides a port for providing data to the FX3 core. A successful transaction of a word occurs when both the valid and ready signals are asserted. This interface is synchronous to clk.

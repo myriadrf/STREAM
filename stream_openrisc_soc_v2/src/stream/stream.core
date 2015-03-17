@@ -1,0 +1,113 @@
+CAPI=1
+[main]
+depend = 
+ adv_debug_sys
+ altera_virtual_jtag
+ ethmac
+ fx3
+ jtag_tap
+ mor1kx-2.2
+ myriadrf
+ or1k_bootloaders
+ uart16550
+ wb_altera_ddr_wrapper
+ wb_intercon-1.0
+ wb_ram
+
+simulators =
+ modelsim
+
+[verilog]
+src_files =
+ ip/myriadrf_pll/myriadrf_pll.v
+ ip/pll/pll.v
+ ip/ddr2_ctrl/alt_mem_ddrx_addr_cmd.v
+ ip/ddr2_ctrl/alt_mem_ddrx_addr_cmd_wrap.v
+ ip/ddr2_ctrl/alt_mem_ddrx_arbiter.v
+ ip/ddr2_ctrl/alt_mem_ddrx_buffer.v
+ ip/ddr2_ctrl/alt_mem_ddrx_buffer_manager.v
+ ip/ddr2_ctrl/alt_mem_ddrx_burst_gen.v
+ ip/ddr2_ctrl/alt_mem_ddrx_burst_tracking.v
+ ip/ddr2_ctrl/alt_mem_ddrx_cmd_gen.v
+ ip/ddr2_ctrl/alt_mem_ddrx_controller.v
+ ip/ddr2_ctrl/alt_mem_ddrx_controller_st_top.v
+ ip/ddr2_ctrl/alt_mem_ddrx_csr.v
+ ip/ddr2_ctrl/alt_mem_ddrx_dataid_manager.v
+ ip/ddr2_ctrl/alt_mem_ddrx_ddr2_odt_gen.v
+ ip/ddr2_ctrl/alt_mem_ddrx_ddr3_odt_gen.v
+ ip/ddr2_ctrl/alt_mem_ddrx_ecc_decoder.v
+ ip/ddr2_ctrl/alt_mem_ddrx_ecc_decoder_32_syn.v
+ ip/ddr2_ctrl/alt_mem_ddrx_ecc_decoder_64_syn.v
+ ip/ddr2_ctrl/alt_mem_ddrx_ecc_encoder.v
+ ip/ddr2_ctrl/alt_mem_ddrx_ecc_encoder_32_syn.v
+ ip/ddr2_ctrl/alt_mem_ddrx_ecc_encoder_64_syn.v
+ ip/ddr2_ctrl/alt_mem_ddrx_ecc_encoder_decoder_wrapper.v
+ ip/ddr2_ctrl/alt_mem_ddrx_fifo.v
+ ip/ddr2_ctrl/alt_mem_ddrx_input_if.v
+ ip/ddr2_ctrl/alt_mem_ddrx_list.v
+ ip/ddr2_ctrl/alt_mem_ddrx_lpddr2_addr_cmd.v
+ ip/ddr2_ctrl/alt_mem_ddrx_mm_st_converter.v
+ ip/ddr2_ctrl/alt_mem_ddrx_odt_gen.v
+ ip/ddr2_ctrl/alt_mem_ddrx_rank_timer.v
+ ip/ddr2_ctrl/alt_mem_ddrx_rdata_path.v
+ ip/ddr2_ctrl/alt_mem_ddrx_rdwr_data_tmg.v
+ ip/ddr2_ctrl/alt_mem_ddrx_sideband.v
+ ip/ddr2_ctrl/alt_mem_ddrx_tbp.v
+ ip/ddr2_ctrl/alt_mem_ddrx_timing_param.v
+ ip/ddr2_ctrl/alt_mem_ddrx_wdata_path.v
+ ip/ddr2_ctrl/ddr2_ctrl_alt_mem_ddrx_controller_top.v
+ ip/ddr2_ctrl/ddr2_ctrl_phy_alt_mem_phy.v
+ ip/ddr2_ctrl/ddr2_ctrl_phy_alt_mem_phy_seq_wrapper.v
+ ip/ddr2_ctrl/ddr2_ctrl.v
+ ip/ddr2_ctrl/ddr2_ctrl_controller_phy.v
+ ip/ddr2_ctrl/ddr2_ctrl_ex_lfsr8.v
+ ip/ddr2_ctrl/ddr2_ctrl_example_driver.v
+ ip/ddr2_ctrl/ddr2_ctrl_example_top.v
+ ip/ddr2_ctrl/ddr2_ctrl_phy.v
+ ip/ddr2_ctrl/ddr2_ctrl_phy_alt_mem_phy_pll.v
+ rtl/verilog/lms_mem_wrapper.v
+ rtl/verilog/altmemphy_wrapper.v
+ rtl/verilog/rst_sync.v
+ rtl/verilog/clkgen.v
+ rtl/verilog/wb_intercon.v
+ rtl/verilog/wb_intercon_dbg.v
+ rtl/verilog/mor1kx_dbg_wrapper.v
+ rtl/verilog/fx3_iq_packer.v
+ rtl/verilog/stream_top.v
+
+include_files =
+ ip/ddr2_ctrl/alt_mem_ddrx_define.iv
+ ip/ddr2_ctrl/alt_mem_phy_defines.v
+ rtl/verilog/wb_intercon.vh
+ rtl/verilog/wb_intercon_dbg.vh
+ rtl/verilog/include/timescale.v
+ rtl/verilog/include/ethmac_defines.v
+ rtl/verilog/include/uart_defines.v
+
+tb_private_src_files =
+ ip/ddr2_ctrl/ddr2_ctrl_phy_alt_mem_phy_seq_wrapper.vo
+ bench/stream_tb.v
+
+tb_include_files =
+ bench/test-defines.v
+
+[vhdl]
+src_files =
+ ip/ddr2_ctrl/ddr2_ctrl_phy_alt_mem_phy_seq.vhd
+
+[simulator]
+tb_toplevel = stream_tb
+
+[icarus]
+depend = elf-loader jtag_vpi vlog_tb_utils wb_bfm-1.0
+iverilog_options = -DICARUS_SIM -DSIM -DMOR1KX_INST=dut.mor1kx_dbg.mor1kx0 -DMAX_MEM
+
+[modelsim]
+depend = jtag_vpi micron vlog_tb_utils wb_bfm-1.0
+vlog_options = +define+SIM +define+MODELSIM_SIM +define+MOR1KX_INST=dut.mor1kx_dbg.mor1kx0
+vsim_options =
+ -L altera_ver
+ -L altera_mf_ver
+ -L sgate_ver
+ -L 220model_ver
+ -L cycloneiii_ver

@@ -1,0 +1,59 @@
+Build OpenRISC linux image
+==========================
+
+Prerequisites
+-------------
+
+Software
+~~~~~~~~
+
+* Linux source code with OpenRISC patches
+* or1k-elf toolchain
+* or1ksim (optional)
+* or1k-linux toolchain (optional)
+
+Hardware
+~~~~~~~~
+
+* N/A
+
+Files
+~~~~~
+* Stream device tree (stream.dts)
+* Stream default Linux configuration (stream_defconfig)
+
+Setting up
+----------
+
+*Note:* OpenRISC is supported in the official kernel since 2011, so in theory the official kernel should work fine for OpenRISC. There are however some extra convenience features that aren't included in the official kernel, which is why we fetch the kernel sources from github. General instructions for running Linux on OpenRISC is found link:http://opencores.org/or1k/Linux[here]. Below are specific instructions for the Stream board.
+
+Get Linux source code
+~~~~~~~~~~~~~~~~~~~~~
+
+.Set up Linux source code
+-----------------------------------------------------
+git clone https://github.com/skristiansson/linux
+cd linux
+git checkout openrisc
+-------------------------------------------
+Copy +<Stream OpenRISC SoC>/src/stream/data/stream.dts+ to +arch/openrisc/boot/dts/+
+
+Copy +<Stream OpenRISC SoC>/src/stream/data/stream_defconfig+ to +.+
+
+.Build kernel
+-------------
+export ARCH=openrisc
+export CROSS_COMPILE=or1k-elf-
+make stream_defconfig
+make
+-------------
+
+The kernel image is now available as +vmlinux+
+
+Further reading
+---------------
+
+link:http://opencores.org/or1k/OpenRISC_GNU_tool_chain[Rebuild or1k-elf toolchain]
+
+link:linuxsw.html[Create Linux user applications]
+

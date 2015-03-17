@@ -1,0 +1,51 @@
+Stream OpenRISC SoC project structure
+=====================================
+
+stream.system:: *FuseSoC System configuration file*
+
+stream.core:: *FuseSoC core configuration file*
+
+[horizontal]
+doc:: *Documentation*
+ Makefile;; Makefile to regenerate HTML docs
+ \*.txt;; AsciiDoc sources
+ \*.html;; HTML Documentation
+ 
+[horizontal]
+data:: *Miscellaneous files*
+ stream.dts;; Device Tree Source file
+ stream.sdc;; Timing constraints
+ stream_defconfig;; Linux default configuration
+ pinmap.tcl;; Pin mapping and I/O configuration
+ wb_intercon_dbg.conf;; Interconnect configuration file for mor1kx_dbg_wrapper
+ options.tcl;; Additional options for Quartus II
+ winbond_w9751g6kb25.xml;; Memory preset file for on-board DDR2 memories
+ wb_intercon.conf;; Configuration file for main Wishbone interconnect
+
+[horizontal]
+rtl/verilog::
+ *SoC-specific verilog source code*
+ mor1kx_dbg_wrapper.v;; Wrapper file for CPU, debug system and boot ROM
+ rst_sync.v;; Reset synchroniser
+ include/timescale.v;; Default verilog timescale setting
+ include/uart_defines.v;; UART default settings
+ include/ethmac_defines.v;; Ethernet MAC default settings
+ stream_top.v;; Stream SoC top-level
+ wb_intercon.v;; Main Wishbone Interconnect
+ wb_intercon.vh;; Main Wishbone Inteconnect include file
+ wb_intercon_dbg.v;; mor1kx_dbg Wishbone Interconnect
+ wb_intercon_dbg.vh;; mor1kx_dbg Wishbone	Interconnect include file
+ altmemphy_wrapper.v;; Wrapper for memory controller and arbiter
+ clkgen.v;; Clock generation
+
+[horizontal]
+bench:: *Testbench*
+ stream_tb.v;; Stream SoC testbench wrapper
+ test-defines.v;; Test defines file
+
+
+
+[horizontal]
+ip:: *Proprietary IP cores*
+ pll;; Main PLL
+ ddr2_ctrl;; Altera Altmemphy DDR2 Controller

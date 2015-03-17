@@ -1,0 +1,20 @@
+PLL_Name	altmemphy_wrapper:mem0|ddr2_ctrl:ddr_ctrl_ip|ddr2_ctrl_controller_phy:ddr2_ctrl_controller_phy_inst|ddr2_ctrl_phy:ddr2_ctrl_phy_inst|ddr2_ctrl_phy_alt_mem_phy:ddr2_ctrl_phy_alt_mem_phy_inst|ddr2_ctrl_phy_alt_mem_phy_clk_reset:clk|ddr2_ctrl_phy_alt_mem_phy_pll:pll|altpll:altpll_component|altpll_6al3:auto_generated|pll1
+PLLJITTER	37
+PLLSPEmax	84
+PLLSPEmin	-53
+
+PLL_Name	clkgen:clkgen0|pll:pll0|altpll:altpll_component|pll_altpll:auto_generated|pll1
+PLLJITTER	1
+PLLSPEmax	84
+PLLSPEmin	-53
+
+PLL_Name	lms_mem_wrapper:rx_tx_mem|ddr2_ctrl:ddr_ctrl_ip|ddr2_ctrl_controller_phy:ddr2_ctrl_controller_phy_inst|ddr2_ctrl_phy:ddr2_ctrl_phy_inst|ddr2_ctrl_phy_alt_mem_phy:ddr2_ctrl_phy_alt_mem_phy_inst|ddr2_ctrl_phy_alt_mem_phy_clk_reset:clk|ddr2_ctrl_phy_alt_mem_phy_pll:pll|altpll:altpll_component|altpll_6al3:auto_generated|pll1
+PLLJITTER	37
+PLLSPEmax	84
+PLLSPEmin	-53
+
+PLL_Name	myriadrf_pll:rx_pll|altpll:altpll_component|myriadrf_pll_altpll:auto_generated|pll1
+PLLJITTER	31
+PLLSPEmax	84
+PLLSPEmin	-53
+

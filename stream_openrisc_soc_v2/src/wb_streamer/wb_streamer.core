@@ -1,0 +1,33 @@
+CAPI=1
+[main]
+description = Wishbone streamer
+depend = stream_utils-1.0
+simulators = icarus modelsim
+
+[verilog]
+src_files =
+ rtl/verilog/wb_stream_reader_cfg.v
+ rtl/verilog/wb_stream_reader_ctrl.v
+ rtl/verilog/wb_stream_reader.v
+ rtl/verilog/wb_stream_writer_cfg.v
+ rtl/verilog/wb_stream_writer_ctrl.v
+ rtl/verilog/wb_stream_writer_fifo.v
+ rtl/verilog/wb_stream_writer.v
+ 
+tb_private_src_files =
+ bench/wb_reader.v
+ bench/wb_stream_reader_tb.v
+ bench/wb_stream_writer_tb.v
+
+[plusargs]
+verbose = bool Enable debug printouts in test bench
+transactions = int Number of test bench transactions
+
+[simulator]
+toplevel=wb_stream_writer_tb
+
+[icarus]
+depend = vlog_tb_utils wb_bfm
+
+[modelsim]
+depend = vlog_tb_utils wb_bfm
