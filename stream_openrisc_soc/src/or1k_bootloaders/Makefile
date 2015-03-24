@@ -1,9 +1,7 @@
 SOURCES := \
 	boot_loop.vh \
 	clear_r3_and_jump_to_0x100.vh \
-	led_blink.vh \
-	rwonce.vh \
-	rw.vh
+	led_blink.vh
 all: $(SOURCES)
 
 %.elf: %.S
