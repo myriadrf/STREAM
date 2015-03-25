@@ -12,3 +12,4 @@ void wb_streamer_ctrl(void *base, uint32_t flags);
 void wb_streamer_set_burst_size(void *base, uint32_t size);
 void wb_streamer_set_range(void *base, uint32_t *addr, uint32_t size);
 void wb_streamer_enable(void *base);
+uint32_t wb_streamer_ready(void *base);

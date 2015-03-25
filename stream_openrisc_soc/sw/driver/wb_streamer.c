@@ -28,3 +28,7 @@ void wb_streamer_enable(void *base) {
   streamer_write_reg(base, STREAMER_CTRL_STAT,
 		     STREAMER_CTRL_STAT_ENABLE);
 }
+
+uint32_t wb_streamer_ready(void *base) {
+  return (streamer_read_reg(base, 0) == 2);
+}
