@@ -19,61 +19,61 @@
 module myriadrf
   (input 	 wb_rst,
    //RX Interface
-   input 	 rx_clk,
-   input 	 rx_rst,
-   input [11:0]  rxd,
-   input 	 rxiqsel,
+   input 	     rx_clk,
+   input 	     rx_rst,
+   input [11:0]      rxd,
+   input 	     rxiqsel,
    //TX Interface
-   input 	 tx_clk,
-   input 	 tx_rst,
-   output [11:0] txd,
-   output 	 txiqsel,
+   input 	     tx_clk,
+   input 	     tx_rst,
+   output reg [11:0] txd,
+   output reg 	     txiqsel,
    //USB Interface
-   input 	 wb_clk,
-   output [23:0] usb_m_data_o,
-   output 	 usb_m_valid_o,
-   input 	 usb_m_ready_i,
+   input 	     wb_clk,
+   output [23:0]     usb_m_data_o,
+   output 	     usb_m_valid_o,
+   input 	     usb_m_ready_i,
    //WB Ctrl Interface
-   input [9:0] 	 wbs_adr_i,
-   input [31:0]  wbs_dat_i,
-   input [3:0] 	 wbs_sel_i,
-   input 	 wbs_we_i,
-   input 	 wbs_cyc_i,
-   input 	 wbs_stb_i,
-   input [2:0] 	 wbs_cti_i,
-   input [1:0] 	 wbs_bte_i,
-   output [31:0] wbs_dat_o,
-   output 	 wbs_ack_o,
-   output 	 wbs_err_o,
-   output 	 wbs_rty_o,
-   output 	 lms_tx_irq_o,
-   output 	 lms_rx_irq_o,
+   input [9:0] 	     wbs_adr_i,
+   input [31:0]      wbs_dat_i,
+   input [3:0] 	     wbs_sel_i,
+   input 	     wbs_we_i,
+   input 	     wbs_cyc_i,
+   input 	     wbs_stb_i,
+   input [2:0] 	     wbs_cti_i,
+   input [1:0] 	     wbs_bte_i,
+   output [31:0]     wbs_dat_o,
+   output 	     wbs_ack_o,
+   output 	     wbs_err_o,
+   output 	     wbs_rty_o,
+   output 	     lms_tx_irq_o,
+   output 	     lms_rx_irq_o,
    //WB TX memory Interface
-   output [31:0] wbm_tx_adr_o,
-   output [31:0] wbm_tx_dat_o,
-   output [3:0]  wbm_tx_sel_o,
-   output 	 wbm_tx_we_o ,
-   output 	 wbm_tx_cyc_o,
-   output 	 wbm_tx_stb_o,
-   output [2:0]  wbm_tx_cti_o,
-   output [1:0]  wbm_tx_bte_o,
-   input [31:0]  wbm_tx_dat_i,
-   input 	 wbm_tx_ack_i,
-   input 	 wbm_tx_err_i,
-   input 	 wbm_tx_rty_i,
+   output [31:0]     wbm_tx_adr_o,
+   output [31:0]     wbm_tx_dat_o,
+   output [3:0]      wbm_tx_sel_o,
+   output 	     wbm_tx_we_o ,
+   output 	     wbm_tx_cyc_o,
+   output 	     wbm_tx_stb_o,
+   output [2:0]      wbm_tx_cti_o,
+   output [1:0]      wbm_tx_bte_o,
+   input [31:0]      wbm_tx_dat_i,
+   input 	     wbm_tx_ack_i,
+   input 	     wbm_tx_err_i,
+   input 	     wbm_tx_rty_i,
    //WB RX memory Interface
-   output [31:0] wbm_rx_adr_o,
-   output [31:0] wbm_rx_dat_o,
-   output [3:0]  wbm_rx_sel_o,
-   output 	 wbm_rx_we_o ,
-   output 	 wbm_rx_cyc_o,
-   output 	 wbm_rx_stb_o,
-   output [2:0]  wbm_rx_cti_o,
-   output [1:0]  wbm_rx_bte_o,
-   input [31:0]  wbm_rx_dat_i,
-   input 	 wbm_rx_ack_i,
-   input 	 wbm_rx_err_i,
-   input 	 wbm_rx_rty_i);
+   output [31:0]     wbm_rx_adr_o,
+   output [31:0]     wbm_rx_dat_o,
+   output [3:0]      wbm_rx_sel_o,
+   output 	     wbm_rx_we_o ,
+   output 	     wbm_rx_cyc_o,
+   output 	     wbm_rx_stb_o,
+   output [2:0]      wbm_rx_cti_o,
+   output [1:0]      wbm_rx_bte_o,
+   input [31:0]      wbm_rx_dat_i,
+   input 	     wbm_rx_ack_i,
+   input 	     wbm_rx_err_i,
+   input 	     wbm_rx_rty_i);
 
 ////////////////////////////////////////////////////////////////////////
 //
@@ -198,8 +198,8 @@ module myriadrf
       .s_data_i  (tx_fifo_data),
       .s_valid_i (tx_fifo_valid),
       .s_ready_o (tx_fifo_ready),
-      .txd       (txd),
-      .txiqsel   (txiqsel));
+      .txd       (txd_int),
+      .txiqsel   (txiqsel_int));
 
 ////////////////////////////////////////////////////////////////////////
 //
@@ -216,8 +216,16 @@ module myriadrf
    wire        rx_fifo_ready;
 
    //Loopback
-   wire [11:0] rxd_int     = loopback ? txd     : rxd;
-   wire        rxiqsel_int = loopback ? txiqsel : rxiqsel;
+   wire [11:0] txd_int;
+   wire        txiqsel_int;
+
+   wire [11:0] rxd_int     = loopback ? txd_int     : rxd;
+   wire        rxiqsel_int = loopback ? txiqsel_int : rxiqsel;
+
+   always @(posedge tx_clk) begin
+      txd <= txd_int;
+      txiqsel <= txiqsel_int;
+   end
 
    myriadrf_rx_if rx_if
      (.clk (rx_clk),

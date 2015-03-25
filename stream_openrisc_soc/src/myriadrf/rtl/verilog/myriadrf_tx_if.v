@@ -22,15 +22,21 @@ module myriadrf_tx_if
    input [23:0]  s_data_i,
    input 	 s_valid_i,
    output 	 s_ready_o,
-   output [11:0] txd,
+   output reg [11:0] txd,
    output reg 	 txiqsel);
+
+   wire [11:0] 	 txd_int;
+   reg 	 txiqsel_int;
    
-   assign txd = txiqsel ? s_data_i[11:0] : s_data_i[23:12];
+   assign txd_int = txiqsel ? s_data_i[11:0] : s_data_i[23:12];
    assign s_ready_o = txiqsel;
    
   always @(posedge clk) begin
-     txiqsel   <= !txiqsel;
+     txiqsel <= txiqsel_int;
+     txd <= txd_int;
+     
+     txiqsel_int   <= !txiqsel_int;
      if (rst)
-       txiqsel <= 1'b0;
+       txiqsel_int <= 1'b0;
   end
 endmodule
