@@ -19,6 +19,7 @@ The directory structure is as follows:
           doc/                   - HTML documentation for the Stream OpenRISC SoC
           quartus/               - Quartus project archive for rebuilding the FPGA image
           src/                   - Source code for Stream-specific cores
+          sw/                    - Example applications for communicating with LMS6002D from OpenRISC
 
 ## Licensing
 
