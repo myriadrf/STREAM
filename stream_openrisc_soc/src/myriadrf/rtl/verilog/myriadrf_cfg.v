@@ -39,13 +39,15 @@ module myriadrf_cfg
    output reg 	       tx_src_o,
    output reg 	       rx_src_o,
    output reg 	       loopback_o,
-   output reg 	       rx_sink_o);
+   output reg 	       rx_sink_o,
+   output reg 	       spi_sel_o);
 
    // Read
    assign wb_dat_o = wb_adr_i[5:2] == 0 ? {{(WB_DW-1){1'b0}}, tx_src_o} :
 		     wb_adr_i[5:2] == 1 ? {{(WB_DW-1){1'b0}}, rx_src_o} :
 		     wb_adr_i[5:2] == 2 ? {{(WB_DW-1){1'b0}}, loopback_o} :
 		     wb_adr_i[5:2] == 3 ? {{(WB_DW-1){1'b0}}, rx_sink_o} :
+		     wb_adr_i[5:2] == 4 ? {{(WB_DW-1){1'b0}}, spi_sel_o} :
                      0;
 
    always @(posedge wb_clk_i) begin
@@ -62,6 +64,7 @@ module myriadrf_cfg
 	   1 : rx_src_o   <= wb_dat_i[0];
 	   2 : loopback_o <= wb_dat_i[0];
 	   3 : rx_sink_o  <= wb_dat_i[0];
+	   4 : spi_sel_o  <= wb_dat_i[0];
 	   default : ;
 	 endcase
       end
@@ -72,6 +75,7 @@ module myriadrf_cfg
 	 rx_src_o   <= 1'b0;
 	 loopback_o <= 1'b0;
 	 rx_sink_o  <= 1'b0;
+	 spi_sel_o  <= 1'b0;
       end
    end
    assign wb_err_o = 0;

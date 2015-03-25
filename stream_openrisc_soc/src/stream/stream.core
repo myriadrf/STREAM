@@ -9,6 +9,7 @@ depend =
  mor1kx-2.2
  myriadrf
  or1k_bootloaders
+ simple_spi
  uart16550
  wb_altera_ddr_wrapper
  wb_intercon-1.0

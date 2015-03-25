@@ -569,11 +569,39 @@ assign or1k_irq[2] = uart0_irq;
 //
 ////////////////////////////////////////////////////////////////////////
 
-   //SPI pass-through
-   assign lms_spi_sck  = fx3_spi_sck;
-   assign lms_spi_cs   = fx3_spi_cs;
-   assign lms_spi_mosi = fx3_spi_mosi;
-   assign fx3_spi_miso = lms_spi_miso;
+   //SPI mux
+   wire        int_spi;
+   wire        int_spi_sck;
+   wire        int_spi_cs;
+   wire        int_spi_mosi;
+   wire        int_spi_miso;
+   
+   assign lms_spi_sck  = int_spi ? int_spi_sck  : fx3_spi_sck;
+   assign lms_spi_cs   = int_spi ? int_spi_cs   : fx3_spi_cs;
+   assign lms_spi_mosi = int_spi ? int_spi_mosi : fx3_spi_mosi;
+   assign fx3_spi_miso = !int_spi & lms_spi_miso;
+   assign int_spi_miso =  int_spi & lms_spi_miso;
+
+   wire   lms_spi_irq;
+
+   simple_spi lms_spi
+     (// Wishbone slave interface
+      .clk_i	(wb_clk),
+      .rst_i	(wb_rst),
+      .adr_i	(wb_m2s_lms_spi_adr[2:0]),
+      .dat_i	(wb_m2s_lms_spi_dat),
+      .we_i	(wb_m2s_lms_spi_we),
+      .stb_i	(wb_m2s_lms_spi_stb),
+      .cyc_i	(wb_m2s_lms_spi_cyc),
+      .dat_o	(wb_s2m_lms_spi_dat),
+      .ack_o	(wb_s2m_lms_spi_ack),
+      .inta_o	(lms_spi_irq),
+
+      // SPI Interface
+      .sck_o	(int_spi_sck),
+      .ss_o	(int_spi_cs),
+      .mosi_o	(int_spi_mosi),
+      .miso_i	(int_spi_miso));
 
    //GPIO pass-through
    assign lms_reset  = fx3_gpio42;
@@ -617,6 +645,7 @@ assign or1k_irq[2] = uart0_irq;
       .wbs_rty_o (wb_s2m_myriadrf_rty),
       .lms_tx_irq_o (lms_tx_irq),
       .lms_rx_irq_o (lms_rx_irq),
+      .spi_select (int_spi),
       //WB TX memory Interface
       .wbm_tx_adr_o (wb_m2s_lms_tx_adr),
       .wbm_tx_dat_o (wb_m2s_lms_tx_dat),
@@ -644,6 +673,7 @@ assign or1k_irq[2] = uart0_irq;
       .wbm_rx_err_i (wb_s2m_lms_rx_err),
       .wbm_rx_rty_i (wb_s2m_lms_rx_rty));
 
+   assign or1k_irq[6]  = lms_spi_irq;
    assign or1k_irq[30] = lms_tx_irq;
    assign or1k_irq[31] = lms_rx_irq;
 endmodule // stream_top

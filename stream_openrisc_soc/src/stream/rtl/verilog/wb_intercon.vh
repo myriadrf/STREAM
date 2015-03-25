@@ -72,6 +72,18 @@ wire [31:0] wb_s2m_myriadrf_dat;
 wire        wb_s2m_myriadrf_ack;
 wire        wb_s2m_myriadrf_err;
 wire        wb_s2m_myriadrf_rty;
+wire [31:0] wb_m2s_lms_spi_adr;
+wire  [7:0] wb_m2s_lms_spi_dat;
+wire  [3:0] wb_m2s_lms_spi_sel;
+wire        wb_m2s_lms_spi_we;
+wire        wb_m2s_lms_spi_cyc;
+wire        wb_m2s_lms_spi_stb;
+wire  [2:0] wb_m2s_lms_spi_cti;
+wire  [1:0] wb_m2s_lms_spi_bte;
+wire  [7:0] wb_s2m_lms_spi_dat;
+wire        wb_s2m_lms_spi_ack;
+wire        wb_s2m_lms_spi_err;
+wire        wb_s2m_lms_spi_rty;
 
 wb_intercon wb_intercon0
    (.wb_clk_i           (wb_clk),
@@ -147,5 +159,17 @@ wb_intercon wb_intercon0
     .wb_myriadrf_dat_i  (wb_s2m_myriadrf_dat),
     .wb_myriadrf_ack_i  (wb_s2m_myriadrf_ack),
     .wb_myriadrf_err_i  (wb_s2m_myriadrf_err),
-    .wb_myriadrf_rty_i  (wb_s2m_myriadrf_rty));
+    .wb_myriadrf_rty_i  (wb_s2m_myriadrf_rty),
+    .wb_lms_spi_adr_o   (wb_m2s_lms_spi_adr),
+    .wb_lms_spi_dat_o   (wb_m2s_lms_spi_dat),
+    .wb_lms_spi_sel_o   (wb_m2s_lms_spi_sel),
+    .wb_lms_spi_we_o    (wb_m2s_lms_spi_we),
+    .wb_lms_spi_cyc_o   (wb_m2s_lms_spi_cyc),
+    .wb_lms_spi_stb_o   (wb_m2s_lms_spi_stb),
+    .wb_lms_spi_cti_o   (wb_m2s_lms_spi_cti),
+    .wb_lms_spi_bte_o   (wb_m2s_lms_spi_bte),
+    .wb_lms_spi_dat_i   (wb_s2m_lms_spi_dat),
+    .wb_lms_spi_ack_i   (wb_s2m_lms_spi_ack),
+    .wb_lms_spi_err_i   (wb_s2m_lms_spi_err),
+    .wb_lms_spi_rty_i   (wb_s2m_lms_spi_rty));
 

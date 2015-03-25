@@ -48,6 +48,7 @@ module myriadrf
    output 	     wbs_rty_o,
    output 	     lms_tx_irq_o,
    output 	     lms_rx_irq_o,
+   output 	     spi_select,
    //WB TX memory Interface
    output [31:0]     wbm_tx_adr_o,
    output [31:0]     wbm_tx_dat_o,
@@ -109,7 +110,8 @@ module myriadrf
       .tx_src_o   (tx_src),
       .rx_src_o   (rx_src),
       .loopback_o (loopback),
-      .rx_sink_o  (rx_sink));
+      .rx_sink_o  (rx_sink),
+      .spi_sel_o  (spi_select));
 
    assign wb_m2s_top_adr = {22'd0,wbs_adr_i};
    assign wb_m2s_top_dat = wbs_dat_i;

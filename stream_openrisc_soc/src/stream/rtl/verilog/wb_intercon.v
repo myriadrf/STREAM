@@ -74,7 +74,19 @@ module wb_intercon
     input  [31:0] wb_myriadrf_dat_i,
     input         wb_myriadrf_ack_i,
     input         wb_myriadrf_err_i,
-    input         wb_myriadrf_rty_i);
+    input         wb_myriadrf_rty_i,
+    output [31:0] wb_lms_spi_adr_o,
+    output  [7:0] wb_lms_spi_dat_o,
+    output  [3:0] wb_lms_spi_sel_o,
+    output        wb_lms_spi_we_o,
+    output        wb_lms_spi_cyc_o,
+    output        wb_lms_spi_stb_o,
+    output  [2:0] wb_lms_spi_cti_o,
+    output  [1:0] wb_lms_spi_bte_o,
+    input   [7:0] wb_lms_spi_dat_i,
+    input         wb_lms_spi_ack_i,
+    input         wb_lms_spi_err_i,
+    input         wb_lms_spi_rty_i);
 
 wire [31:0] wb_m2s_resize_uart0_adr;
 wire [31:0] wb_m2s_resize_uart0_dat;
@@ -88,11 +100,23 @@ wire [31:0] wb_s2m_resize_uart0_dat;
 wire        wb_s2m_resize_uart0_ack;
 wire        wb_s2m_resize_uart0_err;
 wire        wb_s2m_resize_uart0_rty;
+wire [31:0] wb_m2s_resize_lms_spi_adr;
+wire [31:0] wb_m2s_resize_lms_spi_dat;
+wire  [3:0] wb_m2s_resize_lms_spi_sel;
+wire        wb_m2s_resize_lms_spi_we;
+wire        wb_m2s_resize_lms_spi_cyc;
+wire        wb_m2s_resize_lms_spi_stb;
+wire  [2:0] wb_m2s_resize_lms_spi_cti;
+wire  [1:0] wb_m2s_resize_lms_spi_bte;
+wire [31:0] wb_s2m_resize_lms_spi_dat;
+wire        wb_s2m_resize_lms_spi_ack;
+wire        wb_s2m_resize_lms_spi_err;
+wire        wb_s2m_resize_lms_spi_rty;
 
 wb_mux
-  #(.num_slaves (5),
-    .MATCH_ADDR ({32'h92000000, 32'h04000000, 32'h00000000, 32'h95000000, 32'h90000000}),
-    .MATCH_MASK ({32'hfffff000, 32'hfc000000, 32'hfc000000, 32'hfffff000, 32'hffffffe0}))
+  #(.num_slaves (6),
+    .MATCH_ADDR ({32'h92000000, 32'h04000000, 32'h00000000, 32'h95000000, 32'hb0000000, 32'h90000000}),
+    .MATCH_MASK ({32'hfffff000, 32'hfc000000, 32'hfc000000, 32'hfffff000, 32'hfffffff8, 32'hffffffe0}))
  wb_mux_dbus
    (.wb_clk_i  (wb_clk_i),
     .wb_rst_i  (wb_rst_i),
@@ -108,18 +132,18 @@ wb_mux
     .wbm_ack_o (wb_dbus_ack_o),
     .wbm_err_o (wb_dbus_err_o),
     .wbm_rty_o (wb_dbus_rty_o),
-    .wbs_adr_o ({wb_eth0_adr_o, wb_lms_mem_adr_o, wb_mem0_dbus_adr_o, wb_myriadrf_adr_o, wb_m2s_resize_uart0_adr}),
-    .wbs_dat_o ({wb_eth0_dat_o, wb_lms_mem_dat_o, wb_mem0_dbus_dat_o, wb_myriadrf_dat_o, wb_m2s_resize_uart0_dat}),
-    .wbs_sel_o ({wb_eth0_sel_o, wb_lms_mem_sel_o, wb_mem0_dbus_sel_o, wb_myriadrf_sel_o, wb_m2s_resize_uart0_sel}),
-    .wbs_we_o  ({wb_eth0_we_o, wb_lms_mem_we_o, wb_mem0_dbus_we_o, wb_myriadrf_we_o, wb_m2s_resize_uart0_we}),
-    .wbs_cyc_o ({wb_eth0_cyc_o, wb_lms_mem_cyc_o, wb_mem0_dbus_cyc_o, wb_myriadrf_cyc_o, wb_m2s_resize_uart0_cyc}),
-    .wbs_stb_o ({wb_eth0_stb_o, wb_lms_mem_stb_o, wb_mem0_dbus_stb_o, wb_myriadrf_stb_o, wb_m2s_resize_uart0_stb}),
-    .wbs_cti_o ({wb_eth0_cti_o, wb_lms_mem_cti_o, wb_mem0_dbus_cti_o, wb_myriadrf_cti_o, wb_m2s_resize_uart0_cti}),
-    .wbs_bte_o ({wb_eth0_bte_o, wb_lms_mem_bte_o, wb_mem0_dbus_bte_o, wb_myriadrf_bte_o, wb_m2s_resize_uart0_bte}),
-    .wbs_dat_i ({wb_eth0_dat_i, wb_lms_mem_dat_i, wb_mem0_dbus_dat_i, wb_myriadrf_dat_i, wb_s2m_resize_uart0_dat}),
-    .wbs_ack_i ({wb_eth0_ack_i, wb_lms_mem_ack_i, wb_mem0_dbus_ack_i, wb_myriadrf_ack_i, wb_s2m_resize_uart0_ack}),
-    .wbs_err_i ({wb_eth0_err_i, wb_lms_mem_err_i, wb_mem0_dbus_err_i, wb_myriadrf_err_i, wb_s2m_resize_uart0_err}),
-    .wbs_rty_i ({wb_eth0_rty_i, wb_lms_mem_rty_i, wb_mem0_dbus_rty_i, wb_myriadrf_rty_i, wb_s2m_resize_uart0_rty}));
+    .wbs_adr_o ({wb_eth0_adr_o, wb_lms_mem_adr_o, wb_mem0_dbus_adr_o, wb_myriadrf_adr_o, wb_m2s_resize_lms_spi_adr, wb_m2s_resize_uart0_adr}),
+    .wbs_dat_o ({wb_eth0_dat_o, wb_lms_mem_dat_o, wb_mem0_dbus_dat_o, wb_myriadrf_dat_o, wb_m2s_resize_lms_spi_dat, wb_m2s_resize_uart0_dat}),
+    .wbs_sel_o ({wb_eth0_sel_o, wb_lms_mem_sel_o, wb_mem0_dbus_sel_o, wb_myriadrf_sel_o, wb_m2s_resize_lms_spi_sel, wb_m2s_resize_uart0_sel}),
+    .wbs_we_o  ({wb_eth0_we_o, wb_lms_mem_we_o, wb_mem0_dbus_we_o, wb_myriadrf_we_o, wb_m2s_resize_lms_spi_we, wb_m2s_resize_uart0_we}),
+    .wbs_cyc_o ({wb_eth0_cyc_o, wb_lms_mem_cyc_o, wb_mem0_dbus_cyc_o, wb_myriadrf_cyc_o, wb_m2s_resize_lms_spi_cyc, wb_m2s_resize_uart0_cyc}),
+    .wbs_stb_o ({wb_eth0_stb_o, wb_lms_mem_stb_o, wb_mem0_dbus_stb_o, wb_myriadrf_stb_o, wb_m2s_resize_lms_spi_stb, wb_m2s_resize_uart0_stb}),
+    .wbs_cti_o ({wb_eth0_cti_o, wb_lms_mem_cti_o, wb_mem0_dbus_cti_o, wb_myriadrf_cti_o, wb_m2s_resize_lms_spi_cti, wb_m2s_resize_uart0_cti}),
+    .wbs_bte_o ({wb_eth0_bte_o, wb_lms_mem_bte_o, wb_mem0_dbus_bte_o, wb_myriadrf_bte_o, wb_m2s_resize_lms_spi_bte, wb_m2s_resize_uart0_bte}),
+    .wbs_dat_i ({wb_eth0_dat_i, wb_lms_mem_dat_i, wb_mem0_dbus_dat_i, wb_myriadrf_dat_i, wb_s2m_resize_lms_spi_dat, wb_s2m_resize_uart0_dat}),
+    .wbs_ack_i ({wb_eth0_ack_i, wb_lms_mem_ack_i, wb_mem0_dbus_ack_i, wb_myriadrf_ack_i, wb_s2m_resize_lms_spi_ack, wb_s2m_resize_uart0_ack}),
+    .wbs_err_i ({wb_eth0_err_i, wb_lms_mem_err_i, wb_mem0_dbus_err_i, wb_myriadrf_err_i, wb_s2m_resize_lms_spi_err, wb_s2m_resize_uart0_err}),
+    .wbs_rty_i ({wb_eth0_rty_i, wb_lms_mem_rty_i, wb_mem0_dbus_rty_i, wb_myriadrf_rty_i, wb_s2m_resize_lms_spi_rty, wb_s2m_resize_uart0_rty}));
 
 wb_data_resize
   #(.aw  (32),
@@ -149,5 +173,34 @@ wb_data_resize
     .wbs_ack_i (wb_uart0_ack_i),
     .wbs_err_i (wb_uart0_err_i),
     .wbs_rty_i (wb_uart0_rty_i));
+
+wb_data_resize
+  #(.aw  (32),
+    .mdw (32),
+    .sdw (8))
+ wb_data_resize_lms_spi
+   (.wbm_adr_i (wb_m2s_resize_lms_spi_adr),
+    .wbm_dat_i (wb_m2s_resize_lms_spi_dat),
+    .wbm_sel_i (wb_m2s_resize_lms_spi_sel),
+    .wbm_we_i  (wb_m2s_resize_lms_spi_we),
+    .wbm_cyc_i (wb_m2s_resize_lms_spi_cyc),
+    .wbm_stb_i (wb_m2s_resize_lms_spi_stb),
+    .wbm_cti_i (wb_m2s_resize_lms_spi_cti),
+    .wbm_bte_i (wb_m2s_resize_lms_spi_bte),
+    .wbm_dat_o (wb_s2m_resize_lms_spi_dat),
+    .wbm_ack_o (wb_s2m_resize_lms_spi_ack),
+    .wbm_err_o (wb_s2m_resize_lms_spi_err),
+    .wbm_rty_o (wb_s2m_resize_lms_spi_rty),
+    .wbs_adr_o (wb_lms_spi_adr_o),
+    .wbs_dat_o (wb_lms_spi_dat_o),
+    .wbs_we_o  (wb_lms_spi_we_o),
+    .wbs_cyc_o (wb_lms_spi_cyc_o),
+    .wbs_stb_o (wb_lms_spi_stb_o),
+    .wbs_cti_o (wb_lms_spi_cti_o),
+    .wbs_bte_o (wb_lms_spi_bte_o),
+    .wbs_dat_i (wb_lms_spi_dat_i),
+    .wbs_ack_i (wb_lms_spi_ack_i),
+    .wbs_err_i (wb_lms_spi_err_i),
+    .wbs_rty_i (wb_lms_spi_rty_i));
 
 endmodule
