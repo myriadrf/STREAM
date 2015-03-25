@@ -32,9 +32,8 @@ Get Linux source code
 
 .Set up Linux source code
 -----------------------------------------------------
-git clone https://github.com/skristiansson/linux
+git clone https://github.com/openrisc/linux
 cd linux
-git checkout openrisc
 -------------------------------------------
 Copy +<Stream OpenRISC SoC>/src/stream/data/stream.dts+ to +arch/openrisc/boot/dts/+
 
