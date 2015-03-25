@@ -23,7 +23,6 @@ include_files =  rtl/verilog/myriadrf_intercon.vh
 
 tb_private_src_files =
  bench/usb_framer_tb.v
- bench/myriadrf_tb.v
 
 [simulator]
 toplevel = usb_framer_tb
