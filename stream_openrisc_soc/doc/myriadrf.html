@@ -742,6 +742,14 @@ asciidoc.install();
 </div>
 </div>
 <div class="sect1">
+<h2 id="_overview">Overview</h2>
+<div class="sectionbody">
+<div class="paragraph"><p><span class="image">
+<img src="./dataflow.png" alt="./dataflow.png" />
+</span></p></div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_interfaces">Interfaces</h2>
 <div class="sectionbody">
 <div class="tableblock">
@@ -931,14 +939,110 @@ cellspacing="0" cellpadding="4">
 </tbody>
 </table>
 </div>
-<div class="paragraph"><p>The Wishbone slave interface is used for control and status of the MyriadRF core. The memory map is detailed <a href="memory_map.html">here</a></p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_memory_map">Memory map</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>The Wishbone slave interface is used for control and status of the MyriadRF core. The memory map is detailed below</p></div>
+<div class="tableblock">
+<table rules="all"
+width="40%"
+frame="border"
+cellspacing="0" cellpadding="4">
+<caption class="title">Table 5. MyriadRF IF memory map</caption>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+<thead>
+<tr>
+<th align="left" valign="top">Register </th>
+<th align="left" valign="top">Address</th>
+<th align="left" valign="top"> Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" valign="top"><p class="table">tx_src</p></td>
+<td align="left" valign="top"><p class="table">0x0000</p></td>
+<td align="left" valign="top"><p class="table">Source for TX I/Q Data 0 = Test data generator, 1 = TX DMA streamer</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">loopback</p></td>
+<td align="left" valign="top"><p class="table">0x0008</p></td>
+<td align="left" valign="top"><p class="table">0 = Read I/Q samples from MyriadRF, 1 = Loop TX samples to RX</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">rx_sink</p></td>
+<td align="left" valign="top"><p class="table">0x000C</p></td>
+<td align="left" valign="top"><p class="table">0 = Send RX data to Stream port, 1 = Send RX data to RX DMA Streamer</p></td>
+</tr>
+<tr>
+<td colspan="3" align="left" valign="top"><p class="table">TX DMA</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">ctrl</p></td>
+<td align="left" valign="top"><p class="table">0x0100</p></td>
+<td align="left" valign="top"><p class="table">Bit 1 = Interrupt, Bit 0 = Streamer is busy</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">start_adr</p></td>
+<td align="left" valign="top"><p class="table">0x0104</p></td>
+<td align="left" valign="top"><p class="table">Start Address for reading samples in memory</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">buf_size</p></td>
+<td align="left" valign="top"><p class="table">0x0108</p></td>
+<td align="left" valign="top"><p class="table">Size of buffer to read from memory</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">burst_size</p></td>
+<td align="left" valign="top"><p class="table">0x010C</p></td>
+<td align="left" valign="top"><p class="table">Length of Wishbone burst cycles</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">tx_cnt</p></td>
+<td align="left" valign="top"><p class="table">0x0110</p></td>
+<td align="left" valign="top"><p class="table">Number of bytes read for current transaction</p></td>
+</tr>
+<tr>
+<td colspan="3" align="left" valign="top"><p class="table">RX DMA</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">ctrl</p></td>
+<td align="left" valign="top"><p class="table">0x0200</p></td>
+<td align="left" valign="top"><p class="table">Bit 1 = Interrupt, Bit 0 = Streamer is busy</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">start_adr</p></td>
+<td align="left" valign="top"><p class="table">0x0204</p></td>
+<td align="left" valign="top"><p class="table">Start Address for writing samples in memory</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">buf_size</p></td>
+<td align="left" valign="top"><p class="table">0x0208</p></td>
+<td align="left" valign="top"><p class="table">Size of buffer to write to memory</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">burst_size</p></td>
+<td align="left" valign="top"><p class="table">0x020C</p></td>
+<td align="left" valign="top"><p class="table">Length of Wishbone burst cycles</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">tx_cnt</p></td>
+<td align="left" valign="top"><p class="table">0x0210</p></td>
+<td align="left" valign="top"><p class="table">Number of bytes written for current transaction</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-02-02 13:23:31 CET
+Last updated 2015-03-23 09:06:48 CET
 </div>
 </div>
 </body>

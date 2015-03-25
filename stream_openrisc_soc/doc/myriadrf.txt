@@ -3,6 +3,12 @@ MyriadRF IF
 
 The MyriadRF Interface is a peripheral controller for transmitting and receiving data to a MyriadRF board. The external interface consists of an RX interface and a TX interface and the internal interfaces consists of two Wishbone master interfaces for streaming I/Q data to and from RAM, a Wishbone slave interface for control of MyriadRF IF and a stream port for accessing the received data stream directly.
 
+Overview
+--------
+
+image:./dataflow.png[]
+
+
 Interfaces
 ------------
 
@@ -52,5 +58,30 @@ The RX Stream interface provides a port for directly reading out the data stream
 |lms_rx_irq_o | 1   | out | Interrupt signal for RX DMA Streamer
 |==========================
 
-The Wishbone slave interface is used for control and status of the MyriadRF core. The memory map is detailed link:memory_map.html[here]
+
+Memory map
+----------
+
+The Wishbone slave interface is used for control and status of the MyriadRF core. The memory map is detailed below
+
+.MyriadRF IF memory map
+[width="40%",options="header"]
+|==========================
+|Register |Address| Comment
+|tx_src   |0x0000 | Source for TX I/Q Data 0 = Test data generator, 1 = TX DMA streamer
+|loopback |0x0008| 0 = Read I/Q samples from MyriadRF, 1 = Loop TX samples to RX
+|rx_sink  |0x000C| 0 = Send RX data to Stream port, 1 = Send RX data to RX DMA Streamer
+3+|TX DMA
+|ctrl      |0x0100| Bit 1 = Interrupt, Bit 0 = Streamer is busy
+|start_adr |0x0104| Start Address for reading samples in memory
+|buf_size  |0x0108| Size of buffer to read from memory
+|burst_size|0x010C| Length of Wishbone burst cycles
+|tx_cnt    |0x0110| Number of bytes read for current transaction
+3+|RX DMA
+|ctrl      |0x0200| Bit 1 = Interrupt, Bit 0 = Streamer is busy
+|start_adr |0x0204| Start Address for writing samples in memory
+|buf_size  |0x0208| Size of buffer to write to memory
+|burst_size|0x020C| Length of Wishbone burst cycles
+|tx_cnt    |0x0210| Number of bytes written for current transaction
+|==========================
 
