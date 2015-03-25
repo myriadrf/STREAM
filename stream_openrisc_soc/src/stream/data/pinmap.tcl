@@ -341,6 +341,19 @@ set_location_assignment PIN_G9  -to lms_spi_sck
 
 set_location_assignment PIN_D7  -to lms_tx_clk_o
 set_location_assignment PIN_C10 -to lms_txen_o
+set_location_assignment PIN_B10 -to lms_txiqsel_o
+set_location_assignment PIN_A6  -to lms_txd_o[11]
+set_location_assignment PIN_B6  -to lms_txd_o[10]
+set_location_assignment PIN_C6  -to lms_txd_o[9]
+set_location_assignment PIN_A5  -to lms_txd_o[8]
+set_location_assignment PIN_E7  -to lms_txd_o[7]
+set_location_assignment PIN_F7  -to lms_txd_o[6]
+set_location_assignment PIN_A4  -to lms_txd_o[5]
+set_location_assignment PIN_B4  -to lms_txd_o[4]
+set_location_assignment PIN_C4  -to lms_txd_o[3]
+set_location_assignment PIN_A3  -to lms_txd_o[2]
+set_location_assignment PIN_B3  -to lms_txd_o[1]
+set_location_assignment PIN_C3  -to lms_txd_o[0]
 
 set_location_assignment PIN_E6  -to lms_rx_clk_o
 set_location_assignment PIN_G7  -to lms_rxen_o

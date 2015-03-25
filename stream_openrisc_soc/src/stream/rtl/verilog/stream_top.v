@@ -74,6 +74,9 @@ module stream_top
 
     output 		 lms_tx_clk_o,
     output 		 lms_txen_o,
+    output 		 lms_txiqsel_o,
+    output [11:0] 	 lms_txd_o,
+
     output 		 lms_rx_clk_o,
     output 		 lms_rxen_o,
     input 		 lms_rxiqsel_i,
@@ -593,8 +596,8 @@ assign or1k_irq[2] = uart0_irq;
       //TX Interface
       .tx_clk        (lms_tx_clk_o),
       .tx_rst        (!myriadrf_tx_clk_locked),
-      .txd           (/*FIXMEmyriadrf_tx_txd_o*/),
-      .txiqsel       (/*myriadrf_tx_txiqsel_o*/),
+      .txd           (lms_txd_o),
+      .txiqsel       (lms_txiqsel_o),
       //USB Interface
       .usb_m_data_o  (rx_ctrl_data),
       .usb_m_valid_o (rx_ctrl_valid),
