@@ -1,3 +1,10 @@
+////////////////////////////////////////////////////////////////////////
+// Stream OpenRISC Linux example
+//
+// Copyright (c) 2015-2015 Lime Microsystems
+// SPDX-License-Identifier: Apache-2.0
+// http://www.apache.org/licenses/LICENSE-2.0
+////////////////////////////////////////////////////////////////////////
 #include "wb_streamer.h"
 
 void streamer_write_reg(void *base, uint32_t reg, uint32_t value)

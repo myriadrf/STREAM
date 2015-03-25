@@ -1,3 +1,10 @@
+////////////////////////////////////////////////////////////////////////
+// Stream OpenRISC Linux example
+//
+// Copyright (c) 2015-2015 Lime Microsystems
+// SPDX-License-Identifier: Apache-2.0
+// http://www.apache.org/licenses/LICENSE-2.0
+////////////////////////////////////////////////////////////////////////
 #include <stdint.h>
 
 #define STREAMER_CTRL_STAT	0x0
