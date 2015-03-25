@@ -7,5 +7,5 @@ top_module = stream_top
 family = "Cyclone IV E"
 device = EP4CE40F23C7
 sdc_files = data/stream.sdc
-tcl_files = data/pinmap.tcl
+tcl_files = data/pinmapv2r1.tcl
             data/options.tcl
