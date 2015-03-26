@@ -1,5 +1,7 @@
 # STREAM
 
+![STREAM board fitted with a Myriad-RF 1 module](/images/Stream_MRF1_722w.jpg)
+
 [STREAM](https://myriadrf.org/projects/stream/) is a flexible platform for developing high-performance digital and RF designs using an Altera Cyclone IV FPGA and Lime Microsystems FPRF transceiver. The board incorporates SDRAM, Micro SD storage and a selection of other useful peripherals, with expansion via RFDIO and FMC mezzanine cards enabling use with both Myriad-RF 1 and LMS7002M EVB RF modules.
 
 ## Contents
