@@ -1,0 +1,6 @@
+[23:08:35] Log started: 2015-03-06 23:08:35
+[23:08:35] COM connection supported
+[23:08:35] USB connection supported
+[23:08:35] Registers map control parameters initialized.
+[23:08:35] Registers set to default values
+[23:08:35] LMS7002 Main control initialized
