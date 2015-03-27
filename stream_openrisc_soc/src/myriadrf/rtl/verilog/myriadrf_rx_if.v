@@ -25,17 +25,22 @@ module myriadrf_rx_if
    input [11:0]     rxd,
    input 	    rxiqsel);
 
+   reg 		    rxiqsel_r;
+
    //Note: Receiever must always be ready.
    //A deasserted m_ready_i equals a lost data
   always @(posedge clk) begin
-     m_valid_o <= rxiqsel;
+     rxiqsel_r <= rxiqsel;
+     m_valid_o <= rxiqsel_r;
      
-     if (rxiqsel)
+     if (rxiqsel_r)
        m_data_o[11:0] <= rxd;
      else
        m_data_o[23:12] <= rxd;
 
-     if (rst)
-       m_valid_o <= 1'b0;
+     if (rst) begin
+	m_valid_o <= 1'b0;
+	rxiqsel_r <= 1'b0;
+     end
   end
 endmodule
