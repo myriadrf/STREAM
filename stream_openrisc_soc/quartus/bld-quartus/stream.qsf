@@ -1,24 +1,25 @@
 # -------------------------------------------------------------------------- #
 #
-# Copyright (C) 1991-2013 Altera Corporation
+# Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
 # Your use of Altera Corporation's design tools, logic functions 
 # and other software and tools, and its AMPP partner logic 
 # functions, and any output files from any of the foregoing 
 # (including device programming or simulation files), and any 
 # associated documentation or information are expressly subject 
 # to the terms and conditions of the Altera Program License 
-# Subscription Agreement, Altera MegaCore Function License 
-# Agreement, or other applicable license agreement, including, 
-# without limitation, that your use is for the sole purpose of 
-# programming logic devices manufactured by Altera and sold by 
-# Altera or its authorized distributors.  Please refer to the 
-# applicable agreement for further details.
+# Subscription Agreement, the Altera Quartus II License Agreement,
+# the Altera MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Altera and sold by Altera or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
 #
 # -------------------------------------------------------------------------- #
 #
-# Quartus II 32-bit
-# Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-# Date created = 10:02:06  February 02, 2015
+# Quartus II 64-Bit
+# Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+# Date created = 23:48:08  March 27, 2015
 #
 # -------------------------------------------------------------------------- #
 #
@@ -39,22 +40,22 @@
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE40F23C7
 set_global_assignment -name TOP_LEVEL_ENTITY stream_top
-set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:02:06  FEBRUARY 02, 2015"
-set_global_assignment -name LAST_QUARTUS_VERSION 13.1
-set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/rtl/verilog/adbg_wb_biu.v
-set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/rtl/verilog/adbg_or1k_status_reg.v
-set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/rtl/verilog/adbg_jsp_biu.v
-set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/rtl/verilog/adbg_or1k_module.v
-set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/rtl/verilog/syncflop.v
-set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/rtl/verilog/adbg_crc32.v
-set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/rtl/verilog/adbg_jsp_module.v
-set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/rtl/verilog/adbg_top.v
-set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/rtl/verilog/bytefifo.v
-set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/rtl/verilog/adbg_or1k_biu.v
-set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/rtl/verilog/adbg_or1k_defines.v
-set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/rtl/verilog/syncreg.v
-set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/rtl/verilog/adbg_wb_module.v
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 14.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:48:08  MARCH 27, 2015"
+set_global_assignment -name LAST_QUARTUS_VERSION 14.0
+set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/Hardware/adv_dbg_if/rtl/verilog/adbg_wb_biu.v
+set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/Hardware/adv_dbg_if/rtl/verilog/adbg_or1k_status_reg.v
+set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/Hardware/adv_dbg_if/rtl/verilog/adbg_jsp_biu.v
+set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/Hardware/adv_dbg_if/rtl/verilog/adbg_or1k_module.v
+set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/Hardware/adv_dbg_if/rtl/verilog/syncflop.v
+set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/Hardware/adv_dbg_if/rtl/verilog/adbg_crc32.v
+set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/Hardware/adv_dbg_if/rtl/verilog/adbg_jsp_module.v
+set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/Hardware/adv_dbg_if/rtl/verilog/adbg_top.v
+set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/Hardware/adv_dbg_if/rtl/verilog/bytefifo.v
+set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/Hardware/adv_dbg_if/rtl/verilog/adbg_or1k_biu.v
+set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/Hardware/adv_dbg_if/rtl/verilog/adbg_or1k_defines.v
+set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/Hardware/adv_dbg_if/rtl/verilog/syncreg.v
+set_global_assignment -name VERILOG_FILE ../src/adv_debug_sys/Hardware/adv_dbg_if/rtl/verilog/adbg_wb_module.v
 set_global_assignment -name VERILOG_FILE ../src/altera_virtual_jtag/altera_virtual_jtag.v
 set_global_assignment -name VERILOG_FILE ../src/ethmac/rtl/verilog/eth_clockgen.v
 set_global_assignment -name VERILOG_FILE ../src/ethmac/rtl/verilog/eth_cop.v
@@ -85,7 +86,7 @@ set_global_assignment -name VERILOG_FILE ../src/ethmac/rtl/verilog/ethmac_define
 set_global_assignment -name VERILOG_FILE ../src/ethmac/rtl/verilog/xilinx_dist_ram_16x32.v
 set_global_assignment -name VERILOG_FILE ../src/fx3/rtl/verilog/fx3_tx.v
 set_global_assignment -name VERILOG_FILE ../src/fx3/rtl/verilog/fx3.v
-set_global_assignment -name VERILOG_FILE ../src/jtag_tap/rtl/verilog/tap_top.v
+set_global_assignment -name VERILOG_FILE ../src/jtag_tap/tap/rtl/verilog/tap_top.v
 set_global_assignment -name VERILOG_FILE "../src/mor1kx-2.2/rtl/verilog/mor1kx_branch_prediction.v"
 set_global_assignment -name VERILOG_FILE "../src/mor1kx-2.2/rtl/verilog/mor1kx_bus_if_avalon.v"
 set_global_assignment -name VERILOG_FILE "../src/mor1kx-2.2/rtl/verilog/mor1kx_bus_if_wb32.v"
@@ -151,6 +152,8 @@ set_global_assignment -name VERILOG_FILE ../src/myriadrf/rtl/verilog/myriadrf_tx
 set_global_assignment -name VERILOG_FILE ../src/myriadrf/rtl/verilog/myriadrf_rx_ctrl.v
 set_global_assignment -name VERILOG_FILE ../src/myriadrf/rtl/verilog/myriadrf_rx_if.v
 set_global_assignment -name VERILOG_FILE ../src/myriadrf/rtl/verilog/myriadrf.v
+set_global_assignment -name VERILOG_FILE ../src/simple_spi/rtl/verilog/fifo4.v
+set_global_assignment -name VERILOG_FILE ../src/simple_spi/rtl/verilog/simple_spi_top.v
 set_global_assignment -name VERILOG_FILE ../src/uart16550/rtl/verilog/raminfr.v
 set_global_assignment -name VERILOG_FILE ../src/uart16550/rtl/verilog/uart_debug_if.v
 set_global_assignment -name VERILOG_FILE ../src/uart16550/rtl/verilog/uart_receiver.v
@@ -230,7 +233,7 @@ set_global_assignment -name VERILOG_FILE ../src/stream/rtl/verilog/mor1kx_dbg_wr
 set_global_assignment -name VERILOG_FILE ../src/stream/rtl/verilog/fx3_iq_packer.v
 set_global_assignment -name VERILOG_FILE ../src/stream/rtl/verilog/stream_top.v
 set_global_assignment -name VHDL_FILE ../src/stream/ip/ddr2_ctrl/ddr2_ctrl_phy_alt_mem_phy_seq.vhd
-set_global_assignment -name SEARCH_PATH ../src/adv_debug_sys/rtl/verilog
+set_global_assignment -name SEARCH_PATH ../src/adv_debug_sys/Hardware/adv_dbg_if/rtl/verilog
 set_global_assignment -name SEARCH_PATH ../src/ethmac/rtl/verilog
 set_global_assignment -name SEARCH_PATH "../src/mor1kx-2.2/rtl/verilog"
 set_global_assignment -name SEARCH_PATH ../src/myriadrf/rtl/verilog
@@ -238,9 +241,9 @@ set_global_assignment -name SEARCH_PATH ../src/or1k_bootloaders/
 set_global_assignment -name SEARCH_PATH ../src/wb_altera_ddr_wrapper/bench/ddr_ctrl_ip
 set_global_assignment -name SEARCH_PATH ../src/verilog_utils/
 set_global_assignment -name SEARCH_PATH ../src/wb_common/
-set_global_assignment -name SEARCH_PATH ../src/stream/rtl/verilog/include
 set_global_assignment -name SEARCH_PATH ../src/stream/rtl/verilog
 set_global_assignment -name SEARCH_PATH ../src/stream/ip/ddr2_ctrl
+set_global_assignment -name SEARCH_PATH ../src/stream/rtl/verilog/include
 set_global_assignment -name SDC_FILE "data/stream.sdc"
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sys_clk_pad_i
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rst_n_pad_i
@@ -471,9 +474,10 @@ set_location_assignment PIN_AA21 -to eth0_dv
 set_location_assignment PIN_U19 -to eth0_rx_er
 set_location_assignment PIN_W20 -to eth0_col
 set_location_assignment PIN_U20 -to eth0_crs
-set_location_assignment PIN_J5 -to eth0_mdc_pad_o
-set_location_assignment PIN_J6 -to eth0_md_pad_io
-set_location_assignment PIN_G14 -to fx3_spi_cs
+set_location_assignment PIN_G14 -to eth0_mdc_pad_o
+set_location_assignment PIN_E13 -to eth0_md_pad_io
+set_location_assignment PIN_A20 -to eth0_rst_n_o
+set_location_assignment PIN_J4 -to fx3_spi_cs
 set_location_assignment PIN_G15 -to fx3_spi_miso
 set_location_assignment PIN_G16 -to fx3_spi_mosi
 set_location_assignment PIN_F11 -to fx3_spi_sck
@@ -525,6 +529,19 @@ set_location_assignment PIN_H11 -to lms_spi_mosi
 set_location_assignment PIN_G9 -to lms_spi_sck
 set_location_assignment PIN_D7 -to lms_tx_clk_o
 set_location_assignment PIN_C10 -to lms_txen_o
+set_location_assignment PIN_B10 -to lms_txiqsel_o
+set_location_assignment PIN_A6 -to lms_txd_o[11]
+set_location_assignment PIN_B6 -to lms_txd_o[10]
+set_location_assignment PIN_C6 -to lms_txd_o[9]
+set_location_assignment PIN_A5 -to lms_txd_o[8]
+set_location_assignment PIN_E7 -to lms_txd_o[7]
+set_location_assignment PIN_F7 -to lms_txd_o[6]
+set_location_assignment PIN_A4 -to lms_txd_o[5]
+set_location_assignment PIN_B4 -to lms_txd_o[4]
+set_location_assignment PIN_C4 -to lms_txd_o[3]
+set_location_assignment PIN_A3 -to lms_txd_o[2]
+set_location_assignment PIN_B3 -to lms_txd_o[1]
+set_location_assignment PIN_C3 -to lms_txd_o[0]
 set_location_assignment PIN_E6 -to lms_rx_clk_o
 set_location_assignment PIN_G7 -to lms_rxen_o
 set_location_assignment PIN_E10 -to lms_rxiqsel_i
@@ -541,7 +558,3 @@ set_location_assignment PIN_F8 -to lms_rxd_i[2]
 set_location_assignment PIN_A7 -to lms_rxd_i[1]
 set_location_assignment PIN_B7 -to lms_rxd_i[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to lms_*
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
