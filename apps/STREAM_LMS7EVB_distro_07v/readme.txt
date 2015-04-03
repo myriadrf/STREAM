@@ -11,6 +11,7 @@ I. Description of folders and files
 ===================================
 
   readme.txt                - this file
+        docs/                     - Quick start and user guides
 	fx3/                      - FX3 USB microcontroller related
 	 |- firmware_img          - Contains compiled firmware image for FX3 USB microcontroller
 	gateware                  - FPGA related

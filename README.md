@@ -11,6 +11,8 @@ The directory structure is as follows:
       apps/
           STREAM_LMS7EVB_distro_07v/  - LMS7002EVB examples
 
+      docs/                      - platform documentation
+
       hardware/<version>/
           BOM/                   - bill of materials spreadsheet
           Case/                  - Aluminium case design
