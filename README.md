@@ -2,18 +2,26 @@
 
 ![STREAM board fitted with a Myriad-RF 1 module](/images/Stream_MRF1_722w.jpg)
 
-[STREAM](https://myriadrf.org/projects/stream/) is a flexible platform for developing high-performance digital and RF designs using an Altera Cyclone IV FPGA and Lime Microsystems FPRF transceiver. The board incorporates SDRAM, Micro SD storage and a selection of other useful peripherals, with expansion via RFDIO and FMC mezzanine cards enabling use with both Myriad-RF 1 and LMS7002M EVB RF modules.
+[STREAM](https://myriadrf.org/projects/stream/) is a flexible platform for developing high-performance digital and RF designs using an Altera Cyclone IV FPGA and Lime Microsystems FPRF transceiver.
+
+The original STREAM board incorporates SDRAM, Micro SD storage and a selection of other useful peripherals, with expansion via RFDIO and FMC mezzanine cards enabling use with both LMS6002-based Myriad-RF 1 and UNITE LMS7002M EVB RF modules.
+
+uSTREAM is a low cost variant that incorporates a uRFDIO connector, enabling use with the uMyriadRF-6002 and uMyriadRF-7002 RF modules.
+
+For more details about compatible Myriad-RF transceiver modules, see the [Reference Development Kit](https://myriadrf.org/projects/rdk/).
 
 ## Contents
 
 The directory structure is as follows:
 
       apps/
-          STREAM_LMS7EVB_distro_07v/  - LMS7002EVB examples
+          lms6_usb_distro_03v/        - uSTREAM + uMyriadRF-6002 examples
+          lms7_usb_distro_01v/        - uSTREAM + uMyriadRF-7002 examples
+          STREAM_LMS7EVB_distro_07v/  - STREAM + UNITE LMS7002EVB examples
 
       docs/                      - platform documentation
 
-      hardware/<version>/
+      hardware/<variant>/<version>/
           BOM/                   - bill of materials spreadsheet
           Case/                  - Aluminium case design
           Gerbers/               - Gerber CAM files

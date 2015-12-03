@@ -1,0 +1,641 @@
+
+State Machine - |lms7_uStream_trx_top|nco_bin_sin:inst19|state
+Name state.Phase3_Q state.Phase3_I state.Phase2_Q state.Phase2_I state.Phase1_Q state.Phase1_I state.Idle state.Phase0_I state.Phase0_Q 
+state.Phase0_Q 0 0 0 0 0 0 0 0 0 
+state.Phase0_I 0 0 0 0 0 0 0 1 1 
+state.Idle 0 0 0 0 0 0 1 0 1 
+state.Phase1_I 0 0 0 0 0 1 0 0 1 
+state.Phase1_Q 0 0 0 0 1 0 0 0 1 
+state.Phase2_I 0 0 0 1 0 0 0 0 1 
+state.Phase2_Q 0 0 1 0 0 0 0 0 1 
+state.Phase3_I 0 1 0 0 0 0 0 0 1 
+state.Phase3_Q 1 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|slaveFIFO2b_streamINOUT:inst17|slaveFIFO2b_streamIN:stream_in_inst|current_stream_in_state
+Name current_stream_in_state.stream_in_wait_fifo current_stream_in_state.stream_in_write_wr_delay4 current_stream_in_state.stream_in_write_wr_delay3 current_stream_in_state.stream_in_write_wr_delay2 current_stream_in_state.stream_in_write_wr_delay1 current_stream_in_state.stream_in_write_wr_delay current_stream_in_state.stream_in_write current_stream_in_state.stream_in_wait_flagb current_stream_in_state.stream_in_idle 
+current_stream_in_state.stream_in_idle 0 0 0 0 0 0 0 0 0 
+current_stream_in_state.stream_in_wait_flagb 0 0 0 0 0 0 0 1 1 
+current_stream_in_state.stream_in_write 0 0 0 0 0 0 1 0 1 
+current_stream_in_state.stream_in_write_wr_delay 0 0 0 0 0 1 0 0 1 
+current_stream_in_state.stream_in_write_wr_delay1 0 0 0 0 1 0 0 0 1 
+current_stream_in_state.stream_in_write_wr_delay2 0 0 0 1 0 0 0 0 1 
+current_stream_in_state.stream_in_write_wr_delay3 0 0 1 0 0 0 0 0 1 
+current_stream_in_state.stream_in_write_wr_delay4 0 1 0 0 0 0 0 0 1 
+current_stream_in_state.stream_in_wait_fifo 1 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|slaveFIFO2b_streamINOUT:inst17|slaveFIFO2b_streamOUT:stream_out_inst|current_stream_out_state
+Name current_stream_out_state.fifofull_wait1 current_stream_out_state.fifofull_wait0 current_stream_out_state.stream_out_read_oe_delay current_stream_out_state.stream_out_read_rd_and_oe_delay current_stream_out_state.stream_out_read current_stream_out_state.stream_out_wait_flagd current_stream_out_state.stream_out_flagc_rcvd current_stream_out_state.stream_out_idle 
+current_stream_out_state.stream_out_idle 0 0 0 0 0 0 0 0 
+current_stream_out_state.stream_out_flagc_rcvd 0 0 0 0 0 0 1 1 
+current_stream_out_state.stream_out_wait_flagd 0 0 0 0 0 1 0 1 
+current_stream_out_state.stream_out_read 0 0 0 0 1 0 0 1 
+current_stream_out_state.stream_out_read_rd_and_oe_delay 0 0 0 1 0 0 0 1 
+current_stream_out_state.stream_out_read_oe_delay 0 0 1 0 0 0 0 1 
+current_stream_out_state.fifofull_wait0 0 1 0 0 0 0 0 1 
+current_stream_out_state.fifofull_wait1 1 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|sl_ctrl:inst22|s_r
+Name s_r.s2 s_r.s1 s_r.s0 
+s_r.s0 0 0 0 
+s_r.s1 0 1 1 
+s_r.s2 1 0 1 
+
+State Machine - |lms7_uStream_trx_top|ram_control:inst15|addr_state
+Name addr_state.s5 addr_state.s4 addr_state.s3 addr_state.s2 addr_state.s1 addr_state.s0 
+addr_state.s0 0 0 0 0 0 0 
+addr_state.s1 0 0 0 0 1 1 
+addr_state.s2 0 0 0 1 0 1 
+addr_state.s3 0 0 1 0 0 1 
+addr_state.s4 0 1 0 0 0 1 
+addr_state.s5 1 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ram_control:inst15|wfifo_state
+Name wfifo_state.s5 wfifo_state.s4 wfifo_state.s3 wfifo_state.s2 wfifo_state.s1 wfifo_state.s0 
+wfifo_state.s0 0 0 0 0 0 0 
+wfifo_state.s1 0 0 0 0 1 1 
+wfifo_state.s2 0 0 0 1 0 1 
+wfifo_state.s3 0 0 1 0 0 1 
+wfifo_state.s4 0 1 0 0 0 1 
+wfifo_state.s5 1 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ram_control:inst15|burst_state
+Name burst_state.s5 burst_state.s4 burst_state.s3 burst_state.s2 burst_state.s1 burst_state.s0 
+burst_state.s0 0 0 0 0 0 0 
+burst_state.s1 0 0 0 0 1 1 
+burst_state.s2 0 0 0 1 0 1 
+burst_state.s3 0 0 1 0 0 1 
+burst_state.s4 0 1 0 0 0 1 
+burst_state.s5 1 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ram_control:inst15|fifo_state
+Name fifo_state.s5 fifo_state.s4 fifo_state.s3 fifo_state.s2 fifo_state.s1 fifo_state.s0 
+fifo_state.s0 0 0 0 0 0 0 
+fifo_state.s1 0 0 0 0 1 1 
+fifo_state.s2 0 0 0 1 0 1 
+fifo_state.s3 0 0 1 0 0 1 
+fifo_state.s4 0 1 0 0 0 1 
+fifo_state.s5 1 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_mimic:mmc|mimic_state
+Name mimic_state.011 mimic_state.010 mimic_state.001 mimic_state.000 mimic_state.100 
+mimic_state.000 0 0 0 0 0 
+mimic_state.001 0 0 1 1 0 
+mimic_state.010 0 1 0 1 0 
+mimic_state.011 1 0 0 1 0 
+mimic_state.100 0 0 0 1 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|\ac_mux:ctrl_broadcast_r.command
+Name \ac_mux:ctrl_broadcast_r.command.cmd_tr_due \ac_mux:ctrl_broadcast_r.command.cmd_prep_customer_mr_setup \ac_mux:ctrl_broadcast_r.command.cmd_prep_adv_wr_lat \ac_mux:ctrl_broadcast_r.command.cmd_prep_adv_rd_lat \ac_mux:ctrl_broadcast_r.command.cmd_was \ac_mux:ctrl_broadcast_r.command.cmd_poa \ac_mux:ctrl_broadcast_r.command.cmd_rdv \ac_mux:ctrl_broadcast_r.command.cmd_rrp_seek \ac_mux:ctrl_broadcast_r.command.cmd_rrp_sweep \ac_mux:ctrl_broadcast_r.command.cmd_rrp_reset \ac_mux:ctrl_broadcast_r.command.cmd_read_mtp \ac_mux:ctrl_broadcast_r.command.cmd_write_mtp \ac_mux:ctrl_broadcast_r.command.cmd_write_btp \ac_mux:ctrl_broadcast_r.command.cmd_write_ihi \ac_mux:ctrl_broadcast_r.command.cmd_prog_cal_mr \ac_mux:ctrl_broadcast_r.command.cmd_init_dram \ac_mux:ctrl_broadcast_r.command.cmd_phy_initialise \ac_mux:ctrl_broadcast_r.command.cmd_idle 
+\ac_mux:ctrl_broadcast_r.command.cmd_idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+\ac_mux:ctrl_broadcast_r.command.cmd_phy_initialise 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_init_dram 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_prog_cal_mr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_write_ihi 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_write_btp 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_write_mtp 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_read_mtp 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_rrp_reset 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_rrp_sweep 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_rrp_seek 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_rdv 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_poa 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_was 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_prep_adv_rd_lat 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_prep_adv_wr_lat 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_prep_customer_mr_setup 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\ac_mux:ctrl_broadcast_r.command.cmd_tr_due 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_ctrl:ctrl|last_state
+Name last_state.s_non_operational last_state.s_operational last_state.s_tracking last_state.s_prep_customer_mr_setup last_state.s_tracking_setup last_state.s_poa last_state.s_adv_wr_lat last_state.s_adv_rd_lat last_state.s_was last_state.s_rdv last_state.s_rrp_seek last_state.s_rrp_sweep last_state.s_rrp_reset last_state.s_read_mtp last_state.s_write_mtp last_state.s_write_btp last_state.s_cal last_state.s_write_ihi last_state.s_prog_cal_mr last_state.s_init_dram last_state.s_phy_initialise last_state.s_reset 
+last_state.s_reset 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+last_state.s_phy_initialise 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+last_state.s_init_dram 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+last_state.s_prog_cal_mr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+last_state.s_write_ihi 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+last_state.s_cal 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+last_state.s_write_btp 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+last_state.s_write_mtp 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+last_state.s_read_mtp 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+last_state.s_rrp_reset 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+last_state.s_rrp_sweep 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+last_state.s_rrp_seek 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+last_state.s_rdv 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+last_state.s_was 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+last_state.s_adv_rd_lat 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+last_state.s_adv_wr_lat 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+last_state.s_poa 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+last_state.s_tracking_setup 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+last_state.s_prep_customer_mr_setup 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+last_state.s_tracking 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+last_state.s_operational 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+last_state.s_non_operational 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_ctrl:ctrl|state
+Name state.s_non_operational state.s_operational state.s_tracking state.s_prep_customer_mr_setup state.s_tracking_setup state.s_poa state.s_adv_wr_lat state.s_adv_rd_lat state.s_was state.s_rdv state.s_rrp_seek state.s_rrp_sweep state.s_rrp_reset state.s_read_mtp state.s_write_mtp state.s_write_btp state.s_cal state.s_write_ihi state.s_prog_cal_mr state.s_init_dram state.s_phy_initialise state.s_reset 
+state.s_reset 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.s_phy_initialise 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.s_init_dram 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.s_prog_cal_mr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.s_write_ihi 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.s_cal 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.s_write_btp 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.s_write_mtp 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.s_read_mtp 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.s_rrp_reset 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.s_rrp_sweep 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.s_rrp_seek 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.s_rdv 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.s_was 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.s_adv_rd_lat 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.s_adv_wr_lat 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.s_poa 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.s_tracking_setup 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.s_prep_customer_mr_setup 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.s_tracking 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.s_operational 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.s_non_operational 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_ctrl:ctrl|int_ctrl_current_stage
+Name int_ctrl_current_stage.cmd_tr_due int_ctrl_current_stage.cmd_prep_customer_mr_setup int_ctrl_current_stage.cmd_prep_adv_wr_lat int_ctrl_current_stage.cmd_prep_adv_rd_lat int_ctrl_current_stage.cmd_was int_ctrl_current_stage.cmd_poa int_ctrl_current_stage.cmd_rdv int_ctrl_current_stage.cmd_rrp_seek int_ctrl_current_stage.cmd_rrp_sweep int_ctrl_current_stage.cmd_rrp_reset int_ctrl_current_stage.cmd_read_mtp int_ctrl_current_stage.cmd_write_mtp int_ctrl_current_stage.cmd_write_btp int_ctrl_current_stage.cmd_write_ihi int_ctrl_current_stage.cmd_prog_cal_mr int_ctrl_current_stage.cmd_init_dram int_ctrl_current_stage.cmd_phy_initialise int_ctrl_current_stage.cmd_idle 
+int_ctrl_current_stage.cmd_idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+int_ctrl_current_stage.cmd_phy_initialise 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+int_ctrl_current_stage.cmd_init_dram 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+int_ctrl_current_stage.cmd_prog_cal_mr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+int_ctrl_current_stage.cmd_write_ihi 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+int_ctrl_current_stage.cmd_write_btp 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+int_ctrl_current_stage.cmd_write_mtp 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+int_ctrl_current_stage.cmd_read_mtp 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+int_ctrl_current_stage.cmd_rrp_reset 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+int_ctrl_current_stage.cmd_rrp_sweep 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+int_ctrl_current_stage.cmd_rrp_seek 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+int_ctrl_current_stage.cmd_rdv 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+int_ctrl_current_stage.cmd_poa 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+int_ctrl_current_stage.cmd_was 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+int_ctrl_current_stage.cmd_prep_adv_rd_lat 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+int_ctrl_current_stage.cmd_prep_adv_wr_lat 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+int_ctrl_current_stage.cmd_prep_customer_mr_setup 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+int_ctrl_current_stage.cmd_tr_due 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_ctrl:ctrl|int_ctrl_prev_stage
+Name int_ctrl_prev_stage.cmd_tr_due int_ctrl_prev_stage.cmd_prep_customer_mr_setup int_ctrl_prev_stage.cmd_prep_adv_wr_lat int_ctrl_prev_stage.cmd_prep_adv_rd_lat int_ctrl_prev_stage.cmd_was int_ctrl_prev_stage.cmd_poa int_ctrl_prev_stage.cmd_rdv int_ctrl_prev_stage.cmd_rrp_seek int_ctrl_prev_stage.cmd_rrp_sweep int_ctrl_prev_stage.cmd_rrp_reset int_ctrl_prev_stage.cmd_read_mtp int_ctrl_prev_stage.cmd_write_mtp int_ctrl_prev_stage.cmd_write_btp int_ctrl_prev_stage.cmd_write_ihi int_ctrl_prev_stage.cmd_prog_cal_mr int_ctrl_prev_stage.cmd_init_dram int_ctrl_prev_stage.cmd_phy_initialise int_ctrl_prev_stage.cmd_idle 
+int_ctrl_prev_stage.cmd_idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+int_ctrl_prev_stage.cmd_phy_initialise 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+int_ctrl_prev_stage.cmd_init_dram 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+int_ctrl_prev_stage.cmd_prog_cal_mr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+int_ctrl_prev_stage.cmd_write_ihi 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+int_ctrl_prev_stage.cmd_write_btp 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+int_ctrl_prev_stage.cmd_write_mtp 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+int_ctrl_prev_stage.cmd_read_mtp 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+int_ctrl_prev_stage.cmd_rrp_reset 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+int_ctrl_prev_stage.cmd_rrp_sweep 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+int_ctrl_prev_stage.cmd_rrp_seek 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+int_ctrl_prev_stage.cmd_rdv 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+int_ctrl_prev_stage.cmd_poa 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+int_ctrl_prev_stage.cmd_was 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+int_ctrl_prev_stage.cmd_prep_adv_rd_lat 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+int_ctrl_prev_stage.cmd_prep_adv_wr_lat 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+int_ctrl_prev_stage.cmd_prep_customer_mr_setup 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+int_ctrl_prev_stage.cmd_tr_due 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_ctrl:ctrl|ctrl_mmi.ctrl_current_active_block
+Name ctrl_mmi.ctrl_current_active_block.iram~reg0 ctrl_mmi.ctrl_current_active_block.setup~reg0 ctrl_mmi.ctrl_current_active_block.proc~reg0 ctrl_mmi.ctrl_current_active_block.dgrb~reg0 ctrl_mmi.ctrl_current_active_block.dgwb~reg0 ctrl_mmi.ctrl_current_active_block.admin~reg0 ctrl_mmi.ctrl_current_active_block.idle~reg0 
+ctrl_mmi.ctrl_current_active_block.idle~reg0 0 0 0 0 0 0 0 
+ctrl_mmi.ctrl_current_active_block.admin~reg0 0 0 0 0 0 1 1 
+ctrl_mmi.ctrl_current_active_block.dgwb~reg0 0 0 0 0 1 0 1 
+ctrl_mmi.ctrl_current_active_block.dgrb~reg0 0 0 0 1 0 0 1 
+ctrl_mmi.ctrl_current_active_block.proc~reg0 0 0 1 0 0 0 1 
+ctrl_mmi.ctrl_current_active_block.setup~reg0 0 1 0 0 0 0 1 
+ctrl_mmi.ctrl_current_active_block.iram~reg0 1 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_ctrl:ctrl|ctrl_mmi.ctrl_current_stage
+Name ctrl_mmi.ctrl_current_stage.cmd_tr_due~reg0 ctrl_mmi.ctrl_current_stage.cmd_prep_customer_mr_setup~reg0 ctrl_mmi.ctrl_current_stage.cmd_prep_adv_wr_lat~reg0 ctrl_mmi.ctrl_current_stage.cmd_prep_adv_rd_lat~reg0 ctrl_mmi.ctrl_current_stage.cmd_was~reg0 ctrl_mmi.ctrl_current_stage.cmd_poa~reg0 ctrl_mmi.ctrl_current_stage.cmd_rdv~reg0 ctrl_mmi.ctrl_current_stage.cmd_rrp_seek~reg0 ctrl_mmi.ctrl_current_stage.cmd_rrp_sweep~reg0 ctrl_mmi.ctrl_current_stage.cmd_rrp_reset~reg0 ctrl_mmi.ctrl_current_stage.cmd_read_mtp~reg0 ctrl_mmi.ctrl_current_stage.cmd_write_mtp~reg0 ctrl_mmi.ctrl_current_stage.cmd_write_btp~reg0 ctrl_mmi.ctrl_current_stage.cmd_write_ihi~reg0 ctrl_mmi.ctrl_current_stage.cmd_prog_cal_mr~reg0 ctrl_mmi.ctrl_current_stage.cmd_init_dram~reg0 ctrl_mmi.ctrl_current_stage.cmd_phy_initialise~reg0 ctrl_mmi.ctrl_current_stage.cmd_idle~reg0 
+ctrl_mmi.ctrl_current_stage.cmd_idle~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+ctrl_mmi.ctrl_current_stage.cmd_phy_initialise~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+ctrl_mmi.ctrl_current_stage.cmd_init_dram~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_prog_cal_mr~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_write_ihi~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_write_btp~reg0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_write_mtp~reg0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_read_mtp~reg0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_rrp_reset~reg0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_rrp_sweep~reg0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_rrp_seek~reg0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_rdv~reg0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_poa~reg0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_was~reg0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_prep_adv_rd_lat~reg0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_prep_adv_wr_lat~reg0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_prep_customer_mr_setup~reg0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.ctrl_current_stage.cmd_tr_due~reg0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_ctrl:ctrl|ctrl_mmi.master_state_r
+Name ctrl_mmi.master_state_r.s_non_operational~reg0 ctrl_mmi.master_state_r.s_operational~reg0 ctrl_mmi.master_state_r.s_tracking~reg0 ctrl_mmi.master_state_r.s_prep_customer_mr_setup~reg0 ctrl_mmi.master_state_r.s_tracking_setup~reg0 ctrl_mmi.master_state_r.s_poa~reg0 ctrl_mmi.master_state_r.s_adv_wr_lat~reg0 ctrl_mmi.master_state_r.s_adv_rd_lat~reg0 ctrl_mmi.master_state_r.s_was~reg0 ctrl_mmi.master_state_r.s_rdv~reg0 ctrl_mmi.master_state_r.s_rrp_seek~reg0 ctrl_mmi.master_state_r.s_rrp_sweep~reg0 ctrl_mmi.master_state_r.s_rrp_reset~reg0 ctrl_mmi.master_state_r.s_read_mtp~reg0 ctrl_mmi.master_state_r.s_write_mtp~reg0 ctrl_mmi.master_state_r.s_write_btp~reg0 ctrl_mmi.master_state_r.s_cal~reg0 ctrl_mmi.master_state_r.s_write_ihi~reg0 ctrl_mmi.master_state_r.s_prog_cal_mr~reg0 ctrl_mmi.master_state_r.s_init_dram~reg0 ctrl_mmi.master_state_r.s_phy_initialise~reg0 ctrl_mmi.master_state_r.s_reset~reg0 
+ctrl_mmi.master_state_r.s_reset~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+ctrl_mmi.master_state_r.s_phy_initialise~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+ctrl_mmi.master_state_r.s_init_dram~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+ctrl_mmi.master_state_r.s_prog_cal_mr~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+ctrl_mmi.master_state_r.s_write_ihi~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+ctrl_mmi.master_state_r.s_cal~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_write_btp~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_write_mtp~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_read_mtp~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_rrp_reset~reg0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_rrp_sweep~reg0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_rrp_seek~reg0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_rdv~reg0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_was~reg0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_adv_rd_lat~reg0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_adv_wr_lat~reg0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_poa~reg0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_tracking_setup~reg0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_prep_customer_mr_setup~reg0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_tracking~reg0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_operational~reg0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_mmi.master_state_r.s_non_operational~reg0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_ctrl:ctrl|v_ctrl_mmi.ctrl_current_active_block
+Name v_ctrl_mmi.ctrl_current_active_block.iram v_ctrl_mmi.ctrl_current_active_block.setup v_ctrl_mmi.ctrl_current_active_block.proc v_ctrl_mmi.ctrl_current_active_block.dgrb v_ctrl_mmi.ctrl_current_active_block.dgwb v_ctrl_mmi.ctrl_current_active_block.admin v_ctrl_mmi.ctrl_current_active_block.idle 
+v_ctrl_mmi.ctrl_current_active_block.idle 0 0 0 0 0 0 0 
+v_ctrl_mmi.ctrl_current_active_block.admin 0 0 0 0 0 1 1 
+v_ctrl_mmi.ctrl_current_active_block.dgwb 0 0 0 0 1 0 1 
+v_ctrl_mmi.ctrl_current_active_block.dgrb 0 0 0 1 0 0 1 
+v_ctrl_mmi.ctrl_current_active_block.proc 0 0 1 0 0 0 1 
+v_ctrl_mmi.ctrl_current_active_block.setup 0 1 0 0 0 0 1 
+v_ctrl_mmi.ctrl_current_active_block.iram 1 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_ctrl:ctrl|v_ctrl_mmi.ctrl_current_stage
+Name v_ctrl_mmi.ctrl_current_stage.cmd_tr_due v_ctrl_mmi.ctrl_current_stage.cmd_prep_customer_mr_setup v_ctrl_mmi.ctrl_current_stage.cmd_prep_adv_wr_lat v_ctrl_mmi.ctrl_current_stage.cmd_prep_adv_rd_lat v_ctrl_mmi.ctrl_current_stage.cmd_was v_ctrl_mmi.ctrl_current_stage.cmd_poa v_ctrl_mmi.ctrl_current_stage.cmd_rdv v_ctrl_mmi.ctrl_current_stage.cmd_rrp_seek v_ctrl_mmi.ctrl_current_stage.cmd_rrp_sweep v_ctrl_mmi.ctrl_current_stage.cmd_rrp_reset v_ctrl_mmi.ctrl_current_stage.cmd_read_mtp v_ctrl_mmi.ctrl_current_stage.cmd_write_mtp v_ctrl_mmi.ctrl_current_stage.cmd_write_btp v_ctrl_mmi.ctrl_current_stage.cmd_write_ihi v_ctrl_mmi.ctrl_current_stage.cmd_prog_cal_mr v_ctrl_mmi.ctrl_current_stage.cmd_init_dram v_ctrl_mmi.ctrl_current_stage.cmd_phy_initialise v_ctrl_mmi.ctrl_current_stage.cmd_idle 
+v_ctrl_mmi.ctrl_current_stage.cmd_idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+v_ctrl_mmi.ctrl_current_stage.cmd_phy_initialise 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_init_dram 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_prog_cal_mr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_write_ihi 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_write_btp 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_write_mtp 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_read_mtp 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_rrp_reset 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_rrp_sweep 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_rrp_seek 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_rdv 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_poa 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_was 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_prep_adv_rd_lat 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_prep_adv_wr_lat 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_prep_customer_mr_setup 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.ctrl_current_stage.cmd_tr_due 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_ctrl:ctrl|v_ctrl_mmi.master_state_r
+Name v_ctrl_mmi.master_state_r.s_non_operational v_ctrl_mmi.master_state_r.s_operational v_ctrl_mmi.master_state_r.s_tracking v_ctrl_mmi.master_state_r.s_prep_customer_mr_setup v_ctrl_mmi.master_state_r.s_tracking_setup v_ctrl_mmi.master_state_r.s_poa v_ctrl_mmi.master_state_r.s_adv_wr_lat v_ctrl_mmi.master_state_r.s_adv_rd_lat v_ctrl_mmi.master_state_r.s_was v_ctrl_mmi.master_state_r.s_rdv v_ctrl_mmi.master_state_r.s_rrp_seek v_ctrl_mmi.master_state_r.s_rrp_sweep v_ctrl_mmi.master_state_r.s_rrp_reset v_ctrl_mmi.master_state_r.s_read_mtp v_ctrl_mmi.master_state_r.s_write_mtp v_ctrl_mmi.master_state_r.s_write_btp v_ctrl_mmi.master_state_r.s_cal v_ctrl_mmi.master_state_r.s_write_ihi v_ctrl_mmi.master_state_r.s_prog_cal_mr v_ctrl_mmi.master_state_r.s_init_dram v_ctrl_mmi.master_state_r.s_phy_initialise v_ctrl_mmi.master_state_r.s_reset 
+v_ctrl_mmi.master_state_r.s_reset 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+v_ctrl_mmi.master_state_r.s_phy_initialise 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+v_ctrl_mmi.master_state_r.s_init_dram 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+v_ctrl_mmi.master_state_r.s_prog_cal_mr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+v_ctrl_mmi.master_state_r.s_write_ihi 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_cal 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_write_btp 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_write_mtp 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_read_mtp 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_rrp_reset 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_rrp_sweep 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_rrp_seek 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_rdv 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_was 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_adv_rd_lat 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_adv_wr_lat 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_poa 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_tracking_setup 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_prep_customer_mr_setup 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_tracking 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_operational 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+v_ctrl_mmi.master_state_r.s_non_operational 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_ctrl:ctrl|curr_cmd
+Name curr_cmd.cmd_tr_due curr_cmd.cmd_prep_customer_mr_setup curr_cmd.cmd_prep_adv_wr_lat curr_cmd.cmd_prep_adv_rd_lat curr_cmd.cmd_was curr_cmd.cmd_poa curr_cmd.cmd_rdv curr_cmd.cmd_rrp_seek curr_cmd.cmd_rrp_sweep curr_cmd.cmd_rrp_reset curr_cmd.cmd_read_mtp curr_cmd.cmd_write_mtp curr_cmd.cmd_write_btp curr_cmd.cmd_write_ihi curr_cmd.cmd_prog_cal_mr curr_cmd.cmd_init_dram curr_cmd.cmd_phy_initialise curr_cmd.cmd_idle 
+curr_cmd.cmd_idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+curr_cmd.cmd_phy_initialise 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+curr_cmd.cmd_init_dram 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+curr_cmd.cmd_prog_cal_mr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+curr_cmd.cmd_write_ihi 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+curr_cmd.cmd_write_btp 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+curr_cmd.cmd_write_mtp 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+curr_cmd.cmd_read_mtp 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+curr_cmd.cmd_rrp_reset 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+curr_cmd.cmd_rrp_sweep 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+curr_cmd.cmd_rrp_seek 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+curr_cmd.cmd_rdv 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+curr_cmd.cmd_poa 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_cmd.cmd_was 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_cmd.cmd_prep_adv_rd_lat 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_cmd.cmd_prep_adv_wr_lat 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_cmd.cmd_prep_customer_mr_setup 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+curr_cmd.cmd_tr_due 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgwb:dgwb|\master_dgwb_state_block:sig_ctrl_dgwb.command
+Name \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_tr_due \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_prep_customer_mr_setup \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_prep_adv_wr_lat \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_prep_adv_rd_lat \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_was \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_poa \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_rdv \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_rrp_seek \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_rrp_sweep \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_rrp_reset \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_read_mtp \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_write_mtp \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_write_btp \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_write_ihi \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_prog_cal_mr \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_init_dram \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_phy_initialise \master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_idle 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_phy_initialise 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_init_dram 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_prog_cal_mr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_write_ihi 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_write_btp 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_write_mtp 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_read_mtp 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_rrp_reset 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_rrp_sweep 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_rrp_seek 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_rdv 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_poa 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_was 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_prep_adv_rd_lat 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_prep_adv_wr_lat 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_prep_customer_mr_setup 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+\master_dgwb_state_block:sig_ctrl_dgwb.command.cmd_tr_due 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgwb:dgwb|sig_dgwb_last_state
+Name sig_dgwb_last_state.s_release_admin sig_dgwb_last_state.s_write_wlat sig_dgwb_last_state.s_write_0011_step sig_dgwb_last_state.s_write_1100_step sig_dgwb_last_state.s_write_01_pairs sig_dgwb_last_state.s_write_mtp sig_dgwb_last_state.s_write_zeros sig_dgwb_last_state.s_write_ones sig_dgwb_last_state.s_write_btp sig_dgwb_last_state.s_wait_admin sig_dgwb_last_state.s_idle 
+sig_dgwb_last_state.s_idle 0 0 0 0 0 0 0 0 0 0 0 
+sig_dgwb_last_state.s_wait_admin 0 0 0 0 0 0 0 0 0 1 1 
+sig_dgwb_last_state.s_write_btp 0 0 0 0 0 0 0 0 1 0 1 
+sig_dgwb_last_state.s_write_ones 0 0 0 0 0 0 0 1 0 0 1 
+sig_dgwb_last_state.s_write_zeros 0 0 0 0 0 0 1 0 0 0 1 
+sig_dgwb_last_state.s_write_mtp 0 0 0 0 0 1 0 0 0 0 1 
+sig_dgwb_last_state.s_write_01_pairs 0 0 0 0 1 0 0 0 0 0 1 
+sig_dgwb_last_state.s_write_1100_step 0 0 0 1 0 0 0 0 0 0 1 
+sig_dgwb_last_state.s_write_0011_step 0 0 1 0 0 0 0 0 0 0 1 
+sig_dgwb_last_state.s_write_wlat 0 1 0 0 0 0 0 0 0 0 1 
+sig_dgwb_last_state.s_release_admin 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgwb:dgwb|sig_dgwb_state
+Name sig_dgwb_state.s_release_admin sig_dgwb_state.s_write_wlat sig_dgwb_state.s_write_0011_step sig_dgwb_state.s_write_1100_step sig_dgwb_state.s_write_01_pairs sig_dgwb_state.s_write_mtp sig_dgwb_state.s_write_zeros sig_dgwb_state.s_write_ones sig_dgwb_state.s_write_btp sig_dgwb_state.s_wait_admin sig_dgwb_state.s_idle 
+sig_dgwb_state.s_idle 0 0 0 0 0 0 0 0 0 0 0 
+sig_dgwb_state.s_wait_admin 0 0 0 0 0 0 0 0 0 1 1 
+sig_dgwb_state.s_write_btp 0 0 0 0 0 0 0 0 1 0 1 
+sig_dgwb_state.s_write_ones 0 0 0 0 0 0 0 1 0 0 1 
+sig_dgwb_state.s_write_zeros 0 0 0 0 0 0 1 0 0 0 1 
+sig_dgwb_state.s_write_mtp 0 0 0 0 0 1 0 0 0 0 1 
+sig_dgwb_state.s_write_01_pairs 0 0 0 0 1 0 0 0 0 0 1 
+sig_dgwb_state.s_write_1100_step 0 0 0 1 0 0 0 0 0 0 1 
+sig_dgwb_state.s_write_0011_step 0 0 1 0 0 0 0 0 0 0 1 
+sig_dgwb_state.s_write_wlat 0 1 0 0 0 0 0 0 0 0 1 
+sig_dgwb_state.s_release_admin 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgrb:dgrb|\ac_block:sig_addr_cmd_last_state
+Name \ac_block:sig_addr_cmd_last_state.s_ac_read_wd_lat \ac_block:sig_addr_cmd_last_state.s_ac_read_poa_mtp \ac_block:sig_addr_cmd_last_state.s_ac_read_rdv \ac_block:sig_addr_cmd_last_state.s_ac_read_mtp \ac_block:sig_addr_cmd_last_state.s_ac_relax \ac_block:sig_addr_cmd_last_state.s_ac_idle 
+\ac_block:sig_addr_cmd_last_state.s_ac_idle 0 0 0 0 0 0 
+\ac_block:sig_addr_cmd_last_state.s_ac_relax 0 0 0 0 1 1 
+\ac_block:sig_addr_cmd_last_state.s_ac_read_mtp 0 0 0 1 0 1 
+\ac_block:sig_addr_cmd_last_state.s_ac_read_rdv 0 0 1 0 0 1 
+\ac_block:sig_addr_cmd_last_state.s_ac_read_poa_mtp 0 1 0 0 0 1 
+\ac_block:sig_addr_cmd_last_state.s_ac_read_wd_lat 1 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgrb:dgrb|\ac_block:sig_addr_cmd_state
+Name \ac_block:sig_addr_cmd_state.s_ac_read_wd_lat \ac_block:sig_addr_cmd_state.s_ac_read_poa_mtp \ac_block:sig_addr_cmd_state.s_ac_read_rdv \ac_block:sig_addr_cmd_state.s_ac_read_mtp \ac_block:sig_addr_cmd_state.s_ac_relax \ac_block:sig_addr_cmd_state.s_ac_idle 
+\ac_block:sig_addr_cmd_state.s_ac_idle 0 0 0 0 0 0 
+\ac_block:sig_addr_cmd_state.s_ac_relax 0 0 0 0 1 1 
+\ac_block:sig_addr_cmd_state.s_ac_read_mtp 0 0 0 1 0 1 
+\ac_block:sig_addr_cmd_state.s_ac_read_rdv 0 0 1 0 0 1 
+\ac_block:sig_addr_cmd_state.s_ac_read_poa_mtp 0 1 0 0 0 1 
+\ac_block:sig_addr_cmd_state.s_ac_read_wd_lat 1 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgrb:dgrb|\trk_block:sig_trk_last_state
+Name \trk_block:sig_trk_last_state.s_trk_complete \trk_block:sig_trk_last_state.s_trk_adjust_resync \trk_block:sig_trk_last_state.s_trk_cdvw_drift \trk_block:sig_trk_last_state.s_trk_cdvw_wait \trk_block:sig_trk_last_state.s_trk_cdvw_calc \trk_block:sig_trk_last_state.s_trk_next_phase \trk_block:sig_trk_last_state.s_trk_mimic_sample \trk_block:sig_trk_last_state.s_trk_idle \trk_block:sig_trk_last_state.s_trk_init 
+\trk_block:sig_trk_last_state.s_trk_init 0 0 0 0 0 0 0 0 0 
+\trk_block:sig_trk_last_state.s_trk_idle 0 0 0 0 0 0 0 1 1 
+\trk_block:sig_trk_last_state.s_trk_mimic_sample 0 0 0 0 0 0 1 0 1 
+\trk_block:sig_trk_last_state.s_trk_next_phase 0 0 0 0 0 1 0 0 1 
+\trk_block:sig_trk_last_state.s_trk_cdvw_calc 0 0 0 0 1 0 0 0 1 
+\trk_block:sig_trk_last_state.s_trk_cdvw_wait 0 0 0 1 0 0 0 0 1 
+\trk_block:sig_trk_last_state.s_trk_cdvw_drift 0 0 1 0 0 0 0 0 1 
+\trk_block:sig_trk_last_state.s_trk_adjust_resync 0 1 0 0 0 0 0 0 1 
+\trk_block:sig_trk_last_state.s_trk_complete 1 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgrb:dgrb|\trk_block:sig_trk_state
+Name \trk_block:sig_trk_state.s_trk_complete \trk_block:sig_trk_state.s_trk_adjust_resync \trk_block:sig_trk_state.s_trk_cdvw_drift \trk_block:sig_trk_state.s_trk_cdvw_wait \trk_block:sig_trk_state.s_trk_cdvw_calc \trk_block:sig_trk_state.s_trk_next_phase \trk_block:sig_trk_state.s_trk_mimic_sample \trk_block:sig_trk_state.s_trk_idle \trk_block:sig_trk_state.s_trk_init 
+\trk_block:sig_trk_state.s_trk_init 0 0 0 0 0 0 0 0 0 
+\trk_block:sig_trk_state.s_trk_idle 0 0 0 0 0 0 0 1 1 
+\trk_block:sig_trk_state.s_trk_mimic_sample 0 0 0 0 0 0 1 0 1 
+\trk_block:sig_trk_state.s_trk_next_phase 0 0 0 0 0 1 0 0 1 
+\trk_block:sig_trk_state.s_trk_cdvw_calc 0 0 0 0 1 0 0 0 1 
+\trk_block:sig_trk_state.s_trk_cdvw_wait 0 0 0 1 0 0 0 0 1 
+\trk_block:sig_trk_state.s_trk_cdvw_drift 0 0 1 0 0 0 0 0 1 
+\trk_block:sig_trk_state.s_trk_adjust_resync 0 1 0 0 0 0 0 0 1 
+\trk_block:sig_trk_state.s_trk_complete 1 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgrb:dgrb|\rsc_block:sig_rsc_last_state
+Name \rsc_block:sig_rsc_last_state.s_rsc_wait_iram \rsc_block:sig_rsc_last_state.s_rsc_seek_cdvw \rsc_block:sig_rsc_last_state.s_rsc_cdvw_wait \rsc_block:sig_rsc_last_state.s_rsc_cdvw_calc \rsc_block:sig_rsc_last_state.s_rsc_rewind_phase \rsc_block:sig_rsc_last_state.s_rsc_reset_cdvw \rsc_block:sig_rsc_last_state.s_rsc_test_dq \rsc_block:sig_rsc_last_state.s_rsc_flush_datapath \rsc_block:sig_rsc_last_state.s_rsc_wait_for_idle_dimm \rsc_block:sig_rsc_last_state.s_rsc_test_phase \rsc_block:sig_rsc_last_state.s_rsc_next_phase \rsc_block:sig_rsc_last_state.s_rsc_idle 
+\rsc_block:sig_rsc_last_state.s_rsc_idle 0 0 0 0 0 0 0 0 0 0 0 0 
+\rsc_block:sig_rsc_last_state.s_rsc_next_phase 0 0 0 0 0 0 0 0 0 0 1 1 
+\rsc_block:sig_rsc_last_state.s_rsc_test_phase 0 0 0 0 0 0 0 0 0 1 0 1 
+\rsc_block:sig_rsc_last_state.s_rsc_wait_for_idle_dimm 0 0 0 0 0 0 0 0 1 0 0 1 
+\rsc_block:sig_rsc_last_state.s_rsc_flush_datapath 0 0 0 0 0 0 0 1 0 0 0 1 
+\rsc_block:sig_rsc_last_state.s_rsc_test_dq 0 0 0 0 0 0 1 0 0 0 0 1 
+\rsc_block:sig_rsc_last_state.s_rsc_reset_cdvw 0 0 0 0 0 1 0 0 0 0 0 1 
+\rsc_block:sig_rsc_last_state.s_rsc_rewind_phase 0 0 0 0 1 0 0 0 0 0 0 1 
+\rsc_block:sig_rsc_last_state.s_rsc_cdvw_calc 0 0 0 1 0 0 0 0 0 0 0 1 
+\rsc_block:sig_rsc_last_state.s_rsc_cdvw_wait 0 0 1 0 0 0 0 0 0 0 0 1 
+\rsc_block:sig_rsc_last_state.s_rsc_seek_cdvw 0 1 0 0 0 0 0 0 0 0 0 1 
+\rsc_block:sig_rsc_last_state.s_rsc_wait_iram 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgrb:dgrb|\rsc_block:sig_rsc_state
+Name \rsc_block:sig_rsc_state.s_rsc_wait_iram \rsc_block:sig_rsc_state.s_rsc_seek_cdvw \rsc_block:sig_rsc_state.s_rsc_cdvw_wait \rsc_block:sig_rsc_state.s_rsc_cdvw_calc \rsc_block:sig_rsc_state.s_rsc_rewind_phase \rsc_block:sig_rsc_state.s_rsc_reset_cdvw \rsc_block:sig_rsc_state.s_rsc_test_dq \rsc_block:sig_rsc_state.s_rsc_flush_datapath \rsc_block:sig_rsc_state.s_rsc_wait_for_idle_dimm \rsc_block:sig_rsc_state.s_rsc_test_phase \rsc_block:sig_rsc_state.s_rsc_next_phase \rsc_block:sig_rsc_state.s_rsc_idle 
+\rsc_block:sig_rsc_state.s_rsc_idle 0 0 0 0 0 0 0 0 0 0 0 0 
+\rsc_block:sig_rsc_state.s_rsc_next_phase 0 0 0 0 0 0 0 0 0 0 1 1 
+\rsc_block:sig_rsc_state.s_rsc_test_phase 0 0 0 0 0 0 0 0 0 1 0 1 
+\rsc_block:sig_rsc_state.s_rsc_wait_for_idle_dimm 0 0 0 0 0 0 0 0 1 0 0 1 
+\rsc_block:sig_rsc_state.s_rsc_flush_datapath 0 0 0 0 0 0 0 1 0 0 0 1 
+\rsc_block:sig_rsc_state.s_rsc_test_dq 0 0 0 0 0 0 1 0 0 0 0 1 
+\rsc_block:sig_rsc_state.s_rsc_reset_cdvw 0 0 0 0 0 1 0 0 0 0 0 1 
+\rsc_block:sig_rsc_state.s_rsc_rewind_phase 0 0 0 0 1 0 0 0 0 0 0 1 
+\rsc_block:sig_rsc_state.s_rsc_cdvw_calc 0 0 0 1 0 0 0 0 0 0 0 1 
+\rsc_block:sig_rsc_state.s_rsc_cdvw_wait 0 0 1 0 0 0 0 0 0 0 0 1 
+\rsc_block:sig_rsc_state.s_rsc_seek_cdvw 0 1 0 0 0 0 0 0 0 0 0 1 
+\rsc_block:sig_rsc_state.s_rsc_wait_iram 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgrb:dgrb|sig_cdvw_state.status
+Name sig_cdvw_state.status.calculating sig_cdvw_state.status.multiple_equal_windows sig_cdvw_state.status.no_invalid_phases sig_cdvw_state.status.valid_result sig_cdvw_state.status.no_valid_phases 
+sig_cdvw_state.status.no_valid_phases 0 0 0 0 0 
+sig_cdvw_state.status.valid_result 0 0 0 1 1 
+sig_cdvw_state.status.no_invalid_phases 0 0 1 0 1 
+sig_cdvw_state.status.multiple_equal_windows 0 1 0 0 1 
+sig_cdvw_state.status.calculating 1 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgrb:dgrb|\cdvw_block:cdvw_proc:v_cdvw_state.status
+Name \cdvw_block:cdvw_proc:v_cdvw_state.status.no_valid_phases \cdvw_block:cdvw_proc:v_cdvw_state.status.multiple_equal_windows \cdvw_block:cdvw_proc:v_cdvw_state.status.no_invalid_phases \cdvw_block:cdvw_proc:v_cdvw_state.status.valid_result \cdvw_block:cdvw_proc:v_cdvw_state.status.calculating 
+\cdvw_block:cdvw_proc:v_cdvw_state.status.calculating 0 0 0 0 0 
+\cdvw_block:cdvw_proc:v_cdvw_state.status.valid_result 0 0 0 1 1 
+\cdvw_block:cdvw_proc:v_cdvw_state.status.no_invalid_phases 0 0 1 0 1 
+\cdvw_block:cdvw_proc:v_cdvw_state.status.multiple_equal_windows 0 1 0 0 1 
+\cdvw_block:cdvw_proc:v_cdvw_state.status.no_valid_phases 1 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgrb:dgrb|sig_rsc_req
+Name sig_rsc_req.s_rsc_wait_iram sig_rsc_req.s_rsc_seek_cdvw sig_rsc_req.s_rsc_cdvw_wait sig_rsc_req.s_rsc_cdvw_calc sig_rsc_req.s_rsc_rewind_phase sig_rsc_req.s_rsc_reset_cdvw sig_rsc_req.s_rsc_test_dq sig_rsc_req.s_rsc_flush_datapath sig_rsc_req.s_rsc_wait_for_idle_dimm sig_rsc_req.s_rsc_test_phase sig_rsc_req.s_rsc_next_phase sig_rsc_req.s_rsc_idle 
+sig_rsc_req.s_rsc_idle 0 0 0 0 0 0 0 0 0 0 0 0 
+sig_rsc_req.s_rsc_next_phase 0 0 0 0 0 0 0 0 0 0 1 1 
+sig_rsc_req.s_rsc_test_phase 0 0 0 0 0 0 0 0 0 1 0 1 
+sig_rsc_req.s_rsc_wait_for_idle_dimm 0 0 0 0 0 0 0 0 1 0 0 1 
+sig_rsc_req.s_rsc_flush_datapath 0 0 0 0 0 0 0 1 0 0 0 1 
+sig_rsc_req.s_rsc_test_dq 0 0 0 0 0 0 1 0 0 0 0 1 
+sig_rsc_req.s_rsc_reset_cdvw 0 0 0 0 0 1 0 0 0 0 0 1 
+sig_rsc_req.s_rsc_rewind_phase 0 0 0 0 1 0 0 0 0 0 0 1 
+sig_rsc_req.s_rsc_cdvw_calc 0 0 0 1 0 0 0 0 0 0 0 1 
+sig_rsc_req.s_rsc_cdvw_wait 0 0 1 0 0 0 0 0 0 0 0 1 
+sig_rsc_req.s_rsc_seek_cdvw 0 1 0 0 0 0 0 0 0 0 0 1 
+sig_rsc_req.s_rsc_wait_iram 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgrb:dgrb|sig_ac_req
+Name sig_ac_req.s_ac_read_wd_lat sig_ac_req.s_ac_read_poa_mtp sig_ac_req.s_ac_read_rdv sig_ac_req.s_ac_read_mtp sig_ac_req.s_ac_relax sig_ac_req.s_ac_idle 
+sig_ac_req.s_ac_idle 0 0 0 0 0 0 
+sig_ac_req.s_ac_relax 0 0 0 0 1 1 
+sig_ac_req.s_ac_read_mtp 0 0 0 1 0 1 
+sig_ac_req.s_ac_read_rdv 0 0 1 0 0 1 
+sig_ac_req.s_ac_read_poa_mtp 0 1 0 0 0 1 
+sig_ac_req.s_ac_read_wd_lat 1 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgrb:dgrb|sig_dgrb_last_state
+Name sig_dgrb_last_state.s_track sig_dgrb_last_state.s_poa_cal sig_dgrb_last_state.s_adv_wd_lat sig_dgrb_last_state.s_adv_rd_lat sig_dgrb_last_state.s_adv_rd_lat_setup sig_dgrb_last_state.s_rdata_valid_align sig_dgrb_last_state.s_seek_cdvw sig_dgrb_last_state.s_read_mtp sig_dgrb_last_state.s_test_phases sig_dgrb_last_state.s_reset_cdvw sig_dgrb_last_state.s_release_admin sig_dgrb_last_state.s_wait_admin sig_dgrb_last_state.s_idle 
+sig_dgrb_last_state.s_idle 0 0 0 0 0 0 0 0 0 0 0 0 0 
+sig_dgrb_last_state.s_wait_admin 0 0 0 0 0 0 0 0 0 0 0 1 1 
+sig_dgrb_last_state.s_release_admin 0 0 0 0 0 0 0 0 0 0 1 0 1 
+sig_dgrb_last_state.s_reset_cdvw 0 0 0 0 0 0 0 0 0 1 0 0 1 
+sig_dgrb_last_state.s_test_phases 0 0 0 0 0 0 0 0 1 0 0 0 1 
+sig_dgrb_last_state.s_read_mtp 0 0 0 0 0 0 0 1 0 0 0 0 1 
+sig_dgrb_last_state.s_seek_cdvw 0 0 0 0 0 0 1 0 0 0 0 0 1 
+sig_dgrb_last_state.s_rdata_valid_align 0 0 0 0 0 1 0 0 0 0 0 0 1 
+sig_dgrb_last_state.s_adv_rd_lat_setup 0 0 0 0 1 0 0 0 0 0 0 0 1 
+sig_dgrb_last_state.s_adv_rd_lat 0 0 0 1 0 0 0 0 0 0 0 0 1 
+sig_dgrb_last_state.s_adv_wd_lat 0 0 1 0 0 0 0 0 0 0 0 0 1 
+sig_dgrb_last_state.s_poa_cal 0 1 0 0 0 0 0 0 0 0 0 0 1 
+sig_dgrb_last_state.s_track 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgrb:dgrb|sig_dgrb_state
+Name sig_dgrb_state.s_track sig_dgrb_state.s_poa_cal sig_dgrb_state.s_adv_wd_lat sig_dgrb_state.s_adv_rd_lat sig_dgrb_state.s_adv_rd_lat_setup sig_dgrb_state.s_rdata_valid_align sig_dgrb_state.s_seek_cdvw sig_dgrb_state.s_read_mtp sig_dgrb_state.s_test_phases sig_dgrb_state.s_reset_cdvw sig_dgrb_state.s_release_admin sig_dgrb_state.s_wait_admin sig_dgrb_state.s_idle 
+sig_dgrb_state.s_idle 0 0 0 0 0 0 0 0 0 0 0 0 0 
+sig_dgrb_state.s_wait_admin 0 0 0 0 0 0 0 0 0 0 0 1 1 
+sig_dgrb_state.s_release_admin 0 0 0 0 0 0 0 0 0 0 1 0 1 
+sig_dgrb_state.s_reset_cdvw 0 0 0 0 0 0 0 0 0 1 0 0 1 
+sig_dgrb_state.s_test_phases 0 0 0 0 0 0 0 0 1 0 0 0 1 
+sig_dgrb_state.s_read_mtp 0 0 0 0 0 0 0 1 0 0 0 0 1 
+sig_dgrb_state.s_seek_cdvw 0 0 0 0 0 0 1 0 0 0 0 0 1 
+sig_dgrb_state.s_rdata_valid_align 0 0 0 0 0 1 0 0 0 0 0 0 1 
+sig_dgrb_state.s_adv_rd_lat_setup 0 0 0 0 1 0 0 0 0 0 0 0 1 
+sig_dgrb_state.s_adv_rd_lat 0 0 0 1 0 0 0 0 0 0 0 0 1 
+sig_dgrb_state.s_adv_wd_lat 0 0 1 0 0 0 0 0 0 0 0 0 1 
+sig_dgrb_state.s_poa_cal 0 1 0 0 0 0 0 0 0 0 0 0 1 
+sig_dgrb_state.s_track 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_dgrb:dgrb|ctrl_dgrb_r.command
+Name ctrl_dgrb_r.command.cmd_tr_due ctrl_dgrb_r.command.cmd_prep_customer_mr_setup ctrl_dgrb_r.command.cmd_prep_adv_wr_lat ctrl_dgrb_r.command.cmd_prep_adv_rd_lat ctrl_dgrb_r.command.cmd_was ctrl_dgrb_r.command.cmd_poa ctrl_dgrb_r.command.cmd_rdv ctrl_dgrb_r.command.cmd_rrp_seek ctrl_dgrb_r.command.cmd_rrp_sweep ctrl_dgrb_r.command.cmd_rrp_reset ctrl_dgrb_r.command.cmd_read_mtp ctrl_dgrb_r.command.cmd_write_mtp ctrl_dgrb_r.command.cmd_write_btp ctrl_dgrb_r.command.cmd_write_ihi ctrl_dgrb_r.command.cmd_prog_cal_mr ctrl_dgrb_r.command.cmd_init_dram ctrl_dgrb_r.command.cmd_phy_initialise ctrl_dgrb_r.command.cmd_idle 
+ctrl_dgrb_r.command.cmd_idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+ctrl_dgrb_r.command.cmd_phy_initialise 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+ctrl_dgrb_r.command.cmd_init_dram 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+ctrl_dgrb_r.command.cmd_prog_cal_mr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+ctrl_dgrb_r.command.cmd_write_ihi 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+ctrl_dgrb_r.command.cmd_write_btp 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+ctrl_dgrb_r.command.cmd_write_mtp 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+ctrl_dgrb_r.command.cmd_read_mtp 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+ctrl_dgrb_r.command.cmd_rrp_reset 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+ctrl_dgrb_r.command.cmd_rrp_sweep 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+ctrl_dgrb_r.command.cmd_rrp_seek 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+ctrl_dgrb_r.command.cmd_rdv 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_dgrb_r.command.cmd_poa 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_dgrb_r.command.cmd_was 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_dgrb_r.command.cmd_prep_adv_rd_lat 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_dgrb_r.command.cmd_prep_adv_wr_lat 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_dgrb_r.command.cmd_prep_customer_mr_setup 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_dgrb_r.command.cmd_tr_due 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_admin:admin|nop_toggle_signal
+Name nop_toggle_signal.rst_n nop_toggle_signal.odt nop_toggle_signal.cs_n nop_toggle_signal.cke nop_toggle_signal.we_n nop_toggle_signal.ras_n nop_toggle_signal.cas_n nop_toggle_signal.ba nop_toggle_signal.addr 
+nop_toggle_signal.addr 0 0 0 0 0 0 0 0 0 
+nop_toggle_signal.ba 0 0 0 0 0 0 0 1 1 
+nop_toggle_signal.cas_n 0 0 0 0 0 0 1 0 1 
+nop_toggle_signal.ras_n 0 0 0 0 0 1 0 0 1 
+nop_toggle_signal.we_n 0 0 0 0 1 0 0 0 1 
+nop_toggle_signal.cke 0 0 0 1 0 0 0 0 1 
+nop_toggle_signal.cs_n 0 0 1 0 0 0 0 0 1 
+nop_toggle_signal.odt 0 1 0 0 0 0 0 0 1 
+nop_toggle_signal.rst_n 1 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_admin:admin|ac_state
+Name ac_state.s_14 ac_state.s_13 ac_state.s_12 ac_state.s_11 ac_state.s_10 ac_state.s_9 ac_state.s_8 ac_state.s_7 ac_state.s_6 ac_state.s_5 ac_state.s_4 ac_state.s_3 ac_state.s_2 ac_state.s_1 ac_state.s_0 
+ac_state.s_0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+ac_state.s_1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+ac_state.s_2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+ac_state.s_3 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+ac_state.s_4 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+ac_state.s_5 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+ac_state.s_6 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+ac_state.s_7 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+ac_state.s_8 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+ac_state.s_9 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+ac_state.s_10 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+ac_state.s_11 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+ac_state.s_12 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+ac_state.s_13 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ac_state.s_14 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_admin:admin|state
+Name state.s_non_operational state.s_refresh_done state.s_refresh state.s_dummy_wait state.s_prog_user_mrs state.s_access_precharge state.s_access state.s_access_act state.s_zq_cal_short state.s_topup_refresh_done state.s_topup_refresh state.s_idle state.s_program_cal_mrs state.s_run_init_seq state.s_reset 
+state.s_reset 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.s_run_init_seq 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.s_program_cal_mrs 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.s_idle 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.s_topup_refresh 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.s_topup_refresh_done 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.s_zq_cal_short 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.s_access_act 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.s_access 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.s_access_precharge 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.s_prog_user_mrs 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.s_dummy_wait 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.s_refresh 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.s_refresh_done 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.s_non_operational 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_seq_wrapper:seq_wrapper|ddr2_phy_alt_mem_phy_seq:seq_inst|ddr2_phy_alt_mem_phy_admin:admin|ctrl_rec.command
+Name ctrl_rec.command.cmd_tr_due ctrl_rec.command.cmd_prep_customer_mr_setup ctrl_rec.command.cmd_prep_adv_wr_lat ctrl_rec.command.cmd_prep_adv_rd_lat ctrl_rec.command.cmd_was ctrl_rec.command.cmd_poa ctrl_rec.command.cmd_rdv ctrl_rec.command.cmd_rrp_seek ctrl_rec.command.cmd_rrp_sweep ctrl_rec.command.cmd_rrp_reset ctrl_rec.command.cmd_read_mtp ctrl_rec.command.cmd_write_mtp ctrl_rec.command.cmd_write_btp ctrl_rec.command.cmd_write_ihi ctrl_rec.command.cmd_prog_cal_mr ctrl_rec.command.cmd_init_dram ctrl_rec.command.cmd_phy_initialise ctrl_rec.command.cmd_idle 
+ctrl_rec.command.cmd_idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+ctrl_rec.command.cmd_phy_initialise 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+ctrl_rec.command.cmd_init_dram 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+ctrl_rec.command.cmd_prog_cal_mr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+ctrl_rec.command.cmd_write_ihi 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+ctrl_rec.command.cmd_write_btp 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+ctrl_rec.command.cmd_write_mtp 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+ctrl_rec.command.cmd_read_mtp 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+ctrl_rec.command.cmd_rrp_reset 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+ctrl_rec.command.cmd_rrp_sweep 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+ctrl_rec.command.cmd_rrp_seek 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+ctrl_rec.command.cmd_rdv 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_rec.command.cmd_poa 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_rec.command.cmd_was 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_rec.command.cmd_prep_adv_rd_lat 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_rec.command.cmd_prep_adv_wr_lat 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_rec.command.cmd_prep_customer_mr_setup 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_rec.command.cmd_tr_due 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_alt_mem_ddrx_controller_top:ddr2_alt_mem_ddrx_controller_top_inst|alt_mem_ddrx_controller_st_top:controller_inst|alt_mem_ddrx_controller:controller_inst|alt_mem_ddrx_cmd_gen:cmd_gen_inst|ecc_state_sm
+Name ecc_state_sm.FULL_RD ecc_state_sm.0100 ecc_state_sm.FULL_WR ecc_state_sm.PARWR_WR ecc_state_sm.0001 ecc_state_sm.IDLE ecc_state_sm.CORRECT_WR 
+ecc_state_sm.IDLE 0 0 0 0 0 0 0 
+ecc_state_sm.0001 0 0 0 0 1 1 0 
+ecc_state_sm.PARWR_WR 0 0 0 1 0 1 0 
+ecc_state_sm.FULL_WR 0 0 1 0 0 1 0 
+ecc_state_sm.0100 0 1 0 0 0 1 0 
+ecc_state_sm.FULL_RD 1 0 0 0 0 1 0 
+ecc_state_sm.CORRECT_WR 0 0 0 0 0 1 1 
+
+State Machine - |lms7_uStream_trx_top|pll_ps_cntrl:inst10|state
+Name state.s5 state.s4 state.s3 state.s2 state.s0 state.s1 
+state.s1 0 0 0 0 0 0 
+state.s0 0 0 0 0 1 1 
+state.s2 0 0 0 1 0 1 
+state.s3 0 0 1 0 0 1 
+state.s4 0 1 0 0 0 1 
+state.s5 1 0 0 0 0 1 
+
+State Machine - |lms7_uStream_trx_top|config_ctrl:inst11|state_r
+Name state_r.w1 state_r.s1 state_r.w0 state_r.s0 state_r.idle 
+state_r.idle 0 0 0 0 0 
+state_r.s0 0 0 0 1 1 
+state_r.w0 0 0 1 0 1 
+state_r.s1 0 1 0 0 1 
+state_r.w1 1 0 0 0 1 

@@ -1,0 +1,93 @@
+Drill report for C:\Users\Jurij\Desktop\Stream_v2\KiCad Design Files\Stream.kicad_pcb
+Created on 10/02/2015 04:29:27
+Drill report for plated through holes :
+T1  0.20mm  0.008"  (1980 holes)
+T2  0.30mm  0.012"  (535 holes)
+T3  0.80mm  0.031"  (6 holes)
+T4  0.80mm  0.032"  (5 holes)  (with 5 slots)
+T5  0.81mm  0.032"  (5 holes)
+T6  0.90mm  0.035"  (2 holes)
+T7  0.90mm  0.035"  (8 holes)
+T8  1.00mm  0.039"  (12 holes)
+T9  1.27mm  0.050"  (5 holes)
+T10  1.30mm  0.051"  (4 holes)
+T11  1.57mm  0.062"  (2 holes)
+T12  1.60mm  0.063"  (8 holes)
+T13  1.65mm  0.065"  (3 holes)
+T14  1.70mm  0.067"  (2 holes)  (with 2 slots)
+T15  2.00mm  0.079"  (1 hole)
+T16  2.70mm  0.106"  (2 holes)
+T17  3.00mm  0.118"  (4 holes)
+T18  3.20mm  0.126"  (4 holes)
+T19  3.25mm  0.128"  (2 holes)
+
+Total plated holes count 2590
+
+
+Drill report for buried and blind vias :
+
+Drill report for holes from layer B.Cu to layer Inner1.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner1.Cu to layer Inner2.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner2.Cu to layer Inner3.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner3.Cu to layer Inner4.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner4.Cu to layer Inner5.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner5.Cu to layer Inner6.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner6.Cu to layer Inner7.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner7.Cu to layer Inner8.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner8.Cu to layer Inner9.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner9.Cu to layer Inner10.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner10.Cu to layer F.Cu :
+
+Total plated holes count 0
+
+
+Drill report for unplated through holes :
+T1  0.90mm  0.035"  (37 holes)
+T2  1.10mm  0.043"  (1 hole)
+T3  1.20mm  0.047"  (1 hole)
+T4  1.27mm  0.050"  (2 holes)
+T5  2.00mm  0.079"  (2 holes)
+
+Total unplated holes count 43
+
+

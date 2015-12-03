@@ -1,0 +1,112 @@
+EDA Netlist Writer report for lms7_ustream_trx
+Thu Oct 29 21:33:48 2015
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. EDA Netlist Writer Summary
+  3. Simulation Settings
+  4. Simulation Generated Files
+  5. EDA Netlist Writer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------+
+; EDA Netlist Writer Summary                                        ;
++---------------------------+---------------------------------------+
+; EDA Netlist Writer Status ; Successful - Thu Oct 29 21:33:48 2015 ;
+; Revision Name             ; lms7_ustream_trx                      ;
+; Top-level Entity Name     ; lms7_uStream_trx_top                  ;
+; Family                    ; Cyclone IV E                          ;
+; Simulation Files Creation ; Successful                            ;
++---------------------------+---------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                        ;
++---------------------------------------------------------------------------------------------------+------------------------+
+; Option                                                                                            ; Setting                ;
++---------------------------------------------------------------------------------------------------+------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (VHDL) ;
+; Generate netlist for functional simulation only                                                   ; Off                    ;
+; Time scale                                                                                        ; 1 ps                   ;
+; Truncate long hierarchy paths                                                                     ; Off                    ;
+; Map illegal HDL characters                                                                        ; Off                    ;
+; Flatten buses into individual nodes                                                               ; Off                    ;
+; Maintain hierarchy                                                                                ; Off                    ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                    ;
+; Enable glitch filtering                                                                           ; Off                    ;
+; Do not write top level VHDL entity                                                                ; Off                    ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                    ;
+; Architecture name in VHDL output netlist                                                          ; structure              ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                    ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                    ;
++---------------------------------------------------------------------------------------------------+------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                                                              ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                                                                         ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/lms7_ustream_trx_8_1200mv_85c_slow.vho      ;
+; C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/lms7_ustream_trx_8_1200mv_0c_slow.vho       ;
+; C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/lms7_ustream_trx_min_1200mv_0c_fast.vho     ;
+; C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/lms7_ustream_trx.vho                        ;
+; C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/lms7_ustream_trx_8_1200mv_85c_vhd_slow.sdo  ;
+; C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/lms7_ustream_trx_8_1200mv_0c_vhd_slow.sdo   ;
+; C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/lms7_ustream_trx_min_1200mv_0c_vhd_fast.sdo ;
+; C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/lms7_ustream_trx_vhd.sdo                    ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------+
+; EDA Netlist Writer Messages ;
++-----------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit EDA Netlist Writer
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+    Info: Processing started: Thu Oct 29 21:33:36 2015
+Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off lms6usb_trx -c lms7_ustream_trx
+Info (204019): Generated file lms7_ustream_trx_8_1200mv_85c_slow.vho in folder "C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file lms7_ustream_trx_8_1200mv_0c_slow.vho in folder "C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file lms7_ustream_trx_min_1200mv_0c_fast.vho in folder "C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file lms7_ustream_trx.vho in folder "C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/" for EDA simulation tool
+Warning (200000): Double data rate (DDR) timing delays reported by third party timing simulation are preliminary. Run the TimeQuest Timing Analyzer for analyzing delays on paths through the DDR.
+Info (204019): Generated file lms7_ustream_trx_8_1200mv_85c_vhd_slow.sdo in folder "C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/" for EDA simulation tool
+Warning (200000): Double data rate (DDR) timing delays reported by third party timing simulation are preliminary. Run the TimeQuest Timing Analyzer for analyzing delays on paths through the DDR.
+Info (204019): Generated file lms7_ustream_trx_8_1200mv_0c_vhd_slow.sdo in folder "C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/" for EDA simulation tool
+Warning (200000): Double data rate (DDR) timing delays reported by third party timing simulation are preliminary. Run the TimeQuest Timing Analyzer for analyzing delays on paths through the DDR.
+Info (204019): Generated file lms7_ustream_trx_min_1200mv_0c_vhd_fast.sdo in folder "C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/" for EDA simulation tool
+Warning (200000): Double data rate (DDR) timing delays reported by third party timing simulation are preliminary. Run the TimeQuest Timing Analyzer for analyzing delays on paths through the DDR.
+Info (204019): Generated file lms7_ustream_trx_vhd.sdo in folder "C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/simulation/modelsim/" for EDA simulation tool
+Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 684 megabytes
+    Info: Processing ended: Thu Oct 29 21:33:48 2015
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:11
+
+

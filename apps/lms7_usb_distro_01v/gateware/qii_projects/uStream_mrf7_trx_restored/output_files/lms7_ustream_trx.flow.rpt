@@ -1,0 +1,195 @@
+Flow report for lms7_ustream_trx
+Thu Oct 29 21:33:48 2015
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Flow Summary                                                                    ;
++------------------------------------+--------------------------------------------+
+; Flow Status                        ; Successful - Thu Oct 29 21:33:48 2015      ;
+; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Web Edition ;
+; Revision Name                      ; lms7_ustream_trx                           ;
+; Top-level Entity Name              ; lms7_uStream_trx_top                       ;
+; Family                             ; Cyclone IV E                               ;
+; Device                             ; EP4CE10F17C8                               ;
+; Timing Models                      ; Final                                      ;
+; Total logic elements               ; 6,735 / 10,320 ( 65 % )                    ;
+;     Total combinational functions  ; 5,795 / 10,320 ( 56 % )                    ;
+;     Dedicated logic registers      ; 3,911 / 10,320 ( 38 % )                    ;
+; Total registers                    ; 4035                                       ;
+; Total pins                         ; 136 / 180 ( 76 % )                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 135,152 / 423,936 ( 32 % )                 ;
+; Embedded Multiplier 9-bit elements ; 0 / 46 ( 0 % )                             ;
+; Total PLLs                         ; 2 / 2 ( 100 % )                            ;
++------------------------------------+--------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 10/29/2015 21:30:08 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; lms7_ustream_trx    ;
++-------------------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                           ;
++-------------------------------------+-----------------------------------------------------------+------------------+----------------------+----------------+
+; Assignment Name                     ; Value                                                     ; Default Value    ; Entity Name          ; Section Id     ;
++-------------------------------------+-----------------------------------------------------------+------------------+----------------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 53027344507982.144615420800536                            ; --               ; --                   ; --             ;
+; EDA_DESIGN_EXTRA_ALTERA_SIM_LIB     ; cycloneiii                                                ; --               ; --                   ; eda_simulation ;
+; EDA_DESIGN_EXTRA_ALTERA_SIM_LIB     ; cycloneiii                                                ; --               ; --                   ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                      ; --               ; --                   ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                    ; <None>           ; --                   ; --             ;
+; ENABLE_SIGNALTAP                    ; Off                                                       ; --               ; --                   ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                        ; --               ; --                   ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                         ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/clkctrl/clkctrl/synthesis/../clkctrl.cmp               ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/clkctrl/clkctrl/synthesis/../../clkctrl.qsys           ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2.vhd                                          ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2.cmp                                          ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2.bsf                                          ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2.qip                                          ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_example_driver.vhdl                          ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_example_top.vhdl                             ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_ex_lfsr8.vhdl                                ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/testbench/ddr2_example_top_tb.vhdl                ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/testbench/ddr2_mem_model.vhdl                     ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/testbench/ddr2_full_mem_model.vhdl                ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_pin_assignments.tcl                          ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy.vhd                                      ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy.cmp                                      ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy.bsf                                      ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy.qip                                      ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy_alt_mem_phy_seq_wrapper.v                ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy_alt_mem_phy_seq.vhd                      ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy_alt_mem_phy.v                            ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy_alt_mem_phy_pll.vhd                      ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy_pin_assignments.tcl                      ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy_ddr_pins.tcl                             ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy_report_timing.tcl                        ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy_report_timing_core.tcl                   ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy_ddr_timing.tcl                           ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy_alt_mem_phy_pll.cmp                      ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/alt_mem_phy_defines.v                             ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddr2/ddr2_phy.ppf                                      ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/pll2/pll2.bsf                                          ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/pll2/pll2.cmp                                          ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/pll2/pll2.ppf                                          ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddrox1/ddrox1.bsf                                      ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddrox1/ddrox1_inst.vhd                                 ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddrox1/ddrox1.inc                                      ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddrox1/ddrox1.cmp                                      ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/ddrox1/ddrox1.ppf                                      ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/trxdfifo/trxdfifo.cmp                                  ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/fifo_16to32/fifo_16to32.bsf                            ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/fifo_16to32/fifo_16to32.cmp                            ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/fifo_32to16/fifo_32to16.bsf                            ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/fifo_32to16/fifo_32to16.cmp                            ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/pll_reconfig_module/pll_reconfig_module.bsf            ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/pll_reconfig_module/pll_reconfig_module.cmp            ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/iobuff/iobuff.bsf                                      ; --               ; --                   ; --             ;
+; MISC_FILE                           ; ip/iobuff/iobuff.cmp                                      ; --               ; --                   ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                         ; --               ; --                   ; --             ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                         ; --               ; --                   ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                                ; --               ; --                   ; --             ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                                ; --               ; --                   ; --             ;
+; PARTITION_COLOR                     ; 16764057                                                  ; --               ; lms7_uStream_trx_top ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                     ; --               ; lms7_uStream_trx_top ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                    ; --               ; lms7_uStream_trx_top ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                       ; --               ; --                   ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                     ; --               ; --                   ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                              ; --               ; --                   ; --             ;
+; SEARCH_PATH                         ; ip/ddr2/.                                                 ; --               ; --                   ; --             ;
+; SEARCH_PATH                         ; ip/ddr2/ddr2_high_performance_controller-library          ; --               ; --                   ; --             ;
+; SEARCH_PATH                         ; ip/ddr2/.                                                 ; --               ; --                   ; --             ;
+; SEARCH_PATH                         ; ip/ddr2/altmemphy-library                                 ; --               ; --                   ; --             ;
+; SEARCH_PATH                         ; ip/                                                       ; --               ; --                   ; --             ;
+; SEARCH_PATH                         ; src/                                                      ; --               ; --                   ; --             ;
+; SLD_FILE                            ; ip/clkctrl/clkctrl/synthesis/clkctrl.debuginfo            ; --               ; --                   ; --             ;
+; SLD_INFO                            ; QSYS_NAME clkctrl HAS_SOPCINFO 1 GENERATION_ID 1437726034 ; --               ; clkctrl              ; --             ;
+; SOPCINFO_FILE                       ; ip/clkctrl/clkctrl/synthesis/../../clkctrl.sopcinfo       ; --               ; --                   ; --             ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                        ; --               ; --                   ; --             ;
+; TOP_LEVEL_ENTITY                    ; lms7_uStream_trx_top                                      ; lms7_ustream_trx ; --                   ; --             ;
+; USE_SIGNALTAP_FILE                  ; signal_tap/pll_phase.stp                                  ; --               ; --                   ; --             ;
++-------------------------------------+-----------------------------------------------------------+------------------+----------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:01:18     ; 1.0                     ; 917 MB              ; 00:01:26                           ;
+; Fitter                    ; 00:01:24     ; 1.4                     ; 1262 MB             ; 00:01:35                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 638 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:21     ; 1.1                     ; 791 MB              ; 00:00:20                           ;
+; EDA Netlist Writer        ; 00:00:12     ; 1.0                     ; 684 MB              ; 00:00:11                           ;
+; Total                     ; 00:03:18     ; --                      ; --                  ; 00:03:34                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; Ignas            ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; Ignas            ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; Ignas            ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Ignas            ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; Ignas            ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off lms6usb_trx -c lms7_ustream_trx
+quartus_fit --read_settings_files=off --write_settings_files=off lms6usb_trx -c lms7_ustream_trx
+quartus_asm --read_settings_files=off --write_settings_files=off lms6usb_trx -c lms7_ustream_trx
+quartus_sta lms6usb_trx -c lms7_ustream_trx
+quartus_eda --read_settings_files=off --write_settings_files=off lms6usb_trx -c lms7_ustream_trx
+
+
+

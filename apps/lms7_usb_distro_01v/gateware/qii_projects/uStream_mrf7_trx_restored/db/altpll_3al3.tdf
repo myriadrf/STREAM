@@ -1,0 +1,150 @@
+--altpll bandwidth_type="AUTO" CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" clk0_divide_by=256 clk0_duty_cycle=50 clk0_multiply_by=625 clk0_phase_shift="0" clk1_divide_by=128 clk1_duty_cycle=50 clk1_multiply_by=625 clk1_phase_shift="0" clk2_divide_by=128 clk2_duty_cycle=50 clk2_multiply_by=625 clk2_phase_shift="-1667" clk3_divide_by=128 clk3_duty_cycle=50 clk3_multiply_by=625 clk3_phase_shift="0" clk4_divide_by=128 clk4_duty_cycle=50 clk4_multiply_by=625 clk4_phase_shift="0" compensate_clock="CLK1" device_family="Cyclone IV E" inclk0_input_frequency=32552 intended_device_family="Cyclone IV E" operation_mode="normal" pll_type="AUTO" port_clk0="PORT_USED" port_clk1="PORT_USED" port_clk2="PORT_USED" port_clk3="PORT_USED" port_clk4="PORT_USED" port_clk5="PORT_UNUSED" port_extclk0="PORT_UNUSED" port_extclk1="PORT_UNUSED" port_extclk2="PORT_UNUSED" port_extclk3="PORT_UNUSED" port_inclk1="PORT_UNUSED" port_phasecounterselect="PORT_USED" port_phasedone="PORT_USED" port_scandata="PORT_UNUSED" port_scandataout="PORT_UNUSED" self_reset_on_loss_lock="OFF" vco_frequency_control="MANUAL_PHASE" vco_phase_shift_step=119 width_clock=5 width_phasecounterselect=3 areset clk inclk locked phasecounterselect phasedone phasestep phaseupdown scanclk CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=48
+--VERSION_BEGIN 15.0 cbx_altclkbuf 2015:04:22:18:04:07:SJ cbx_altiobuf_bidir 2015:04:22:18:04:07:SJ cbx_altiobuf_in 2015:04:22:18:04:07:SJ cbx_altiobuf_out 2015:04:22:18:04:07:SJ cbx_altpll 2015:04:22:18:04:07:SJ cbx_cycloneii 2015:04:22:18:04:07:SJ cbx_lpm_add_sub 2015:04:22:18:04:07:SJ cbx_lpm_compare 2015:04:22:18:04:07:SJ cbx_lpm_counter 2015:04:22:18:04:07:SJ cbx_lpm_decode 2015:04:22:18:04:08:SJ cbx_lpm_mux 2015:04:22:18:04:08:SJ cbx_mgl 2015:04:22:18:06:50:SJ cbx_stratix 2015:04:22:18:04:08:SJ cbx_stratixii 2015:04:22:18:04:08:SJ cbx_stratixiii 2015:04:22:18:04:08:SJ cbx_stratixv 2015:04:22:18:04:08:SJ cbx_util_mgl 2015:04:22:18:04:08:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, the Altera Quartus II License Agreement,
+--  the Altera MegaCore Function License Agreement, or other 
+--  applicable license agreement, including, without limitation, 
+--  that your use is for the sole purpose of programming logic 
+--  devices manufactured by Altera and sold by Altera or its 
+--  authorized distributors.  Please refer to the applicable 
+--  agreement for further details.
+
+
+FUNCTION altpll_dyn_phase_le_4ho (dataa, datab, datac, datad)
+RETURNS ( combout);
+FUNCTION altpll_dyn_phase_le_5ho (dataa, datab, datac, datad)
+RETURNS ( combout);
+FUNCTION altpll_dyn_phase_le_6ho (dataa, datab, datac, datad)
+RETURNS ( combout);
+FUNCTION lcell (in)
+RETURNS ( out);
+FUNCTION cntr_22e (clock, cnt_en)
+RETURNS ( q[1..0]);
+FUNCTION cntr_8ge (aclr, clock, cnt_en)
+RETURNS ( q[2..0]);
+FUNCTION cycloneive_pll (areset, clkswitch, configupdate, fbin, inclk[1..0], pfdena, phasecounterselect[phasecounterselect_width-1..0], phasestep, phaseupdown, scanclk, scanclkena, scandata)
+WITH ( AUTO_SETTINGS, BANDWIDTH, BANDWIDTH_TYPE, C0_HIGH, C0_INITIAL, C0_LOW, C0_MODE, C0_PH, C0_TEST_SOURCE, C1_HIGH, C1_INITIAL, C1_LOW, C1_MODE, C1_PH, C1_TEST_SOURCE, C1_USE_CASC_IN, C2_HIGH, C2_INITIAL, C2_LOW, C2_MODE, C2_PH, C2_TEST_SOURCE, C2_USE_CASC_IN, C3_HIGH, C3_INITIAL, C3_LOW, C3_MODE, C3_PH, C3_TEST_SOURCE, C3_USE_CASC_IN, C4_HIGH, C4_INITIAL, C4_LOW, C4_MODE, C4_PH, C4_TEST_SOURCE, C4_USE_CASC_IN, CHARGE_PUMP_CURRENT, CHARGE_PUMP_CURRENT_BITS, CLK0_COUNTER, CLK0_DIVIDE_BY, CLK0_DUTY_CYCLE, CLK0_MULTIPLY_BY, CLK0_OUTPUT_FREQUENCY, CLK0_PHASE_SHIFT, CLK0_PHASE_SHIFT_NUM, clk0_use_even_counter_mode, clk0_use_even_counter_value, CLK1_COUNTER, CLK1_DIVIDE_BY, CLK1_DUTY_CYCLE, CLK1_MULTIPLY_BY, CLK1_OUTPUT_FREQUENCY, CLK1_PHASE_SHIFT, CLK1_PHASE_SHIFT_NUM, clk1_use_even_counter_mode, clk1_use_even_counter_value, CLK2_COUNTER, CLK2_DIVIDE_BY, CLK2_DUTY_CYCLE, CLK2_MULTIPLY_BY, CLK2_OUTPUT_FREQUENCY, CLK2_PHASE_SHIFT, CLK2_PHASE_SHIFT_NUM, clk2_use_even_counter_mode, clk2_use_even_counter_value, CLK3_COUNTER, CLK3_DIVIDE_BY, CLK3_DUTY_CYCLE, CLK3_MULTIPLY_BY, CLK3_OUTPUT_FREQUENCY, CLK3_PHASE_SHIFT, CLK3_PHASE_SHIFT_NUM, clk3_use_even_counter_mode, clk3_use_even_counter_value, CLK4_COUNTER, CLK4_DIVIDE_BY, CLK4_DUTY_CYCLE, CLK4_MULTIPLY_BY, CLK4_OUTPUT_FREQUENCY, CLK4_PHASE_SHIFT, CLK4_PHASE_SHIFT_NUM, clk4_use_even_counter_mode, clk4_use_even_counter_value, CLKOUT_WIDTH = 5, COMPENSATE_CLOCK, ENABLE_SWITCH_OVER_COUNTER, INCLK0_INPUT_FREQUENCY, INCLK1_INPUT_FREQUENCY, LOCK_HIGH, LOCK_LOW, lock_window_ui, lock_window_ui_bits, LOOP_FILTER_C, LOOP_FILTER_C_BITS, LOOP_FILTER_R, LOOP_FILTER_R_BITS, M, M_INITIAL, M_PH, M_TEST_SOURCE, N, OPERATION_MODE, PFD_MAX, PFD_MIN, PHASECOUNTERSELECT_WIDTH = 3, PLL_COMPENSATION_DELAY, PLL_TYPE, SCAN_CHAIN_MIF_FILE, self_reset_on_loss_lock, SIMULATION_TYPE, SWITCH_OVER_COUNTER, SWITCH_OVER_TYPE, TEST_BYPASS_LOCK_DETECT, USE_DC_COUPLING, VCO_CENTER, VCO_DIVIDE_BY, vco_frequency_control, VCO_MAX, VCO_MIN, VCO_MULTIPLY_BY, vco_phase_shift_step, VCO_POST_SCALE, VCO_RANGE_DETECTOR_HIGH_BITS, VCO_RANGE_DETECTOR_LOW_BITS)
+RETURNS ( activeclock, clk[CLKOUT_WIDTH-1..0], clkbad[1..0], fbout, locked, phasedone, scandataout, scandone, vcooverrange, vcounderrange);
+
+--synthesis_resources = cycloneive_pll 1 lut 11 reg 9 
+OPTIONS ALTERA_INTERNAL_OPTION = "SUPPRESS_DA_RULE_INTERNAL=R101;SUPPRESS_DA_RULE_INTERNAL=C104;SUPPRESS_DA_RULE_INTERNAL=R101;{-to remap_decoy_le3a} ADV_NETLIST_OPT_ALLOWED = NEVER_ALLOW;{-to remap_decoy_le3a} IGNORE_LCELL_BUFFERS = OFF;{-to remap_decoy_le3a} REMOVE_REDUNDANT_LOGIC_CELLS = OFF;-name SDC_STATEMENT ""set_false_path -from ** -to *phasedone_state* "";-name SDC_STATEMENT ""set_false_path -from ** -to *internal_phasestep* """;
+
+SUBDESIGN altpll_3al3
+( 
+	areset	:	input;
+	clk[4..0]	:	output;
+	inclk[1..0]	:	input;
+	locked	:	output;
+	phasecounterselect[2..0]	:	input;
+	phasedone	:	output;
+	phasestep	:	input;
+	phaseupdown	:	input;
+	scanclk	:	input;
+) 
+VARIABLE 
+	altpll_dyn_phase_le2 : altpll_dyn_phase_le_4ho;
+	altpll_dyn_phase_le4 : altpll_dyn_phase_le_5ho;
+	altpll_dyn_phase_le5 : altpll_dyn_phase_le_6ho;
+	internal_phasestep : dffe;
+	phasedone_state : dffe;
+	pll_internal_phasestep_reg : dffe;
+	pll_lock_sync : dffe;
+	remap_decoy_le3a[2..0] : lcell;
+	phasestep_counter : cntr_22e;
+	pll_internal_phasestep : cntr_8ge;
+	pll1 : cycloneive_pll
+		WITH (
+			BANDWIDTH_TYPE = "auto",
+			CLK0_DIVIDE_BY = 256,
+			CLK0_DUTY_CYCLE = 50,
+			CLK0_MULTIPLY_BY = 625,
+			CLK0_PHASE_SHIFT = "0",
+			CLK1_DIVIDE_BY = 128,
+			CLK1_DUTY_CYCLE = 50,
+			CLK1_MULTIPLY_BY = 625,
+			CLK1_PHASE_SHIFT = "0",
+			CLK2_DIVIDE_BY = 128,
+			CLK2_DUTY_CYCLE = 50,
+			CLK2_MULTIPLY_BY = 625,
+			CLK2_PHASE_SHIFT = "-1667",
+			CLK3_DIVIDE_BY = 128,
+			CLK3_DUTY_CYCLE = 50,
+			CLK3_MULTIPLY_BY = 625,
+			CLK3_PHASE_SHIFT = "0",
+			CLK4_DIVIDE_BY = 128,
+			CLK4_DUTY_CYCLE = 50,
+			CLK4_MULTIPLY_BY = 625,
+			CLK4_PHASE_SHIFT = "0",
+			COMPENSATE_CLOCK = "clk1",
+			INCLK0_INPUT_FREQUENCY = 32552,
+			OPERATION_MODE = "normal",
+			PLL_TYPE = "auto",
+			self_reset_on_loss_lock = "off",
+			vco_frequency_control = "manual_phase",
+			vco_phase_shift_step = 119
+		);
+	internal_phasestep_reg_wire	: WIRE;
+	phasedone_low_counter[2..0]	: WIRE;
+	phasedone_state_reg_wire	: WIRE;
+	phasestep_counter_wire[1..0]	: WIRE;
+	w14w[1..0]	: WIRE;
+	w20w[2..0]	: WIRE;
+	w29w[2..0]	: WIRE;
+
+BEGIN 
+	altpll_dyn_phase_le2.dataa = remap_decoy_le3a[0].out;
+	altpll_dyn_phase_le2.datab = remap_decoy_le3a[1].out;
+	altpll_dyn_phase_le2.datac = remap_decoy_le3a[2].out;
+	altpll_dyn_phase_le2.datad = B"0";
+	altpll_dyn_phase_le4.dataa = remap_decoy_le3a[0].out;
+	altpll_dyn_phase_le4.datab = remap_decoy_le3a[1].out;
+	altpll_dyn_phase_le4.datac = remap_decoy_le3a[2].out;
+	altpll_dyn_phase_le4.datad = B"0";
+	altpll_dyn_phase_le5.dataa = remap_decoy_le3a[0].out;
+	altpll_dyn_phase_le5.datab = remap_decoy_le3a[1].out;
+	altpll_dyn_phase_le5.datac = remap_decoy_le3a[2].out;
+	altpll_dyn_phase_le5.datad = B"0";
+	internal_phasestep.clk = scanclk;
+	internal_phasestep.clrn = (! areset);
+	internal_phasestep.d = (phasedone_state_reg_wire # ((((! phasedone_state_reg_wire) & phasedone_low_counter[2..2]) & w29w[1..1]) & phasedone_low_counter[0..0]));
+	phasedone_state.clk = scanclk;
+	phasedone_state.clrn = (! areset);
+	phasedone_state.d = (((! phasedone_state_reg_wire) & ((phasedone_low_counter[0..0] & w20w[1..1]) & phasedone_low_counter[2..2])) # (phasedone_state_reg_wire & (w14w[0..0] # (phasestep_counter_wire[0..0] & phasestep_counter_wire[1..1]))));
+	pll_internal_phasestep_reg.clk = scanclk;
+	pll_internal_phasestep_reg.d = pll1.phasedone;
+	pll_lock_sync.clk = pll1.locked;
+	pll_lock_sync.clrn = (! areset);
+	pll_lock_sync.d = B"1";
+	remap_decoy_le3a[].in = ( phasecounterselect[2..0]);
+	phasestep_counter.clock = scanclk;
+	phasestep_counter.cnt_en = phasedone_state_reg_wire;
+	pll_internal_phasestep.aclr = (areset # pll1.phasedone);
+	pll_internal_phasestep.clock = scanclk;
+	pll_internal_phasestep.cnt_en = (! pll_internal_phasestep_reg.q);
+	pll1.areset = areset;
+	pll1.fbin = pll1.fbout;
+	pll1.inclk[] = inclk[];
+	pll1.phasecounterselect[] = ( altpll_dyn_phase_le5.combout, altpll_dyn_phase_le4.combout, altpll_dyn_phase_le2.combout);
+	pll1.phasestep = (phasestep # internal_phasestep_reg_wire);
+	pll1.phaseupdown = phaseupdown;
+	pll1.scanclk = scanclk;
+	clk[] = ( pll1.clk[4..0]);
+	internal_phasestep_reg_wire = internal_phasestep.q;
+	locked = (pll1.locked & pll_lock_sync.q);
+	phasedone = (pll1.phasedone & (! internal_phasestep_reg_wire));
+	phasedone_low_counter[] = pll_internal_phasestep.q[];
+	phasedone_state_reg_wire = phasedone_state.q;
+	phasestep_counter_wire[] = phasestep_counter.q[];
+	w14w[] = (! phasestep_counter_wire[]);
+	w20w[] = (! phasedone_low_counter[]);
+	w29w[] = (! phasedone_low_counter[]);
+END;
+--VALID FILE

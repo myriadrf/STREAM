@@ -1,0 +1,4 @@
+[16:17:24] Log started: 2015-12-01 16:17:24
+[16:17:24] COM connection supported
+[16:17:24] USB connection supported
+[16:17:24] SPI connection supported

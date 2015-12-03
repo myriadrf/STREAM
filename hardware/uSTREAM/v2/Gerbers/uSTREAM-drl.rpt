@@ -1,0 +1,73 @@
+Drill report for F:\uSTREAM_v2r3\KiCad Design files\uSTREAM.kicad_pcb
+Created on 27/11/2015 23:20:58
+Drill report for plated through holes :
+T1  0.20mm  0.008"  (992 holes)
+T2  0.30mm  0.012"  (132 holes)
+T3  1.00mm  0.039"  (4 holes)  (with 2 slots)
+
+Total plated holes count 1128
+
+
+Drill report for buried and blind vias :
+
+Drill report for holes from layer B.Cu to layer Inner1.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner1.Cu to layer Inner2.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner2.Cu to layer Inner3.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner3.Cu to layer Inner4.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner4.Cu to layer Inner5.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner5.Cu to layer Inner6.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner6.Cu to layer Inner7.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner7.Cu to layer Inner8.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner8.Cu to layer Inner9.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner9.Cu to layer Inner10.Cu :
+
+Total plated holes count 0
+
+
+Drill report for holes from layer Inner10.Cu to layer F.Cu :
+
+Total plated holes count 0
+
+
+Drill report for unplated through holes :
+T1  0.90mm  0.035"  (18 holes)
+
+Total unplated holes count 18
+
+

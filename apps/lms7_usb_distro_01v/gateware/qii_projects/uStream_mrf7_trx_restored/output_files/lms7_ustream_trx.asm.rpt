@@ -1,0 +1,104 @@
+Assembler report for lms7_ustream_trx
+Thu Oct 29 21:33:07 2015
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Assembler Summary
+  3. Assembler Settings
+  4. Assembler Generated Files
+  5. Assembler Device Options: C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/output_files/lms7_ustream_trx.sof
+  6. Assembler Device Options: C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/output_files/lms7_ustream_trx.rbf
+  7. Assembler Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------+
+; Assembler Summary                                             ;
++-----------------------+---------------------------------------+
+; Assembler Status      ; Successful - Thu Oct 29 21:33:07 2015 ;
+; Revision Name         ; lms7_ustream_trx                      ;
+; Top-level Entity Name ; lms7_uStream_trx_top                  ;
+; Family                ; Cyclone IV E                          ;
+; Device                ; EP4CE10F17C8                          ;
++-----------------------+---------------------------------------+
+
+
++----------------------------------+
+; Assembler Settings               ;
++--------+---------+---------------+
+; Option ; Setting ; Default Value ;
++--------+---------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                                 ;
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                                 ;
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/output_files/lms7_ustream_trx.sof ;
+; C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/output_files/lms7_ustream_trx.rbf ;
++-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/output_files/lms7_ustream_trx.sof ;
++----------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                                            ;
++----------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Device         ; EP4CE10F17C8                                                                                                                                       ;
+; JTAG usercode  ; 0x004A1257                                                                                                                                         ;
+; Checksum       ; 0x004A1257                                                                                                                                         ;
++----------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Ignas Lime/Desktop/uStream_uMyriad7_distro_v01/gateware/qii_projects/uStream_mrf7_trx_restored/output_files/lms7_ustream_trx.rbf ;
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Option              ; Setting                                                                                                                                       ;
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Raw Binary File     ;                                                                                                                                               ;
+;  Compression Ratio  ; 2                                                                                                                                             ;
++---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------+
+; Assembler Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Assembler
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+    Info: Processing started: Thu Oct 29 21:33:04 2015
+Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off lms6usb_trx -c lms7_ustream_trx
+Info (115031): Writing out detailed assembly data for power analysis
+Info (115030): Assembler is generating device programming files
+Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 638 megabytes
+    Info: Processing ended: Thu Oct 29 21:33:07 2015
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

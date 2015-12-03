@@ -1,0 +1,10 @@
+PLL_Name	ddr2:inst1|ddr2_controller_phy:ddr2_controller_phy_inst|ddr2_phy:ddr2_phy_inst|ddr2_phy_alt_mem_phy:ddr2_phy_alt_mem_phy_inst|ddr2_phy_alt_mem_phy_clk_reset:clk|ddr2_phy_alt_mem_phy_pll:pll|altpll:altpll_component|altpll_3al3:auto_generated|pll1
+PLLJITTER	NA
+PLLSPEmax	84
+PLLSPEmin	-53
+
+PLL_Name	pll2:inst32|altpll:altpll_component|pll2_altpll:auto_generated|pll1
+PLLJITTER	43
+PLLSPEmax	84
+PLLSPEmin	-53
+

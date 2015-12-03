@@ -1,0 +1,5 @@
+uStream_uMyriad7_distro_v01
+===========================
+Release date: 14 Oct 2015
+Change log:
+  1. Initial project release for uStream and uMyriadRF boards.

@@ -1,0 +1,327 @@
+ -- Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+ -- Your use of Altera Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Altera Program License 
+ -- Subscription Agreement, the Altera Quartus II License Agreement,
+ -- the Altera MegaCore Function License Agreement, or other 
+ -- applicable license agreement, including, without limitation, 
+ -- that your use is for the sole purpose of programming logic 
+ -- devices manufactured by Altera and sold by Altera or its 
+ -- authorized distributors.  Please refer to the applicable 
+ -- agreement for further details.
+ -- 
+ -- This is a Quartus II output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus II input file. This file cannot be used
+ -- to make Quartus II pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus II help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.2V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --                  Bank 1:       3.3V
+ --                  Bank 2:       3.3V
+ --                  Bank 3:       1.8V
+ --                  Bank 4:       1.8V
+ --                  Bank 5:       1.8V
+ --                  Bank 6:       1.8V
+ --                  Bank 7:       3.3V
+ --                  Bank 8:       3.3V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --                  It can also be used to report unused dedicated pins. The connection
+ --                  on the board for unused dedicated pins depends on whether this will
+ --                  be used in a future design. One example is device migration. When
+ --                  using device migration, refer to the device pin-tables. If it is a
+ --                  GND pin in the pin table or if it will not be used in a future design
+ --                  for another purpose the it MUST be connected to GND. If it is an unused
+ --                  dedicated pin, then it can be connected to a valid signal on the board
+ --                  (low, high, or toggling) if that signal is required for a different
+ --                  revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --                  This pin should be connected to GND. It may also be connected  to a
+ --                  valid signal  on the board  (low, high, or toggling)  if that signal
+ --                  is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --                  or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Web Edition
+CHIP  "lms7_ustream_trx"  ASSIGNED TO AN: EP4CE10F17C8
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+VCCIO8                       : A1        : power  :                   : 3.3V    : 8         :                
+FPGA_LMS_CS                  : A2        : output : 3.3-V LVCMOS      :         : 8         : Y              
+FX3_FPGA_GPIO3               : A3        : input  : 3.3-V LVCMOS      :         : 8         : Y              
+FX3_FPGA_GPIO1               : A4        : input  : 3.3-V LVCMOS      :         : 8         : Y              
+FPGA_SPI_MOSI                : A5        : output : 3.3-V LVCMOS      :         : 8         : Y              
+FX3_FPGA_SNN                 : A6        : input  : 3.3-V LVCMOS      :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A7        :        :                   :         : 8         :                
+RPI_SCLK                     : A8        : output : 3.3-V LVCMOS      :         : 8         : Y              
+RPI_MISO                     : A9        : output : 3.3-V LVCMOS      :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A10       :        :                   :         : 7         :                
+RPI_GEN3                     : A11       : output : 3.3-V LVCMOS      :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A12       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : A13       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : A14       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : A15       :        :                   :         : 7         :                
+VCCIO7                       : A16       : power  :                   : 3.3V    : 7         :                
+RXD[3]                       : B1        : input  : 3.3-V LVCMOS      :         : 1         : Y              
+GND                          : B2        : gnd    :                   :         :           :                
+RXD[7]                       : B3        : input  : 3.3-V LVCMOS      :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B4        :        :                   :         : 8         :                
+FPGA_DAC_CS                  : B5        : output : 3.3-V LVCMOS      :         : 8         : Y              
+RXD[1]                       : B6        : input  : 3.3-V LVCMOS      :         : 8         : Y              
+FX3_SPI_SCK                  : B7        : input  : 3.3-V LVCMOS      :         : 8         : Y              
+FX3_GPIO5                    : B8        : output : 3.3-V LVCMOS      :         : 8         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B9        :        :                   :         : 7         :                
+RPI_MOSI                     : B10       : output : 3.3-V LVCMOS      :         : 7         : Y              
+RPI_GEN4                     : B11       : output : 3.3-V LVCMOS      :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B12       :        :                   :         : 7         :                
+RPI_GCLK                     : B13       : output : 3.3-V LVCMOS      :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : B14       :        :                   :         : 7         :                
+GND                          : B15       : gnd    :                   :         :           :                
+FX3_FLAGA                    : B16       : input  : 1.8 V             :         : 6         : Y              
+RXD[9]                       : C1        : input  : 3.3-V LVCMOS      :         : 1         : Y              
+MCLK2                        : C2        : input  : 3.3-V LVCMOS      :         : 1         : Y              
+RXIQSEL                      : C3        : input  : 3.3-V LVCMOS      :         : 8         : Y              
+VCCIO8                       : C4        : power  :                   : 3.3V    : 8         :                
+GND                          : C5        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C6        :        :                   :         : 8         :                
+VCCIO8                       : C7        : power  :                   : 3.3V    : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C8        :        :                   :         : 8         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C9        :        :                   :         : 7         :                
+VCCIO7                       : C10       : power  :                   : 3.3V    : 7         :                
+FPGA_LED2                    : C11       : output : 3.3-V LVCMOS      :         : 7         : Y              
+GND                          : C12       : gnd    :                   :         :           :                
+VCCIO7                       : C13       : power  :                   : 3.3V    : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C14       :        :                   :         : 7         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C15       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C16       :        :                   :         : 6         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D1        :        :                   :         : 1         :                
+FCLK2                        : D2        : output : 3.3-V LVCMOS      :         : 1         : Y              
+RXD[2]                       : D3        : input  : 3.3-V LVCMOS      :         : 8         : Y              
+RXD[0]                       : D4        : input  : 3.3-V LVCMOS      :         : 1         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D5        :        :                   :         : 8         :                
+unused_pin                   : D6        : input  : 3.3-V LVCMOS      :         : 8         : Y              
+GND                          : D7        : gnd    :                   :         :           :                
+RPI_GPIO12_miso              : D8        : output : 3.3-V LVCMOS      :         : 8         : Y              
+RPI_GPIO6                    : D9        : output : 3.3-V LVCMOS      :         : 7         : Y              
+GND                          : D10       : gnd    :                   :         :           :                
+RPI_ID_SD                    : D11       : output : 3.3-V LVCMOS      :         : 7         : Y              
+RPI_GEN0                     : D12       : output : 3.3-V LVCMOS      :         : 7         : Y              
+VCCD_PLL2                    : D13       : power  :                   : 1.2V    :           :                
+RPI_SDA1                     : D14       : output : 3.3-V LVCMOS      :         : 7         : Y              
+FX3_SLRDn                    : D15       : output : 1.8 V             :         : 6         : Y              
+FX3_PCLK                     : D16       : output : 1.8 V             :         : 6         : Y              
+clk                          : E1        : input  : 3.3-V LVCMOS      :         : 1         : Y              
+GND                          : E2        : gnd    :                   :         :           :                
+VCCIO1                       : E3        : power  :                   : 3.3V    : 1         :                
+GND                          : E4        : gnd    :                   :         :           :                
+RXD[5]                       : E5        : input  : 3.3-V LVCMOS      :         : 1         : Y              
+FPGA_SPI_MISO                : E6        : input  : 3.3-V LVCMOS      :         : 8         : Y              
+FPGA_SPI_SCK                 : E7        : output : 3.3-V LVCMOS      :         : 8         : Y              
+RPI_GPIO16_cs                : E8        : output : 3.3-V LVCMOS      :         : 8         : Y              
+RPI_GPIO19                   : E9        : output : 3.3-V LVCMOS      :         : 7         : Y              
+FPGA_LED1                    : E10       : output : 3.3-V LVCMOS      :         : 7         : Y              
+FPGA_LED0                    : E11       : output : 3.3-V LVCMOS      :         : 7         : Y              
+GNDA2                        : E12       : gnd    :                   :         :           :                
+GND                          : E13       : gnd    :                   :         :           :                
+VCCIO6                       : E14       : power  :                   : 1.8V    : 6         :                
+GND+                         : E15       :        :                   :         : 6         :                
+GND+                         : E16       :        :                   :         : 6         :                
+RXD[6]                       : F1        : input  : 3.3-V LVCMOS      :         : 1         : Y              
+RXD[4]                       : F2        : input  : 3.3-V LVCMOS      :         : 1         : Y              
+LMS_RESET                    : F3        : output : 3.3-V LVCMOS      :         : 1         : Y              
+nSTATUS                      : F4        :        :                   :         : 1         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F5        :        :                   :         : 1         :                
+FX3_SPI_MISO                 : F6        : output : 3.3-V LVCMOS      :         : 8         : Y              
+FX3_SPI_MOSI                 : F7        : input  : 3.3-V LVCMOS      :         : 8         : Y              
+RPI_GPIO20_mosi              : F8        : output : 3.3-V LVCMOS      :         : 8         : Y              
+RPI_GPIO21_sclk              : F9        : output : 3.3-V LVCMOS      :         : 7         : Y              
+RPI_GPIO26                   : F10       : output : 3.3-V LVCMOS      :         : 7         : Y              
+RPI_GPIO13                   : F11       : output : 3.3-V LVCMOS      :         : 7         : Y              
+VCCA2                        : F12       : power  :                   : 2.5V    :           :                
+FX3_SLOEn                    : F13       : output : 1.8 V             :         : 6         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F14       :        :                   :         : 6         :                
+FX3_FLAGB                    : F15       : input  : 1.8 V             :         : 6         : Y              
+FX3_DQ[2]                    : F16       : bidir  : 1.8 V             :         : 6         : Y              
+RXD[8]                       : G1        : input  : 3.3-V LVCMOS      :         : 1         : Y              
+RXD[11]                      : G2        : input  : 3.3-V LVCMOS      :         : 1         : Y              
+VCCIO1                       : G3        : power  :                   : 3.3V    : 1         :                
+GND                          : G4        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : G5        :        :                   :         : 1         :                
+VCCINT                       : G6        : power  :                   : 1.2V    :           :                
+VCCINT                       : G7        : power  :                   : 1.2V    :           :                
+VCCINT                       : G8        : power  :                   : 1.2V    :           :                
+VCCINT                       : G9        : power  :                   : 1.2V    :           :                
+VCCINT                       : G10       : power  :                   : 1.2V    :           :                
+FX3_DQ[15]                   : G11       : bidir  : 1.8 V             :         : 6         : Y              
+MSEL2                        : G12       :        :                   :         : 6         :                
+GND                          : G13       : gnd    :                   :         :           :                
+VCCIO6                       : G14       : power  :                   : 1.8V    : 6         :                
+FX3_A[0]                     : G15       : output : 1.8 V             :         : 6         : Y              
+FX3_FLAGD                    : G16       : input  : 1.8 V             :         : 6         : Y              
+~ALTERA_DCLK~ / RESERVED_INPUT : H1        : input  : 3.3-V LVTTL       :         : 1         : N              
+~ALTERA_DATA0~ / RESERVED_INPUT : H2        : input  : 3.3-V LVTTL       :         : 1         : N              
+TCK                          : H3        : input  :                   :         : 1         :                
+TDI                          : H4        : input  :                   :         : 1         :                
+nCONFIG                      : H5        :        :                   :         : 1         :                
+VCCINT                       : H6        : power  :                   : 1.2V    :           :                
+GND                          : H7        : gnd    :                   :         :           :                
+GND                          : H8        : gnd    :                   :         :           :                
+GND                          : H9        : gnd    :                   :         :           :                
+GND                          : H10       : gnd    :                   :         :           :                
+VCCINT                       : H11       : power  :                   : 1.2V    :           :                
+MSEL1                        : H12       :        :                   :         : 6         :                
+MSEL0                        : H13       :        :                   :         : 6         :                
+CONF_DONE                    : H14       :        :                   :         : 6         :                
+GND                          : H15       : gnd    :                   :         :           :                
+GND                          : H16       : gnd    :                   :         :           :                
+TXD[11]                      : J1        : output : 3.3-V LVCMOS      :         : 2         : Y              
+RXD[10]                      : J2        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+nCE                          : J3        :        :                   :         : 1         :                
+TDO                          : J4        : output :                   :         : 1         :                
+TMS                          : J5        : input  :                   :         : 1         :                
+TXIQSEL                      : J6        : output : 3.3-V LVCMOS      :         : 2         : Y              
+GND                          : J7        : gnd    :                   :         :           :                
+GND                          : J8        : gnd    :                   :         :           :                
+GND                          : J9        : gnd    :                   :         :           :                
+GND                          : J10       : gnd    :                   :         :           :                
+FX3_DQ[5]                    : J11       : bidir  : 1.8 V             :         : 5         : Y              
+FX3_PKTENDn                  : J12       : output : 1.8 V             :         : 5         : Y              
+FX3_A[1]                     : J13       : output : 1.8 V             :         : 5         : Y              
+FX3_FLAGC                    : J14       : input  : 1.8 V             :         : 5         : Y              
+FX3_SLWRn                    : J15       : output : 1.8 V             :         : 5         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J16       :        :                   :         : 5         :                
+TXD[3]                       : K1        : output : 3.3-V LVCMOS      :         : 2         : Y              
+FCLK1                        : K2        : output : 3.3-V LVCMOS      :         : 2         : Y              
+VCCIO2                       : K3        : power  :                   : 3.3V    : 2         :                
+GND                          : K4        : gnd    :                   :         :           :                
+TXD[4]                       : K5        : output : 3.3-V LVCMOS      :         : 2         : Y              
+TXD[8]                       : K6        : output : 3.3-V LVCMOS      :         : 2         : Y              
+VCCINT                       : K7        : power  :                   : 1.2V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K8        :        :                   :         : 3         :                
+mem_addr[6]                  : K9        : output : SSTL-18 Class I   :         : 4         : Y              
+mem_addr[0]                  : K10       : output : SSTL-18 Class I   :         : 4         : Y              
+FX3_DQ[4]                    : K11       : bidir  : 1.8 V             :         : 5         : Y              
+FX3_DQ[7]                    : K12       : bidir  : 1.8 V             :         : 5         : Y              
+GND                          : K13       : gnd    :                   :         :           :                
+VCCIO5                       : K14       : power  :                   : 1.8V    : 5         :                
+FX3_SLCSn                    : K15       : output : 1.8 V             :         : 5         : Y              
+FX3_DQ[14]                   : K16       : bidir  : 1.8 V             :         : 5         : Y              
+TXD[0]                       : L1        : output : 3.3-V LVCMOS      :         : 2         : Y              
+TXD[1]                       : L2        : output : 3.3-V LVCMOS      :         : 2         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L3        :        :                   :         : 2         :                
+TXD[10]                      : L4        : output : 3.3-V LVCMOS      :         : 2         : Y              
+VCCA1                        : L5        : power  :                   : 2.5V    :           :                
+TXD[5]                       : L6        : output : 3.3-V LVCMOS      :         : 2         : Y              
+mem_dq[5]                    : L7        : bidir  : SSTL-18 Class I   :         : 3         : Y              
+mem_dq[7]                    : L8        : bidir  : SSTL-18 Class I   :         : 3         : Y              
+mem_addr[2]                  : L9        : output : SSTL-18 Class I   :         : 4         : Y              
+mem_cs_n[0]                  : L10       : output : SSTL-18 Class I   :         : 4         : Y              
+mem_cas_n                    : L11       : output : SSTL-18 Class I   :         : 4         : Y              
+FX3_DQ[13]                   : L12       : bidir  : 1.8 V             :         : 5         : Y              
+FX3_DQ[12]                   : L13       : bidir  : 1.8 V             :         : 5         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L14       :        :                   :         : 5         :                
+FX3_DQ[11]                   : L15       : bidir  : 1.8 V             :         : 5         : Y              
+FX3_DQ[9]                    : L16       : bidir  : 1.8 V             :         : 5         : Y              
+GND+                         : M1        :        :                   :         : 2         :                
+GND+                         : M2        :        :                   :         : 2         :                
+VCCIO2                       : M3        : power  :                   : 3.3V    : 2         :                
+GND                          : M4        : gnd    :                   :         :           :                
+GNDA1                        : M5        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M6        :        :                   :         : 3         :                
+mem_dqs[0]                   : M7        : bidir  : SSTL-18 Class I   :         : 3         : Y              
+mem_dm[1]                    : M8        : output : SSTL-18 Class I   :         : 3         : Y              
+mem_ras_n                    : M9        : output : SSTL-18 Class I   :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M10       :        :                   :         : 4         :                
+mem_clk[0]                   : M11       : bidir  : SSTL-18 Class I   :         : 4         : Y              
+FX3_DQ[10]                   : M12       : bidir  : 1.8 V             :         : 5         : Y              
+GND                          : M13       : gnd    :                   :         :           :                
+VCCIO5                       : M14       : power  :                   : 1.8V    : 5         :                
+GND+                         : M15       :        :                   :         : 5         :                
+GND+                         : M16       :        :                   :         : 5         :                
+MCLK1                        : N1        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+TXD[9]                       : N2        : output : 3.3-V LVCMOS      :         : 2         : Y              
+mem_addr[4]                  : N3        : output : SSTL-18 Class I   :         : 3         : Y              
+VCCD_PLL1                    : N4        : power  :                   : 1.2V    :           :                
+mem_dq[2]                    : N5        : bidir  : SSTL-18 Class I   :         : 3         : Y              
+mem_dq[0]                    : N6        : bidir  : SSTL-18 Class I   :         : 3         : Y              
+GND                          : N7        : gnd    :                   :         :           :                
+mem_dq[10]                   : N8        : bidir  : SSTL-18 Class I   :         : 3         : Y              
+mem_dq[13]                   : N9        : bidir  : SSTL-18 Class I   :         : 4         : Y              
+GND                          : N10       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N11       :        :                   :         : 4         :                
+mem_clk_n[0]                 : N12       : bidir  : SSTL-18 Class I   :         : 4         : Y              
+FX3_DQ[3]                    : N13       : bidir  : 1.8 V             :         : 5         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N14       :        :                   :         : 5         :                
+FX3_DQ[6]                    : N15       : bidir  : 1.8 V             :         : 5         : Y              
+FX3_DQ[8]                    : N16       : bidir  : 1.8 V             :         : 5         : Y              
+TXD[2]                       : P1        : output : 3.3-V LVCMOS      :         : 2         : Y              
+TXD[6]                       : P2        : output : 3.3-V LVCMOS      :         : 2         : Y              
+mem_dm[0]                    : P3        : output : SSTL-18 Class I   :         : 3         : Y              
+VCCIO3                       : P4        : power  :                   : 1.8V    : 3         :                
+GND                          : P5        : gnd    :                   :         :           :                
+VREFB3N0                     : P6        :        :                   : 0.9V    : 3         :                
+VCCIO3                       : P7        : power  :                   : 1.8V    : 3         :                
+mem_dq[15]                   : P8        : bidir  : SSTL-18 Class I   :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P9        :        :                   :         : 4         :                
+VCCIO4                       : P10       : power  :                   : 1.8V    : 4         :                
+VREFB4N0                     : P11       :        :                   : 0.9V    : 4         :                
+GND                          : P12       : gnd    :                   :         :           :                
+VCCIO4                       : P13       : power  :                   : 1.8V    : 4         :                
+mem_addr[8]                  : P14       : output : SSTL-18 Class I   :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P15       :        :                   :         : 5         :                
+FX3_DQ[0]                    : P16       : bidir  : 1.8 V             :         : 5         : Y              
+TXD[7]                       : R1        : output : 3.3-V LVCMOS      :         : 2         : Y              
+GND                          : R2        : gnd    :                   :         :           :                
+mem_dq[6]                    : R3        : bidir  : SSTL-18 Class I   :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R4        :        :                   :         : 3         :                
+mem_dq[4]                    : R5        : bidir  : SSTL-18 Class I   :         : 3         : Y              
+mem_dq[1]                    : R6        : bidir  : SSTL-18 Class I   :         : 3         : Y              
+mem_dq[3]                    : R7        : bidir  : SSTL-18 Class I   :         : 3         : Y              
+mem_odt[0]                   : R8        : output : SSTL-18 Class I   :         : 3         : Y              
+mem_we_n                     : R9        : output : SSTL-18 Class I   :         : 4         : Y              
+mem_dq[9]                    : R10       : bidir  : SSTL-18 Class I   :         : 4         : Y              
+mem_dq[8]                    : R11       : bidir  : SSTL-18 Class I   :         : 4         : Y              
+mem_dq[11]                   : R12       : bidir  : SSTL-18 Class I   :         : 4         : Y              
+mem_addr[11]                 : R13       : output : SSTL-18 Class I   :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R14       :        :                   :         : 4         :                
+GND                          : R15       : gnd    :                   :         :           :                
+FX3_DQ[1]                    : R16       : bidir  : 1.8 V             :         : 5         : Y              
+VCCIO3                       : T1        : power  :                   : 1.8V    : 3         :                
+mem_cke[0]                   : T2        : output : SSTL-18 Class I   :         : 3         : Y              
+mem_ba[1]                    : T3        : output : SSTL-18 Class I   :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T4        :        :                   :         : 3         :                
+mem_ba[0]                    : T5        : output : SSTL-18 Class I   :         : 3         : Y              
+mem_addr[10]                 : T6        : output : SSTL-18 Class I   :         : 3         : Y              
+mem_dqs[1]                   : T7        : bidir  : SSTL-18 Class I   :         : 3         : Y              
+mem_addr[1]                  : T8        : output : SSTL-18 Class I   :         : 3         : Y              
+mem_addr[5]                  : T9        : output : SSTL-18 Class I   :         : 4         : Y              
+mem_addr[3]                  : T10       : output : SSTL-18 Class I   :         : 4         : Y              
+mem_addr[9]                  : T11       : output : SSTL-18 Class I   :         : 4         : Y              
+mem_dq[12]                   : T12       : bidir  : SSTL-18 Class I   :         : 4         : Y              
+mem_dq[14]                   : T13       : bidir  : SSTL-18 Class I   :         : 4         : Y              
+mem_addr[12]                 : T14       : output : SSTL-18 Class I   :         : 4         : Y              
+mem_addr[7]                  : T15       : output : SSTL-18 Class I   :         : 4         : Y              
+VCCIO4                       : T16       : power  :                   : 1.8V    : 4         :                
